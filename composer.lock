@@ -14,12 +14,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/alexsholk/AxSConfigBundle.git",
-                "reference": "8689efde0f7f972cdcce079000fcdb055274ad3f"
+                "reference": "0d825b4e42d666ca49e912c8cbab37c219703359"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/alexsholk/AxSConfigBundle/zipball/8689efde0f7f972cdcce079000fcdb055274ad3f",
-                "reference": "8689efde0f7f972cdcce079000fcdb055274ad3f",
+                "url": "https://api.github.com/repos/alexsholk/AxSConfigBundle/zipball/0d825b4e42d666ca49e912c8cbab37c219703359",
+                "reference": "0d825b4e42d666ca49e912c8cbab37c219703359",
                 "shasum": ""
             },
             "type": "symfony-bundle",
@@ -50,7 +50,7 @@
                 "source": "https://github.com/alexsholk/AxSConfigBundle/tree/master",
                 "issues": "https://github.com/alexsholk/AxSConfigBundle/issues"
             },
-            "time": "2015-10-15 19:04:33"
+            "time": "2015-10-16 10:13:26"
         },
         {
             "name": "cocur/slugify",
