@@ -20,7 +20,9 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "sonata-project/admin-bundle": "^2.3",
         "sonata-project/doctrine-orm-admin-bundle": "^2.3",
-        "axs/config-bundle": "dev-master"
+        "axs/config-bundle": "dev-master",
+        "sonata-project/easy-extends-bundle": "^2.1",
+        "sonata-project/user-bundle": "^2.2"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
