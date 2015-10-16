@@ -46,11 +46,11 @@ sonata_admin:
                             </div>
                         </div>
 
-#            left:
-#                position: left
-#                type: sonata.admin.block.admin_list
-#                settings:
-#                    groups: [Applications, Content]
+            left:
+                position: left
+                type: sonata.admin.block.admin_list
+                settings:
+                    groups: [Content]
 
             right:
                 position: right

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c2f569f2a90cef964b95697a27456a91",
-    "content-hash": "79c122e7ff24f1349f6716b1c49d325b",
+    "hash": "0ed431d69715b265af397a4242889f63",
+    "content-hash": "09e14c73c77c7f33deecae4791a8cd59",
     "packages": [
         {
             "name": "axs/config-bundle",
@@ -51,6 +51,94 @@
                 "issues": "https://github.com/alexsholk/AxSConfigBundle/issues"
             },
             "time": "2015-10-16 10:13:26"
+        },
+        {
+            "name": "axs/page-bundle",
+            "version": "dev-master",
+            "target-dir": "AxS/PageBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/alexsholk/AxSPageBundle.git",
+                "reference": "d3186cfaf4fcf238700b7e7c2c7d6e7e5b0c8223"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/alexsholk/AxSPageBundle/zipball/d3186cfaf4fcf238700b7e7c2c7d6e7e5b0c8223",
+                "reference": "d3186cfaf4fcf238700b7e7c2c7d6e7e5b0c8223",
+                "shasum": ""
+            },
+            "require": {
+                "gedmo/doctrine-extensions": "^2.4"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "AxS\\PageBundle": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alexander Sholk",
+                    "email": "sasha1133@gmail.com"
+                }
+            ],
+            "description": "Symfony 2 Page Bundle",
+            "keywords": [
+                "symfony2 page bundle"
+            ],
+            "support": {
+                "source": "https://github.com/alexsholk/AxSPageBundle/tree/master",
+                "issues": "https://github.com/alexsholk/AxSPageBundle/issues"
+            },
+            "time": "2015-10-16 12:35:57"
+        },
+        {
+            "name": "behat/transliterator",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Behat/Transliterator.git",
+                "reference": "868e05be3a9f25ba6424c2dd4849567f50715003"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Behat/Transliterator/zipball/868e05be3a9f25ba6424c2dd4849567f50715003",
+                "reference": "868e05be3a9f25ba6424c2dd4849567f50715003",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Behat\\Transliterator": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Artistic-1.0"
+            ],
+            "description": "String transliterator",
+            "keywords": [
+                "i18n",
+                "slug",
+                "transliterator"
+            ],
+            "time": "2015-09-28 16:26:35"
         },
         {
             "name": "cocur/slugify",
@@ -1028,6 +1116,85 @@
                 "User management"
             ],
             "time": "2015-06-01 00:57:03"
+        },
+        {
+            "name": "gedmo/doctrine-extensions",
+            "version": "v2.4.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
+                "reference": "1a86ba1c7426238b4f765089e0af51174a38af7f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/1a86ba1c7426238b4f765089e0af51174a38af7f",
+                "reference": "1a86ba1c7426238b4f765089e0af51174a38af7f",
+                "shasum": ""
+            },
+            "require": {
+                "behat/transliterator": "~1.0",
+                "doctrine/common": "~2.4",
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "doctrine/common": ">=2.5.0",
+                "doctrine/mongodb-odm": ">=1.0.2",
+                "doctrine/orm": ">=2.5.0",
+                "phpunit/phpunit": "~4.4",
+                "phpunit/phpunit-mock-objects": "~2.3",
+                "symfony/yaml": "~2.6"
+            },
+            "suggest": {
+                "doctrine/mongodb-odm": "to use the extensions with the MongoDB ODM",
+                "doctrine/orm": "to use the extensions with the ORM"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Gedmo\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Buchmann",
+                    "email": "david@liip.ch"
+                },
+                {
+                    "name": "Gediminas Morkevicius",
+                    "email": "gediminas.morkevicius@gmail.com"
+                },
+                {
+                    "name": "Gustavo Falco",
+                    "email": "comfortablynumb84@gmail.com"
+                }
+            ],
+            "description": "Doctrine2 behavioral extensions",
+            "homepage": "http://gediminasm.org/",
+            "keywords": [
+                "Blameable",
+                "behaviors",
+                "doctrine2",
+                "extensions",
+                "gedmo",
+                "loggable",
+                "nestedset",
+                "sluggable",
+                "sortable",
+                "timestampable",
+                "translatable",
+                "tree",
+                "uploadable"
+            ],
+            "time": "2015-09-28 16:39:27"
         },
         {
             "name": "incenteev/composer-parameter-handler",
@@ -2987,7 +3154,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "axs/config-bundle": 20
+        "axs/config-bundle": 20,
+        "axs/page-bundle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

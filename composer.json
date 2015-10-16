@@ -20,9 +20,10 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "sonata-project/admin-bundle": "^2.3",
         "sonata-project/doctrine-orm-admin-bundle": "^2.3",
-        "axs/config-bundle": "dev-master",
         "sonata-project/easy-extends-bundle": "^2.1",
-        "sonata-project/user-bundle": "^2.2"
+        "sonata-project/user-bundle": "^2.2",
+        "axs/config-bundle": "dev-master",
+        "axs/page-bundle": "dev-master"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
@@ -31,6 +32,10 @@
         {
             "type": "vcs",
             "url": "https://github.com/alexsholk/AxSConfigBundle.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/alexsholk/AxSPageBundle.git"
         }
     ],
     "scripts": {

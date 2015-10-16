@@ -30,6 +30,7 @@ class AppKernel extends Kernel
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
             // AxS bundles:
             new AxS\ConfigBundle\AxSConfigBundle(),
+            new AxS\PageBundle\AxSPageBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
