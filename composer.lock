@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0ed431d69715b265af397a4242889f63",
-    "content-hash": "09e14c73c77c7f33deecae4791a8cd59",
+    "hash": "fafe3c14cf44f98f3a34df8ad0140dd8",
+    "content-hash": "e41ef51971cffbffa127b9da16b22e13",
     "packages": [
         {
             "name": "axs/config-bundle",
@@ -99,6 +99,54 @@
                 "issues": "https://github.com/alexsholk/AxSPageBundle/issues"
             },
             "time": "2015-10-16 12:35:57"
+        },
+        {
+            "name": "axs/shop-bundle",
+            "version": "dev-master",
+            "target-dir": "AxS/ShopBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/alexsholk/AxSShopBundle.git",
+                "reference": "ceaa20ead613cee5834d670a167e5c91f6f97e75"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/alexsholk/AxSShopBundle/zipball/ceaa20ead613cee5834d670a167e5c91f6f97e75",
+                "reference": "ceaa20ead613cee5834d670a167e5c91f6f97e75",
+                "shasum": ""
+            },
+            "require": {
+                "gedmo/doctrine-extensions": "^2.4"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "AxS\\ShopBundle": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alexander Sholk",
+                    "email": "sasha1133@gmail.com"
+                }
+            ],
+            "description": "Symfony 2 Shop Bundle",
+            "keywords": [
+                "symfony2 shop bundle"
+            ],
+            "support": {
+                "source": "https://github.com/alexsholk/AxSShopBundle/tree/master",
+                "issues": "https://github.com/alexsholk/AxSShopBundle/issues"
+            },
+            "time": "2015-10-16 12:47:40"
         },
         {
             "name": "behat/transliterator",
@@ -3155,7 +3203,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "axs/config-bundle": 20,
-        "axs/page-bundle": 20
+        "axs/page-bundle": 20,
+        "axs/shop-bundle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

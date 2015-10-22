@@ -23,7 +23,8 @@
         "sonata-project/easy-extends-bundle": "^2.1",
         "sonata-project/user-bundle": "^2.2",
         "axs/config-bundle": "dev-master",
-        "axs/page-bundle": "dev-master"
+        "axs/page-bundle": "dev-master",
+        "axs/shop-bundle": "dev-master"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
@@ -36,6 +37,10 @@
         {
             "type": "vcs",
             "url": "https://github.com/alexsholk/AxSPageBundle.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/alexsholk/AxSShopBundle.git"
         }
     ],
     "scripts": {
