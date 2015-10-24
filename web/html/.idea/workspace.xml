@@ -25,8 +25,8 @@
       <file leaf-file-name="korzina.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/korzina.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.8846154">
-              <caret line="195" column="34" selection-start-line="195" selection-start-column="34" selection-end-line="195" selection-end-column="34" />
+            <state vertical-scroll-proportion="-20.615385">
+              <caret line="177" column="13" selection-start-line="176" selection-start-column="27" selection-end-line="177" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -35,8 +35,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.20348205">
-              <caret line="599" column="5" selection-start-line="599" selection-start-column="5" selection-end-line="599" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.55603915">
+              <caret line="628" column="71" selection-start-line="628" selection-start-column="71" selection-end-line="628" selection-end-column="71" />
               <folding />
             </state>
           </provider>
@@ -210,14 +210,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/katalog.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614">
-          <caret line="464" column="0" selection-start-line="464" selection-start-column="0" selection-end-line="464" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-25.192308">
@@ -226,26 +218,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/katalog.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.019036954">
+          <caret line="464" column="0" selection-start-line="464" selection-start-column="0" selection-end-line="464" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tovar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.68533033">
-          <caret line="135" column="54" selection-start-line="135" selection-start-column="54" selection-end-line="135" selection-end-column="54" />
+        <state vertical-scroll-proportion="-0.74244124">
+          <caret line="155" column="29" selection-start-line="155" selection-start-column="29" selection-end-line="155" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/korzina.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.8846154">
-          <caret line="195" column="34" selection-start-line="195" selection-start-column="34" selection-end-line="195" selection-end-column="34" />
+        <state vertical-scroll-proportion="-20.615385">
+          <caret line="177" column="13" selection-start-line="176" selection-start-column="27" selection-end-line="177" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20348205">
-          <caret line="599" column="5" selection-start-line="599" selection-start-column="5" selection-end-line="599" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.55603915">
+          <caret line="628" column="71" selection-start-line="628" selection-start-column="71" selection-end-line="628" selection-end-column="71" />
           <folding />
         </state>
       </provider>
