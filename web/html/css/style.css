@@ -1,5 +1,6 @@
     html {
         height: 100%;
+
     }
     
     .title .simple-line {
@@ -10,7 +11,7 @@
     }
     a {color: #ff7d00;}
     a:hover {color: #ff3c15;
-        text-decoration: blink ;
+
    }
     .title {
         text-align: center;
@@ -23,10 +24,15 @@
     .margin {
         margin-top: 50px;
     }
-    
+    .backing {background: url(../img/background.jpg) ; background-size: auto; }
     .bootstrap-grid {
+        overflow: auto;
         width: 1170px;
         margin: 0 auto;
+        background: #fff;
+       height: auto !important;
+      height: 100%;
+
     }
     
     .row {
@@ -373,7 +379,7 @@
     #header .k-contact a {
         text-transform: uppercase;
     }
-    
+
     #katalog .k-search input {
         width: 205px;
         padding: 5px 5px;
@@ -460,6 +466,7 @@
     .tovar-box {
         margin-top: 27px;
           background: rgba(103, 57, 13, 0.07);
+
     }
     
     .t-item {
@@ -548,6 +555,7 @@
     #katalog {
         margin-left: 21px;
         width: 1148px;
+
     }
     
     #kartochka .tovar {
