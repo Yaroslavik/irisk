@@ -1,5 +1,6 @@
     html {
         height: 100%;
+
     }
     
     .title .simple-line {
@@ -8,7 +9,10 @@
         height: 5px;
         margin: 0 auto;
     }
-    
+    a {color: #ff7d00;}
+    a:hover {color: #ff3c15;
+
+   }
     .title {
         text-align: center;
     }
@@ -20,10 +24,15 @@
     .margin {
         margin-top: 50px;
     }
-    
+    .backing {background: url(../img/background.jpg) ; background-size: auto; }
     .bootstrap-grid {
+        overflow: auto;
         width: 1170px;
         margin: 0 auto;
+        background: #fff;
+       height: auto !important;
+      height: 100%;
+
     }
     
     .row {
@@ -38,12 +47,11 @@
     #header {
         height: 198px;
         width: 100%;
-        background: url(../img/h-back.png) no-repeat center bottom;
-        -webkit-background-size: cover;
-        -o-background-size: cover;
-        -ms-background-size: cover;
-        -moz-background-size: cover;
-        background-size: cover;
+        background: #222222;
+        -webkit-background-size: auto;
+        -ms-background-size:auto;
+        -moz-background-size: auto;
+        background-size: auto;
         position: relative;
     }
     
@@ -202,7 +210,8 @@
         font-size: 18px;
         font-weight: 500;
     }
-    
+    #popular { overflow: auto;
+    width: 100%;}
     .p-itembox {
         ;
         margin-left: 30px;
@@ -239,6 +248,7 @@
     }
     
     #catalog {
+
         padding: 50px 30px;
         background: url(../img/cat-back.jpg) center bottom;
         -webkit-background-size: cover;
@@ -246,6 +256,7 @@
         -ms-background-size: cover;
         -moz-background-size: cover;
         background-size: cover;
+        overflow: auto;
     }
     
     #catalog .simple-line {
@@ -265,8 +276,7 @@
         float: left;
         width: 255px;
         background: #fff;
-        margin-right: 30px;
-        margin-bottom: 40px;
+      margin: 10px 11px;
         text-transform: uppercase;
     }
     
@@ -274,7 +284,7 @@
         font-size: 20px;
         height: 70px;
         width: 255px;
-        margin-left: -15px;
+        text-align: center;
     }
     
     #catalog .c-item:hover {
@@ -287,8 +297,11 @@
     }
     
     #footer {
-        width: 100%;
+        width: 1170px;
         background: #222;
+        overflow: auto;
+        height: auto !important;
+        height: 100%;
     }
     
     #footer .logo {
@@ -370,7 +383,7 @@
     #header .k-contact a {
         text-transform: uppercase;
     }
-    
+
     #katalog .k-search input {
         width: 205px;
         padding: 5px 5px;
@@ -457,6 +470,7 @@
     .tovar-box {
         margin-top: 27px;
           background: rgba(103, 57, 13, 0.07);
+
     }
     
     .t-item {
@@ -514,17 +528,19 @@
         float: left;
     }
     
-    .navbar {
-        padding: 12px 10px;
+   #header .navbar  {
+       padding-top: 19px;
         text-align: center;
         background: #f68e56;
         border: none;
+
     }
     
     .navbar ul li a {
         color: #fff;
         text-transform: uppercase;
         font-weight: bold;
+        font-size: 18px;
         text-shadow: 1px 1px 3px black;
     }
     
@@ -532,7 +548,7 @@
         text-decoration: none;
         background: #fa762f;
     }
-    
+
     .navbar ul li {
         display: inline-block;
         margin-right: 25px;
@@ -545,6 +561,7 @@
     #katalog {
         margin-left: 21px;
         width: 1148px;
+
     }
     
     #kartochka .tovar {
@@ -601,6 +618,44 @@
     
     #kartochka .tov-table {
         margin-top: 130px;
+
+
     }
-    
-   
+    #cart-field .cart-head {
+        height: 25px;
+
+    }
+    #cart-field .cart-table table {background: rgb(253, 255, 255); }
+    #cart-field .cart-table table tr td {
+        width: 350px;
+        border: 1px solid #9f9f9f;
+        text-align: center;
+        padding: 5px 15px;
+border-collapse: collapse;
+    }
+    #cart-field .cart-table table tr td a {text-decoration: underline;}
+
+    #cart-field .cart-table table tr td input {
+        width:35px; text-align: center;
+    }
+.delivery-choose {padding: 5px 50px;
+margin: 0 auto; }
+    #cart-field .delivery-choose table {background: rgb(253, 255, 255);}
+    #cart-field .delivery-choose table tr td {
+
+        width: 350px;
+        border: 1px solid #e5e5e5;
+        text-align: center;
+        padding: 5px 15px;
+        border-collapse: collapse;
+    }
+
+    .cart-action {text-align: center; margin-top: 50px; }
+    .cart-action ul li {display: inline-block;}
+    .background { background: #6c6c6c; color: #fff; font-weight: 400;}
+    #cart-field .container {background: #f5f4f3; padding: 15px 15px;}
+    #cart-field .cart-z p { font-size: 22px;}
+    #cart-field .container .info table tr td {
+        padding: 5px 15px;}
+    #cart-field .container .info table tr td input {width: 250px;}
+    b {font-weight: 500}
