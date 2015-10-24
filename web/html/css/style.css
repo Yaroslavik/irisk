@@ -47,12 +47,11 @@
     #header {
         height: 198px;
         width: 100%;
-        background: url(../img/h-back.png) no-repeat center bottom;
-        -webkit-background-size: cover;
-        -o-background-size: cover;
-        -ms-background-size: cover;
-        -moz-background-size: cover;
-        background-size: cover;
+        background: #222222;
+        -webkit-background-size: auto;
+        -ms-background-size:auto;
+        -moz-background-size: auto;
+        background-size: auto;
         position: relative;
     }
     
@@ -211,7 +210,8 @@
         font-size: 18px;
         font-weight: 500;
     }
-    
+    #popular { overflow: auto;
+    width: 100%;}
     .p-itembox {
         ;
         margin-left: 30px;
@@ -248,6 +248,7 @@
     }
     
     #catalog {
+
         padding: 50px 30px;
         background: url(../img/cat-back.jpg) center bottom;
         -webkit-background-size: cover;
@@ -255,6 +256,7 @@
         -ms-background-size: cover;
         -moz-background-size: cover;
         background-size: cover;
+        overflow: auto;
     }
     
     #catalog .simple-line {
@@ -274,8 +276,7 @@
         float: left;
         width: 255px;
         background: #fff;
-        margin-right: 30px;
-        margin-bottom: 40px;
+      margin: 10px 11px;
         text-transform: uppercase;
     }
     
@@ -283,7 +284,7 @@
         font-size: 20px;
         height: 70px;
         width: 255px;
-        margin-left: -15px;
+        text-align: center;
     }
     
     #catalog .c-item:hover {
@@ -296,8 +297,11 @@
     }
     
     #footer {
-        width: 100%;
+        width: 1170px;
         background: #222;
+        overflow: auto;
+        height: auto !important;
+        height: 100%;
     }
     
     #footer .logo {
@@ -524,17 +528,19 @@
         float: left;
     }
     
-    .navbar {
-        padding: 12px 10px;
+   #header .navbar  {
+       padding-top: 19px;
         text-align: center;
         background: #f68e56;
         border: none;
+
     }
     
     .navbar ul li a {
         color: #fff;
         text-transform: uppercase;
         font-weight: bold;
+        font-size: 18px;
         text-shadow: 1px 1px 3px black;
     }
     
@@ -542,7 +548,7 @@
         text-decoration: none;
         background: #fa762f;
     }
-    
+
     .navbar ul li {
         display: inline-block;
         margin-right: 25px;
