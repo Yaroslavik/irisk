@@ -683,7 +683,7 @@ b {
 }
 
 .dostavka {
-    background: url(../img/dostavka.jpg) no-repeat center bottom;
+    background: #fdffff;
     -webkit-background-size: auto;
     background-size: auto;
     height: auto !important;
@@ -694,7 +694,7 @@ b {
 
 .dostavka .caption {
 
-    color: #fff;
+    color: #222;
     padding: 40px 30px;
 }
 
@@ -707,7 +707,7 @@ b {
 
 .dostavka .caption p {
     font-size: 25px;
-    text-shadow: 1px 1px 3px #222;
+
     width:1100px;
 }
 
@@ -716,7 +716,7 @@ b {
     line-height: 5px;
 }
 .pochta {text-align: right;}
-.pochta p {color:#fff; text-shadow: 1px 1px 3px #222;}
+.pochta p {color:#222;}
 #seotext .text-box { float: left;
 }
 #footer  {
