@@ -8,21 +8,24 @@
     <meta name="keywords" content="">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/fresco.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <script src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fresco.css">
     <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
-<div class="backing">
+<div class="backing clearfix">
     <!----HEADER------>
-    <div class="bootstrap-grid">
-        <div id="header">
+    <div class="bootstrap-grid clearfix">
+        <div id="header" class="clearfix">
             <div class="logo">
                 <a href="#"><img src="img/logo.png" alt="Irisk"></a>
+
                 <p>BELARUS</p>
             </div>
             <div class="k-contact">
@@ -35,7 +38,7 @@
             </div>
             <div class="mycart">
                 <a href=""> <img src="img/shops1.png" alt=""></a>
-                <a href=""> Корзина                </a>
+                <a href=""> Корзина </a>
             </div>
             <nav class="navbar navbar-inverse">
                 <ul>
@@ -67,7 +70,6 @@
         <!----MainBanner------>
 
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
-
 
 
             <!-- Wrapper for slides -->
@@ -106,12 +108,13 @@
 
         <!----ОБЛАСТЬ БЛЯЦКАЯ------>
 
-        <div id="katalog">
+        <div id="katalog" class="clearfix">
 
 
             <!---------------LEFT-SIDE BEGIN---------------------------->
-            <div class="left-side">
+            <div class="left-side clearfix">
                 <h3>Каталог товаров</h3>
+
                 <div class="k-search">
                     <input type="text" name="katalog search" placeholder="поиск товаров">
                 </div>
@@ -127,7 +130,7 @@
                         <li><a href="">Декор</a></li>
                     </ul>
                 </div>
-                <div class="advice">
+                <div class="advic clearfix">
                     <div class="k-title">
                         <h3>Новости</h3>
                     </div>
@@ -135,7 +138,7 @@
                         <div class="hat">
                             <p>Как правильно подобрать
                                 <br/><strong>материалы для наращивания
-                                        </br/>ногтей?</strong>
+                                    </br/>ногтей?</strong>
                             </p>
                         </div>
                         <img src="img/advice-1.jpg" alt="ногти">
@@ -147,7 +150,7 @@
                         <div class="hat">
                             <p>Хотите
                                 <br/><strong>красивые
-                                       ресницы?</strong>
+                                    ресницы?</strong>
                                 </br/>
                                 <a href="#">Кликайте сюда!</a>
                             </p>
@@ -161,7 +164,7 @@
             <!---------------LEFT-SIDE END SUKA---------------------------->
 
             <!-----------------RIGHT SIDE BEGIN NAHUI------------------------>
-            <div class="right-side">
+            <div class="right-side clearfix">
                 <div class="right-head">
                     <div class="breadcrumbs">
                         <ul class="breadcrumb">
@@ -173,13 +176,12 @@
                     </div>
 
 
-
                 </div>
 
                 <!-----------------------TOVARI EBA NACHINAYU-------------------->
 
                 <!----item kartochka nachinaem---------------------->
-                <div id="kartochka">
+                <div id="kartochka" class=" clearfix">
                     <div class="tovar">
                         <div class="tov-heading">
                             <a href="#">
@@ -188,12 +190,24 @@
                             <img src="img/star.png">
                         </div>
                         <div class="tov-img">
-                            <a href=""><img src="img/c-item-1.jpg" alt="">
+                            <a href="img/b-1.jpg" class="fresco fresco-main" data-fresco-group="shared_options" data-fresco-group-options="ui: 'inside'">
+                                <img src="img/c-item-1.jpg"></a>
+                            <a href="img/irisk.jpg"
+                               class="fresco fresco-sub"
+                               data-fresco-group="shared_options"><img src="img/c-item-2.jpg"></a><br/>
+                            <a href="img/b-1.jpg"
+                               class="fresco fresco-sub"
+                               data-fresco-group="shared_options"><img src="img/c-item-3.jpg"></a>
                             </a>
                         </div>
                         <div class="tov-descrip">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam fuga et culpa cumque corrupti libero maiores voluptas, in nihil fugiat ipsam obcaecati minima debitis, vitae iure voluptatibus expedita iste consectetur porro eaque recusandae quae saepe nostrum amet commodi! Fugit labore ratione tenetur facere dicta iure harum veniam architecto neque ea.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam fuga et culpa cumque
+                                corrupti libero maiores voluptas, in nihil fugiat ipsam obcaecati minima debitis, vitae
+                                iure voluptatibus expedita iste consectetur porro eaque recusandae quae saepe nostrum
+                                amet commodi! Fugit labore ratione tenetur facere dicta iure harum veniam architecto
+                                neque ea.</p>
                             <br/>
+
                             <div class="tov-price">
                                 <p><b>ЦЕНА: 50 000 руб.</b></p>
                             </div>
@@ -205,38 +219,51 @@
 
                                     <a href="" class="btn btn-success"> <i class="fa fa-cart-plus "></i></i> Купить</a>
                                 </li>
-                                <li> <a href="">Купить в 1 клик</a></li>
+                                <li><a href="">Купить в 1 клик</a></li>
                             </ul>
 
 
-
                         </div>
-                        <div class="tov-table">
+                        <div class="tov-table clearfix">
                             <ul class="nav nav-tabs">
                                 <li class=""><a href="#opl" data-toggle="tab" aria-expanded="false">Оплата</a></li>
-                                <li class="active"><a href="#dost" data-toggle="tab" aria-expanded="true">Доставка</a></li>
+                                <li class="active"><a href="#dost" data-toggle="tab" aria-expanded="true">Доставка</a>
+                                </li>
                                 <li class=""><a href="#otz" data-toggle="tab" aria-expanded="false">Отзывы</a></li>
 
                             </ul>
                             <div id="myTabContent" class="tab-content">
                                 <div class="tab-pane fade" id="opl">
-                                    <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                                    <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu
+                                        stumptown aliqua, retro synth master cleanse. Mustache cliche tempor,
+                                        williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
+                                        dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex
+                                        squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan
+                                        american apparel, butcher voluptate nisi qui.</p>
                                 </div>
                                 <div class="tab-pane fade active in" id="dost">
-                                    <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
+                                    <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee
+                                        squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes
+                                        anderson artisan four loko farm-to-table craft beer twee. Qui photo booth
+                                        letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl
+                                        cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus
+                                        mollit.</p>
                                 </div>
                                 <div class="tab-pane fade" id="otz">
-                                    <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                                    <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu
+                                        stumptown aliqua, retro synth master cleanse. Mustache cliche tempor,
+                                        williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
+                                        dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex
+                                        squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan
+                                        american apparel, butcher voluptate nisi qui.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="tovar-box">
+                <div class="tovar-box clearfix">
                     <div class="recomend text-center">
                         <h3>РЕКОМЕНДУЕМ</h3></div>
-
-
 
 
                     <div class="margin"></div>
@@ -245,15 +272,19 @@
                     <div class="t-item">
                         <div class="item-head">
                             <a href="">Лак для собак, 150мл</a>
+
                             <div class="raiting">
                                 <img src="img/star.png" alt="raiting" align="right">
                             </div>
                         </div>
                         <div class="item-middle">
                             <a href="#"><img src="img/k-item.jpg" alt="" align="left"></a>
+
                             <p>Код товара: 918</p>
 
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui odio tempora voluptates quod itaque commodi quibusdam non voluptatum earum iusto!</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui odio tempora voluptates
+                                quod itaque commodi quibusdam non voluptatum earum iusto!</p>
+
                             <p><b>Цена: 50 000 руб</b></p>
                         </div>
                         <div class="item-footer">
@@ -275,15 +306,19 @@
                     <div class="t-item">
                         <div class="item-head">
                             <a href="">Лак для собак, 150мл</a>
+
                             <div class="raiting">
                                 <img src="img/star.png" alt="raiting" align="right">
                             </div>
                         </div>
                         <div class="item-middle">
                             <a href="#"><img src="img/k-item.jpg" alt="" align="left"></a>
+
                             <p>Код товара: 918</p>
                             <!---краткое описание не более 25 слов--->
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui odio tempora voluptates quod itaque commodi quibusdam non voluptatum earum iusto!</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui odio tempora voluptates
+                                quod itaque commodi quibusdam non voluptatum earum iusto!</p>
+
                             <p><b>Цена: 50 000 руб</b></p>
                         </div>
                         <div class="item-footer">
@@ -305,15 +340,19 @@
                     <div class="t-item">
                         <div class="item-head">
                             <a href="">Лак для собак, 150мл</a>
+
                             <div class="raiting">
                                 <img src="img/star.png" alt="raiting" align="right">
                             </div>
                         </div>
                         <div class="item-middle">
                             <a href="#"><img src="img/k-item.jpg" alt="" align="left"></a>
+
                             <p>Код товара: 918</p>
                             <!---краткое описание не более 25 слов--->
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui odio tempora voluptates quod itaque commodi quibusdam non voluptatum earum iusto!</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui odio tempora voluptates
+                                quod itaque commodi quibusdam non voluptatum earum iusto!</p>
+
                             <p><b>Цена: 50 000 руб</b></p>
                         </div>
                         <div class="item-footer">
@@ -335,15 +374,19 @@
                     <div class="t-item">
                         <div class="item-head">
                             <a href="">Лак для собак, 150мл</a>
+
                             <div class="raiting">
                                 <img src="img/star.png" alt="raiting" align="right">
                             </div>
                         </div>
                         <div class="item-middle">
                             <a href="#"><img src="img/k-item.jpg" alt="" align="left"></a>
+
                             <p>Код товара: 918</p>
                             <!---краткое описание не более 25 слов--->
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui odio tempora voluptates quod itaque commodi quibusdam non voluptatum earum iusto!</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui odio tempora voluptates
+                                quod itaque commodi quibusdam non voluptatum earum iusto!</p>
+
                             <p><b>Цена: 50 000 руб</b></p>
                         </div>
                         <div class="item-footer">
@@ -365,15 +408,19 @@
                     <div class="t-item">
                         <div class="item-head">
                             <a href="">Лак для собак, 150мл</a>
+
                             <div class="raiting">
                                 <img src="img/star.png" alt="raiting" align="right">
                             </div>
                         </div>
                         <div class="item-middle">
                             <a href="#"><img src="img/k-item.jpg" alt="" align="left"></a>
+
                             <p>Код товара: 918</p>
                             <!---краткое описание не более 25 слов--->
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui odio tempora voluptates quod itaque commodi quibusdam non voluptatum earum iusto!</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui odio tempora voluptates
+                                quod itaque commodi quibusdam non voluptatum earum iusto!</p>
+
                             <p><b>Цена: 50 000 руб</b></p>
                         </div>
                         <div class="item-footer">
@@ -395,15 +442,19 @@
                     <div class="t-item">
                         <div class="item-head">
                             <a href="">Лак для собак, 150мл</a>
+
                             <div class="raiting">
                                 <img src="img/star.png" alt="raiting" align="right">
                             </div>
                         </div>
                         <div class="item-middle">
                             <a href="#"><img src="img/k-item.jpg" alt="" align="left"></a>
+
                             <p>Код товара: 918</p>
                             <!---краткое описание не более 25 слов--->
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui odio tempora voluptates quod itaque commodi quibusdam non voluptatum earum iusto!</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui odio tempora voluptates
+                                quod itaque commodi quibusdam non voluptatum earum iusto!</p>
+
                             <p><b>Цена: 50 000 руб</b></p>
                         </div>
                         <div class="item-footer">
@@ -425,15 +476,19 @@
                     <div class="t-item">
                         <div class="item-head">
                             <a href="">Лак для собак, 150мл</a>
+
                             <div class="raiting">
                                 <img src="img/star.png" alt="raiting" align="right">
                             </div>
                         </div>
                         <div class="item-middle">
                             <a href="#"><img src="img/k-item.jpg" alt="" align="left"></a>
+
                             <p>Код товара: 918</p>
                             <!---краткое описание не более 25 слов--->
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui odio tempora voluptates quod itaque commodi quibusdam non voluptatum earum iusto!</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui odio tempora voluptates
+                                quod itaque commodi quibusdam non voluptatum earum iusto!</p>
+
                             <p><b>Цена: 50 000 руб</b></p>
                         </div>
                         <div class="item-footer">
@@ -455,15 +510,19 @@
                     <div class="t-item">
                         <div class="item-head">
                             <a href="">Лак для собак, 150мл</a>
+
                             <div class="raiting">
                                 <img src="img/star.png" alt="raiting" align="right">
                             </div>
                         </div>
                         <div class="item-middle">
                             <a href="#"><img src="img/k-item.jpg" alt="" align="left"></a>
+
                             <p>Код товара: 918</p>
                             <!---краткое описание не более 25 слов--->
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui odio tempora voluptates quod itaque commodi quibusdam non voluptatum earum iusto!</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui odio tempora voluptates
+                                quod itaque commodi quibusdam non voluptatum earum iusto!</p>
+
                             <p><b>Цена: 50 000 руб</b></p>
                         </div>
                         <div class="item-footer">
@@ -485,15 +544,19 @@
                     <div class="t-item">
                         <div class="item-head">
                             <a href="">Лак для собак, 150мл</a>
+
                             <div class="raiting">
                                 <img src="img/star.png" alt="raiting" align="right">
                             </div>
                         </div>
                         <div class="item-middle">
                             <a href="#"><img src="img/k-item.jpg" alt="" align="left"></a>
+
                             <p>Код товара: 918</p>
                             <!---краткое описание не более 25 слов--->
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui odio tempora voluptates quod itaque commodi quibusdam non voluptatum earum iusto!</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui odio tempora voluptates
+                                quod itaque commodi quibusdam non voluptatum earum iusto!</p>
+
                             <p><b>Цена: 50 000 руб</b></p>
                         </div>
                         <div class="item-footer">
@@ -515,15 +578,19 @@
                     <div class="t-item">
                         <div class="item-head">
                             <a href="">Лак для собак, 150мл</a>
+
                             <div class="raiting">
                                 <img src="img/star.png" alt="raiting" align="right">
                             </div>
                         </div>
                         <div class="item-middle">
                             <a href="#"><img src="img/k-item.jpg" alt="" align="left"></a>
+
                             <p>Код товара: 918</p>
                             <!---краткое описание не более 25 слов--->
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui odio tempora voluptates quod itaque commodi quibusdam non voluptatum earum iusto!</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui odio tempora voluptates
+                                quod itaque commodi quibusdam non voluptatum earum iusto!</p>
+
                             <p><b>Цена: 50 000 руб</b></p>
                         </div>
                         <div class="item-footer">
@@ -544,7 +611,6 @@
                     <!----------item END------------------------------>
 
                 </div>
-
 
 
             </div>
@@ -556,17 +622,56 @@
         </div>
 
 
+        <!----БЛЯЦКАЯ ОБЛАСТЬ ПОТРАЧЕНО-----
+         -------------------------->
 
-    <!----БЛЯЦКАЯ ОБЛАСТЬ ПОТРАЧЕНО-----   
-     -------------------------->
+        <!----footer------>
+        <div id="footer" class="clearfix">
+            <div class="navig clearfix">
+                <ul>
+                    <li><a href="main.html" class="btn btn-warning">Главная</a></li>
+                    <li><a href="about.html" class="btn btn-warning">О магазине</a></li>
+                    <li><a href="katalog.html" class="btn btn-warning">Каталог товаров</a></li>
+                    <li><a href="dostavka_oplata.html" class="btn btn-warning">Доставка и оплата</a></li>
+                    <li><a href="poleznoe.html" class="btn btn-warning">Полезные статьи</a></li>
 
+                    <li><a href="akcii.html" class="btn btn-warning">Дилерам</a></li>
+                    <li><a href="korzina.html" class="btn btn-warning">Корзина</a></li>
+                </ul>
+            </div>
+            <div class="logo">
+                <a href="#"><img src="img/logo.png" alt="Irisk"></a>
 
+                <p>BELARUS</p>
+            </div>
+            <div class="k-contact">
+                <ul>
+                    <li>
+                        +375 29 666 55 55
+                    </li>
+                    <li>
+                        +375 29 666 55 55
+                    </li>
+                    <li><a href="" class="btn btn-success">заказать звонок</a></li>
+                </ul>
+            </div>
+            <div class="worktime">
+                <p><i class="fa fa-clock-o"></i><b> 8:00 - 20:00</b><br/>пн - пт</p>
 
+            </div>
+            <div class="mycart">
+                <a href=""> <i class="fa fa-shopping-cart"></i> Корзина</a>
 
+                <p style='color:#fff; font-size:14px;'>
+                    <ins>0 товаров</ins>
+                </p>
 
+            </div>
+            <div class="search"><input type="text" placeholder="Поиск по сайту"></div>
+        </div>
     </div>
-
 </div>
+
 
 </body>
 

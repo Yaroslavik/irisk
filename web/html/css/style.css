@@ -567,13 +567,16 @@ li {
 }
 
 #kartochka .tov-img:hover {
-    box-shadow: 1px 1px 3px #222;
 }
-
+.fresco-main img {float: left; border: 1px #cfcece solid; cursor: zoom-in; margin-right: 5px;}
+.fresco-sub img {width:90px;border: 1px #cfcece solid;cursor: zoom-in;
+    height: 90.5px;
+margin-bottom: 5px;}
 #kartochka .tov-price {
     float: left;
 }
-
+.fresco-main img:hover {box-shadow: #090909 1px 1px 3px;}
+.fresco-sub img:hover {box-shadow: #090909 1px 1px 3px;}
 .act-to-buy {
     float: left;
     margin-top: 35px;
