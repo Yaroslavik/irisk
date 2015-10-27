@@ -565,7 +565,7 @@ li {
     margin-right: 50px;
     margin-top: 25px;
 }
-
+.mycart p {color:#fff; font-size:14px;}
 #kartochka .tov-img:hover {
 }
 .fresco-main img {float: left; border: 1px #eaedeb solid; cursor: zoom-in; margin-right: 5px;}
