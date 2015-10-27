@@ -568,8 +568,8 @@ li {
 
 #kartochka .tov-img:hover {
 }
-.fresco-main img {float: left; border: 1px #cfcece solid; cursor: zoom-in; margin-right: 5px;}
-.fresco-sub img {width:90px;border: 1px #cfcece solid;cursor: zoom-in;
+.fresco-main img {float: left; border: 1px #eaedeb solid; cursor: zoom-in; margin-right: 5px;}
+.fresco-sub img {width:90px;border: 1px #eaedeb solid;cursor: zoom-in;
     height: 90.5px;
 margin-bottom: 5px;}
 #kartochka .tov-price {
