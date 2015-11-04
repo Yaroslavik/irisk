@@ -1,0 +1,104 @@
+#zakazatzvonok .modal-dialog {
+    width: 350px;
+    background: black;
+    border-radius: 0;
+    border: none;
+}
+
+#zakazatzvonok .modal-content {
+    width: 350px;
+    background: url(../img/formback.jpg) no-repeat;
+    border-radius: 0;
+}
+
+.callback-form {
+    padding: 0 35px;
+}
+
+#zakazatzvonok .modal-header {
+    background: #ff0027;
+
+}
+
+#zakazatzvonok .modal-header .close span {
+    color: #000000;
+
+}
+
+#zakazatzvonok .modal-header h4.modal-title {
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.callback-form p {
+    margin-bottom: 0;
+}
+
+.callback-form input {
+    border-radius: 3px;
+    border: 1px solid #555555;
+    padding: 10px 3px;
+    width: 250px;
+    margin-bottom: 15px;
+}
+.callback-form textarea {border-radius: 3px;
+    border: 1px solid #555555;
+    padding: 10px 3px;
+    width: 250px;
+    margin-bottom: 15px;}
+.callback-form .btn {
+    width: 250px;
+}
+#tovarvkorzine .modal-dialog {margin-top: 10%; width: 250px; }
+#tovarvkorzine .modal-body .btn {padding: 5px 5px; margin-top: 10px;}
+
+#kupitv1klik .modal-dialog {
+    width: 350px;
+    background: black;
+    border-radius: 0;
+    border: none;
+}
+
+#kupitv1klik .modal-content {
+    width: 350px;
+    background: url(../img/formback.jpg) no-repeat;
+    border-radius: 0;
+}
+
+#kupitv1klik .callback-form {
+    padding: 0 35px;
+}
+
+#kupitv1klik .modal-header {
+    background: #ff0027;
+
+}
+
+#kupitv1klik .modal-header .close span {
+    color: #000000;
+
+}
+#kupitv1klik .modal-header h4.modal-title {
+    text-transform: uppercase;
+    color: #fff;
+}
+
+#kupitv1klik .callback-form p {
+    margin-bottom: 0;
+}
+
+#kupitv1klik .callback-form input {
+    border-radius: 3px;
+    border: 1px solid #555555;
+    padding: 10px 3px;
+    width: 250px;
+    margin-bottom: 15px;
+}
+#kupitv1klik .callback-form textarea {border-radius: 3px;
+    border: 1px solid #555555;
+    padding: 10px 3px;
+    width: 250px;
+    margin-bottom: 15px;}
+#kupitv1klik .callback-form .btn {
+    width: 250px;
+}
