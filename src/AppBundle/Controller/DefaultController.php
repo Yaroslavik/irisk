@@ -26,23 +26,7 @@ class DefaultController extends Controller
         return [];
     }
 
-    /**
-     * @Route("/catalog", name="catalog")
-     * @Template()
-     */
-    public function catalogAction()
-    {
-        return [];
-    }
 
-    /**
-     * @Route("/product/{url}", name="product")
-     * @Template()
-     */
-    public function productAction($url)
-    {
-        return [];
-    }
 
     /**
      * @Route("/delivery", name="page-delivery")
@@ -59,15 +43,6 @@ class DefaultController extends Controller
      * @Template()
      */
     public function articlesAction()
-    {
-        return [];
-    }
-
-    /**
-     * @Route("/cart", name="cart")
-     * @Template()
-     */
-    public function cartAction()
     {
         return [];
     }
