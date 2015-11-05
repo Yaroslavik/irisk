@@ -1,0 +1,130 @@
+{% extends '@App/layout.html.twig' %}
+
+{% block content %}
+    <div id="katalog" class="clearfix">
+        {% include '@App/catalogMenu.html.twig' %}
+        <div class="right-side clearfix">
+            <div class="right-head">
+                <div class="breadcrumbs">
+                    <ul class="breadcrumb">
+                        <li><a href="#">Каталог</a></li>
+                        <li><a href="#">Наращивание усов</a></li>
+                        <li><a href="#">На клею</a></li>
+                        <li class="active">Лак для собак, 150мл</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="kartochka" class=" clearfix">
+                <div class="tovar">
+                    <div class="tov-heading">
+                        <a href="#">
+                            <strong>Лак для ногтей, 300мл (код: 916)</strong>
+                        </a>
+                        <img src="{{ asset('img/star.png') }}">
+                    </div>
+                    <div class="tov-img">
+                        <a href="{{ asset('img/b-1.jpg') }}" class="fresco fresco-main" data-fresco-group="shared_options"
+                           data-fresco-group-options="ui: 'inside'">
+                            <img src="{{ asset('img/c-item-1.jpg') }}"></a>
+                        <a href="{{ asset('img/irisk.jpg') }}"
+                           class="fresco fresco-sub"
+                           data-fresco-group="shared_options" data-fresco-group-options="ui: 'inside'"><img src="{{ asset('img/c-item-2.jpg') }}">
+                        </a><br>
+                        <a href="{{ asset('img/b-1.jpg') }}"
+                           class="fresco fresco-sub"
+                           data-fresco-group="shared_options" data-fresco-group-options="ui: 'inside'"><img src="{{ asset('img/c-item-3.jpg') }}">
+                        </a>
+                    </div>
+                    <div class="tov-descrip">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam fuga et culpa cumque
+                            corrupti libero maiores voluptas, in nihil fugiat ipsam obcaecati minima debitis, vitae
+                            iure voluptatibus expedita iste consectetur porro eaque recusandae quae saepe nostrum
+                            amet commodi! Fugit labore ratione tenetur facere dicta iure harum veniam architecto
+                            neque ea.</p>
+                        <br>
+                        <div class="tov-price">
+                            <p><b>ЦЕНА: 50 000 руб.</b></p>
+                        </div>
+                    </div>
+                    <div class="act-to-buy">
+                        <ul>
+                            <li>
+                                <a href="" class="btn btn-success" data-target="#tovarvkorzine" data-toggle="modal" >
+                                    <i class="fa fa-cart-plus "></i> Купить</a>
+                            </li>
+                            <li><a href="" data-target="#kupitv1klik" data-toggle="modal">Купить в 1 клик</a></li>
+                        </ul>
+                    </div>
+                    <div class="tov-table clearfix">
+                        <ul class="nav nav-tabs">
+                            <li class=""><a href="#opl" data-toggle="tab" aria-expanded="false">Оплата</a></li>
+                            <li class="active" ><a href="#dost" data-toggle="tab" aria-expanded="true">Доставка</a>
+                            </li>
+                            <li class=""><a href="#otz" data-toggle="tab" aria-expanded="false">Отзывы</a></li>
+                        </ul>
+                        <div id="myTabContent" class="tab-content">
+                            <div class="tab-pane fade" id="opl">
+                                <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu
+                                    stumptown aliqua, retro synth master cleanse. Mustache cliche tempor,
+                                    williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
+                                    dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex
+                                    squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan
+                                    american apparel, butcher voluptate nisi qui.</p>
+                            </div>
+                            <div class="tab-pane fade active in" id="dost">
+                                <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee
+                                    squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes
+                                    anderson artisan four loko farm-to-table craft beer twee. Qui photo booth
+                                    letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl
+                                    cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus
+                                    mollit.</p>
+                            </div>
+                            <div class="tab-pane fade" id="otz">
+                                <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu
+                                    stumptown aliqua, retro synth master cleanse. Mustache cliche tempor,
+                                    williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
+                                    dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex
+                                    squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan
+                                    american apparel, butcher voluptate nisi qui.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tovar-box clearfix">
+                <div class="recomend text-center">
+                    <h3>РЕКОМЕНДУЕМ</h3></div>
+                <div class="margin"></div>
+                {% for i in 1..4 %}
+                    <div class="t-item">
+                        <div class="item-head">
+                            <a href="">Лак для собак, 150мл</a>
+                            <div class="raiting">
+                                <img src="{{ asset('img/star.png') }}" alt="raiting" align="right">
+                            </div>
+                        </div>
+                        <div class="item-middle">
+                            <a href="#"><img src="{{ asset('img/k-item.jpg') }}" alt="" align="left"></a>
+                            <p>Код товара: 918</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui odio tempora voluptates
+                                quod itaque commodi quibusdam non voluptatum earum iusto!</p>
+                            <p><b>Цена: 50 000 руб</b></p>
+                        </div>
+                        <div class="item-footer">
+                            <div class="present">
+                                <ul>
+                                    <li><img src="{{ asset('img/yes.png') }}" alt=""></li>
+                                    <li>
+                                        <p>В наличии</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <a href="#" class="btn btn-success">В корзину</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

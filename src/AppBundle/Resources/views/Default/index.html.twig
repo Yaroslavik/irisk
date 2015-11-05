@@ -1,1 +1,167 @@
-Hello!
+{% extends '@App/layout.html.twig' %}
+
+{% block content %}
+    <div id="banner">
+        <div class="container">
+            <div class="b-caption col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h1>Материалы для <br/> <span><strong>Наращивания ногтей и ресниц</strong></span></h1>
+                <h2><span>Маникюра и педикюра</span></h2>
+                <p><i class="fa fa-check-circle-o"></i> Биоэпиляции </p>
+                <p><i class="fa fa-check-circle-o"></i> Визажа</p>
+                <p><i class="fa fa-check-circle-o"></i> Косметологии</p>
+                <p><span>Внимание отправка в день заказа по всей РБ</span></p>
+                <div class="action">
+                    <a href="{{ path('catalog') }}" class="btn btn-warning">Перейти в каталог</a>
+                    <a href="#" class="btn btn-default" data-toggle="modal" data-target="#zakazatzvonok">
+                        Бесплатная консультация
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="advantage">
+        <div class="adv-itembox clearfix">
+            <div class="adv-item">
+                <img src="{{ asset('img/ico-pig.png') }}" alt="низкая цена" align="left">
+                <p><span>Низкая цена</span></p>
+                <p>мы первый поставщик и <br/> работаем без посредников
+                </p>
+            </div>
+            <div class="adv-item">
+                <img src="{{ asset('img/ico-car.png') }}" alt="низкая цена" align="left">
+                <p><span>Бесплатная доставка</span></p>
+                <p>закажите товаров на 450 000 и мы привезем их бесплатно
+                </p>
+            </div>
+            <div class="adv-item ">
+                <img src="{{ asset('img/ico-check.png') }}" alt="низкая цена" align="left">
+                <p><span>Более 2000 товаров</span></p>
+                <p>всегда в наличии в день заказа
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="margin"></div>
+    <div id="popular">
+        <div class="title">
+            <h2>Популярные товары</h2>
+            <div class="simple-line"></div>
+            <p>Ваши любимые товары </p>
+        </div>
+        <div class="margin"></div>
+        <div class="p-itembox">
+            {% for i in 1..4 %}
+                <div class="p-item">
+                    <a href="">Гель для ногтей, 150мл </a>
+                    <br/>
+                    <a href="{{ asset('img/pop-item.jpg') }}" class ="fresco">
+                        <img src="{{ asset('img/pop-item.jpg') }}" alt="Ресницы">
+                    </a>
+                    <p>Ванночка для проведения парафинотерапии рук и лица, рассчитана на небольшой объем</p>
+                    <p><b>Цена: 50 000 руб</b></p>
+                    <div class="action">
+                        <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#tovarvkorzine">В корзину</a>
+                        <a href="#" class="btn btn-default">Описание</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="margin"></div>
+    <div id="catalog">
+        <div class="c-item ">
+            <h3>Для <br/>наращивания ресниц</h3>
+            <div class="simple-line"></div>
+            <img src="{{ asset('img/c-item-1.jpg') }}" alt="наращивание ресниц">
+        </div>
+        <div class="c-item ">
+            <h3>Для<br/>
+                наращивания
+                ногтей</h3>
+            <div class="simple-line"></div>
+            <img src="{{ asset('img/c-item-2.jpg') }}" alt="наращивание ногтей">
+        </div>
+        <div class="c-item ">
+            <h3>Для<br/>
+                маникюра и
+                педикюра
+            </h3>
+            <div class="simple-line"></div>
+            <img src="{{ asset('img/c-item-3.jpg') }}" alt="маникюр и педикюр">
+        </div>
+        <div class="c-item">
+            <h3>для <br/>
+                биоэпиляции
+            </h3>
+            <div class="simple-line"></div>
+            <img src="{{ asset('img/c-item-4.jpg') }}" alt="биоэпиляция">
+        </div>
+        <div class="c-item">
+            <h3>Для <br/>
+                парафинотерапии</h3>
+            <div class="simple-line"></div>
+            <img src="{{ asset('img/c-item-5.jpg') }}" alt="парафинотерапия">
+        </div>
+        <div class="c-item ">
+            <h3>Для <br/>
+                Спа</h3>
+            <div class="simple-line"></div>
+            <img src="{{ asset('img/c-item-6.jpg') }}" alt="спа">
+        </div>
+        <div class="c-item ">
+            <h3>Для <br/>
+                Визажиста</h3>
+            <div class="simple-line"></div>
+            <img src="{{ asset('img/c-item-7.jpg') }}" alt="визаж">
+        </div>
+        <div class="c-item ">
+            <h3>Для <br/>
+                Парикмахера</h3>
+            <div class="simple-line"></div>
+            <img src="{{ asset('img/c-item-8.jpg') }}" alt="парикмахер">
+        </div>
+    </div>
+
+    <div class="margin"></div>
+    <div id="seotext">
+        <div class="title">
+            <h2>Seo текст о нас</h2>
+            <div class="simple-line"></div>
+            <p>интернет-магазин Irisk-bel.by</p>
+        </div>
+        <div class="margin"></div>
+        <div class="container clearfix">
+            <div class="text-box ">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto voluptates assumenda, aliquid ut
+                    atque magni.
+                    Voluptatum maxime magni vero eum? Pariatur placeat similique ut, eius provident enim velit dicta
+                    sapiente aliquid
+                    nemo iusto modi possimus rem sequi reiciendis quia aspernatur quod iure excepturi vero molestiae
+                    est labore in quae
+                    itaque. Sapiente maxime, veniam, eaque debitis cum dolores nostrum est esse tenetur quis,
+                    provident ratione dicta quo
+                    eos, magnam unde accusantium placeat. Officia iure voluptatum aut, nobis commodi sunt, quos,
+                    dolorem impedit accusamus
+                    consequatur, temporibus quis. Officiis omnis, eum. Consequuntur unde excepturi pariatur fugit
+                    ea, nulla, quos, sapiente
+                    labore fuga nobis blanditiis! Veniam fugit quos, est sint delectus quia ipsum dolor veritatis
+                    placeat aspernatur. A aspernatur nisi
+                    itaque esse, quam architecto est dolorum totam iure commodi! A delectus, atque, fuga vel nobis
+                    explicabo. Perferendis itaque sit sequi
+                    veniam exercitationem et ipsa cupiditate deleniti unde, fuga accusantium beatae eveniet magnam
+                    cum blanditiis. Lorem ipsum dolor sit amet,
+                    consectetur adipisicing elit.
+                </p>
+            </div>
+            <div class="vidos">
+                <iframe align="left" width="100%" height="466" src="https://www.youtube.com/embed/XMh-q2GUR70"
+                        frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="margin"></div>
+
+{% endblock %}

@@ -1,0 +1,134 @@
+{% extends '@App/layout.html.twig' %}
+
+{% block content %}
+    <div id="cart-field">
+        <div class="container">
+            <div class="cart-head">
+                <ul class="breadcrumb">
+                    <li><a href="#">Главная</a></li>
+                    <li class="active">Корзина</li>
+                </ul>
+            </div>
+            <div class="margin"></div>
+            <div class="cart-z"><p>Корзина</p></div>
+            <div class="cart-table">
+                <table align="center">
+                    <tr>
+                        <td colspan="5" class="background">Товары</td>
+                    </tr>
+                    <tr>
+                        <td><b>Код</b></td>
+                        <td><b>Наименование товара</b></td>
+                        <td><b>Цена, руб</b></td>
+                        <td><b>Кол-во, шт</b></td>
+                        <td><b>Сумма, руб</b></td>
+                    </tr>
+                    <tr>
+                        <td>916</td>
+                        <td><a href="tovar.html">Гель для волос, 150мл</a></td>
+                        <td>150 000</td>
+                        <td><input type="text" placeholder="1"></td>
+                        <td>450 000</td>
+                    </tr>
+                    <tr>
+                        <td>916</td>
+                        <td><a href="#">Гель для волос, 150мл</a></td>
+                        <td>150 000</td>
+                        <td><input type="text" placeholder="1"></td>
+                        <td>450 000</td>
+                    </tr>
+                    <tr>
+                        <td>916</td>
+                        <td><a href="#">Гель для волос, 150мл</a></td>
+                        <td>150 000</td>
+                        <td><input type="text" placeholder="1"></td>
+                        <td>450 000</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="text-right"><b>Итого:</b></td>
+                        <td>3</td>
+                        <td>1 655 500</td>
+                    </tr>
+                </table>
+                <br/>
+
+                <p>*Минимальная сумма заказа 250 000 бел.рублей</p>
+            </div>
+            <div class="margin"></div>
+            <div class="delivery-choose">
+                <form name="dostavka" method="post" action="">
+                    <table>
+                        <tr>
+                            <td colspan="3" class="background">Способ доставки</td>
+                        </tr>
+                        <tr>
+                            <td align="left"><input type="radio" name="dostavka-kurer" value="option1" id="kurer">
+                                Курьер
+                            </td>
+                            <td>Доставка курьером по г.Минску в день заказа</td>
+                            <td>33 000</td>
+                        </tr>
+
+                        <tr>
+                            <td align="left"><input type="radio" name="dostavka-pochta" value="option2" id="pochta">
+                                Почта
+                            </td>
+                            <td>Отправка почтой наложенным платежом</td>
+                            <td>0</td>
+                        </tr>
+                    </table>
+                </form>
+                <div class="margin"></div>
+                <div class="cart-itog">
+                    <table align="center">
+                        <tr>
+                            <td colspan="3" class="background"><b>Итого:</b></td>
+                        </tr>
+                        <tr>
+                            <td>1 690 000</td>
+                        </tr>
+                    </table
+                </div>
+                <div class="margin"></div>
+                <div class="info">
+                    <div class="margin"></div>
+                    <form>
+                        <table align="center">
+                            <tr>
+                                <td colspan="2" class="background">Личная информация</td>
+                            </tr>
+                            <tr>
+                                <td> ФИО*</td>
+                                <td><input type="text" name="FIO" placeholder="Иванов Иван Иванович"><br/></td>
+                            </tr>
+                            <tr>
+                                <td>Контакты*</td>
+                                <td><input type="tel" name="telephone" placeholder="+375 44 555 53 53"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="background">Адрес доставки</td>
+                            </tr>
+                            <tr>
+                                <td> Адрес*</td>
+                                <td><input type="text" name="FIO" placeholder="г.Минск, ул.Веры-хоружей 2"><br/></td>
+                            </tr>
+                            <tr>
+                                <td>Пожелания к заказу (доставке)</td>
+                                <td><textarea rows="6" cols="33" name="text"></textarea></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+                <div class="cart-action">
+                    <ul>
+                        <li><a href="#" class="btn btn-success">Назад в магазин</a></li>
+                        <li><a href="#" class="btn btn-success">Назад</a></li>
+                        <li><a href="#" class="btn btn-success">Пересчитать</a></li>
+                        <li><a href="#" class="btn btn-success">Оформить заказ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

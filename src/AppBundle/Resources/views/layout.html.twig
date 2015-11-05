@@ -1,0 +1,28 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/modal.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/fresco.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    {{ parent() }}
+{% endblock %}
+
+{% block javascripts %}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src = "{{ asset('js/fresco.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <div class="backing">
+        <div class="bootstrap-grid clearfix">
+            {% include '@App/header.html.twig' %}
+            {% block content %}{% endblock %}
+            {% include '@App/footer.html.twig' %}
+        </div>
+    </div>
+    {% include '@App/modal.html.twig' %}
+{% endblock %}

@@ -24,7 +24,8 @@
         "sonata-project/user-bundle": "^2.2",
         "axs/config-bundle": "dev-master",
         "axs/page-bundle": "dev-master",
-        "axs/shop-bundle": "dev-master"
+        "axs/shop-bundle": "dev-master",
+        "sonata-project/seo-bundle": "^2.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

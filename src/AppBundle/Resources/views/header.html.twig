@@ -1,0 +1,39 @@
+<div id="header">
+    <div class="logo">
+        <a href="{{ path('homepage') }}"><img src="{{ asset('img/logo.png') }}" alt="Irisk"></a>
+        <p>BELARUS</p>
+    </div>
+    <div class="k-contact">
+        <ul>
+            <li>
+                +375 29 666 55 55
+            </li>
+            <li>
+                +375 29 666 55 55
+            </li>
+            <li><a href="#" class="btn btn-success" data-toggle="modal" data-target="#zakazatzvonok">заказать звонок</a>
+            </li>
+        </ul>
+    </div>
+    <div class="worktime">
+        <p><i class="fa fa-clock-o"></i><b> 8:00 - 20:00</b><br/>пн - пт</p>
+    </div>
+    <div class="mycart">
+        <a href=""> <i class="fa fa-shopping-cart"></i> Корзина</a>
+        <p>
+            <ins>0 товаров</ins>
+        </p>
+    </div>
+    <div class="search"><input type="text" placeholder="Поиск по сайту"></div>
+    <div class="navig">
+        <ul>
+            <li><a href="{{ path('homepage') }}" class="btn btn-warning">Главная</a></li>
+            <li><a href="{{ path('page', {'url': 'about'}) }}" class="btn btn-warning">О магазине</a></li>
+            <li><a href="{{ path('catalog') }}" class="btn btn-warning">Каталог товаров</a></li>
+            <li><a href="{{ path('page-delivery') }}" class="btn btn-warning">Доставка и оплата</a></li>
+            <li><a href="{{ path('articles') }}" class="btn btn-warning">Полезные статьи</a></li>
+            <li><a href="{{ path('page', {'url': 'akcii'}) }}" class="btn btn-warning">Дилерам</a></li>
+            <li><a href="{{ path('cart') }}" class="btn btn-warning">Корзина</a></li>
+        </ul>
+    </div>
+</div>
