@@ -1,0 +1,7 @@
+model: AxS\ConfigBundle\Entity\ConfigGroup
+fixtures:
+    config-group-contacts:
+        title: Контакты
+
+    config-group-textblocks:
+        title: Текстовые блоки

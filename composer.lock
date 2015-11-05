@@ -59,12 +59,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/alexsholk/AxSPageBundle.git",
-                "reference": "8820dc6df0fc5d7cba7b1f2540a4ae7931920c70"
+                "reference": "3f7839be192e7ab7242e2ffca9cc5a9af5fa35cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/alexsholk/AxSPageBundle/zipball/8820dc6df0fc5d7cba7b1f2540a4ae7931920c70",
-                "reference": "8820dc6df0fc5d7cba7b1f2540a4ae7931920c70",
+                "url": "https://api.github.com/repos/alexsholk/AxSPageBundle/zipball/3f7839be192e7ab7242e2ffca9cc5a9af5fa35cb",
+                "reference": "3f7839be192e7ab7242e2ffca9cc5a9af5fa35cb",
                 "shasum": ""
             },
             "require": {
@@ -98,7 +98,7 @@
                 "source": "https://github.com/alexsholk/AxSPageBundle/tree/master",
                 "issues": "https://github.com/alexsholk/AxSPageBundle/issues"
             },
-            "time": "2015-11-05 14:11:48"
+            "time": "2015-11-05 14:57:24"
         },
         {
             "name": "axs/shop-bundle",

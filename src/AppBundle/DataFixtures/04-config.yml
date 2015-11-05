@@ -1,0 +1,53 @@
+model: AxS\ConfigBundle\Entity\Config
+fixtures:
+    config-phone-1:
+        title: Телефон 1
+        mask: PHONE_1
+        value: +375 29 666 55 55
+        type: 0 # Config::TYPE_TEXT
+        required: false
+        group: config-group-contacts
+
+    config-phone-2:
+        title: Телефон 2
+        mask: PHONE_2
+        value: +375 29 666 55 55
+        type: 0 # Config::TYPE_TEXT
+        required: false
+        group: config-group-contacts
+
+    config-worktime:
+        title: Время работы
+        mask: WORKTIME
+        value: 10:00 - 20:00
+        type: 0 # Config::TYPE_TEXT
+        required: false
+        group: config-group-contacts
+
+    config-workdays:
+        title: Рабочие дни
+        mask: WORKDAYS
+        value: пн-пт
+        type: 0 # Config::TYPE_TEXT
+        required: false
+        group: config-group-contacts
+
+    config-text-homepage:
+        title: Текстовый блок на главной
+        mask: TEXT_HOMEPAGE
+        type: 2 # Config::TYPE_WYSIWYG
+        required: false
+        group: config-group-textblocks
+        value: >
+            <p>Интернет-магазин IRISKBEL специализируется на продукции для ресничного и ногтевого сервиса,
+            а также для визажа и косметологии. У нас самый большой ассортимент – около 2000 наименований.
+            В нашем интернет – магазине представлен широкий выбор продукции для наращивания ногтей и ресниц,
+            маникюра и педикюра, косметологии и визажа. Ассортимент товаров постоянно расширяется и обновляется.
+            Вся продукция представлена в удобном иллюстрированном каталоге на нашем сайте. У нас Вы можете
+            приобрести весь ассортимент продукции популярных торговых марок IRIS'K PROFESSIONAL, DPG, COSMO, TANGO и др.
+            Многие годы эти торговые марки пользуются заслуженной популярностью и доверием мастеров. У нас Вы найдете
+            нужную Вам продукцию по доступным ценам. Для нашего интернет-магазина действительно важно воплотить в жизнь
+            все фантазии мастеров ногтевого и ресничного сервиса, косметологов и визажистов, предоставив им качественные
+            материалы и аксессуары, которые обеспечат прекрасный результат работы и принесут клиентам только позитивные
+            эмоции. Наши клиенты ценят такой подход. Присоединяйтесь!</p>
+
