@@ -1,0 +1,15 @@
+model: Application\Sonata\UserBundle\Entity\User
+service_calls:
+    service_1:
+        service: fos_user.user_manager
+        method: createUser
+fixtures:
+    admin:
+        username: admin
+        plain_password: admin
+        email: admin@example.com
+        expired: 0
+        locked: 0
+        enabled: 1
+        roles:
+            - ROLE_SUPER_ADMIN

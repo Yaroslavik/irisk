@@ -26,8 +26,6 @@ class DefaultController extends Controller
         return [];
     }
 
-
-
     /**
      * @Route("/delivery", name="page-delivery")
      * @Template()
@@ -36,7 +34,6 @@ class DefaultController extends Controller
     {
         return [];
     }
-
 
     /**
      * @Route("/articles", name="articles")
