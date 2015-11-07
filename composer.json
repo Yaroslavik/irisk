@@ -26,7 +26,10 @@
         "axs/page-bundle": "dev-master",
         "axs/shop-bundle": "dev-master",
         "sonata-project/seo-bundle": "^2.0",
-        "khepin/yaml-fixtures-bundle": "^1.0"
+        "khepin/yaml-fixtures-bundle": "^1.0",
+        "knplabs/knp-paginator-bundle": "^2.5",
+        "knplabs/knp-menu-bundle": "^2.1",
+        "ircmaxell/password-compat": "^1.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

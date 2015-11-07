@@ -8,8 +8,13 @@ fixtures:
         username: admin
         plain_password: admin
         email: admin@example.com
-        expired: 0
-        locked: 0
+        enabled: 1
+        roles:
+            - ROLE_ADMIN
+    dev:
+        username: dev
+        plain_password: dev
+        email: dev@example.com
         enabled: 1
         roles:
             - ROLE_SUPER_ADMIN

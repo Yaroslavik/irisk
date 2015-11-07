@@ -3,6 +3,8 @@
 imports:
     - { resource: "@AxSConfigBundle/Resources/config/services.yml" }
     - { resource: "@AxSPageBundle/Resources/config/services.yml" }
+    - { resource: "@AxSShopBundle/Resources/config/admin_order.yml" }
+    - { resource: "@AxSShopBundle/Resources/config/admin_shop.yml" }
 
 parameters:
 #    parameter_name: value
@@ -11,3 +13,4 @@ services:
 #    service_name:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+

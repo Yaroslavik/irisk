@@ -33,6 +33,7 @@ class AppKernel extends Kernel
             // AxS bundles:
             new AxS\ConfigBundle\AxSConfigBundle(),
             new AxS\PageBundle\AxSPageBundle(),
+            new AxS\ShopBundle\AxSShopBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

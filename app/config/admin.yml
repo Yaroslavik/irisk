@@ -9,22 +9,6 @@ sonata_block:
         sonata.user.block.account: # used to display menu option (login option)
         sonata.block.service.text: # used to if you plan to use Sonata user routes
 
-sonata_user:
-    #security_acl: true # Uncomment for ACL support
-    manager_type: orm # can be orm or mongodb
-
-fos_user:
-    db_driver:      orm # can be orm or odm
-    firewall_name:  main
-    user_class:     Application\Sonata\UserBundle\Entity\User
-
-    group:
-        group_class:   Application\Sonata\UserBundle\Entity\Group
-        group_manager: sonata.user.orm.group_manager
-
-    service:
-        user_manager: sonata.user.orm.user_manager
-
 sonata_admin:
     title:      "%site_name%"
     #title_logo: bundles/acmedemo/img/fancy_acme_logo.png
@@ -59,3 +43,21 @@ sonata_admin:
                     groups: [Config, sonata_user]
 
     persist_filters: true
+    security:
+        handler: sonata.admin.security.handler.role
+
+sonata_user:
+    security_acl: false
+    manager_type: orm
+
+fos_user:
+    db_driver:      orm # can be orm or odm
+    firewall_name:  main
+    user_class:     Application\Sonata\UserBundle\Entity\User
+
+    group:
+        group_class:   Application\Sonata\UserBundle\Entity\Group
+        group_manager: sonata.user.orm.group_manager
+
+    service:
+        user_manager: sonata.user.orm.user_manager
