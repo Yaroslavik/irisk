@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class DefaultController extends Controller
 {
@@ -18,12 +19,20 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/page/{url}", name="page")
+     * @Route("/page/{slug}", name="page")
      * @Template()
      */
-    public function pageAction($url)
+    public function pageAction($slug)
     {
-        return [];
+        $page = $this->getDoctrine()
+            ->getRepository('AxSPageBundle:Page')
+            ->findOneBy(['visible' => 1, 'slug' => $slug]);
+
+        if (!$page) throw new NotFoundHttpException();
+
+        return [
+            'page' => $page
+        ];
     }
 
     /**
@@ -41,6 +50,29 @@ class DefaultController extends Controller
      */
     public function articlesAction()
     {
-        return [];
+        $articles = $this->getDoctrine()
+            ->getRepository('AxSArticleBundle:Article')
+            ->findBy(['visible' => 1], ['createdAt' => 'DESC']);
+
+        return [
+            'articles' => $articles,
+        ];
+    }
+
+    /**
+     * @Route("/articles/{slug}", name="article")
+     * @Template()
+     */
+    public function articleAction($slug)
+    {
+        $article = $this->getDoctrine()
+            ->getRepository('AxSArticleBundle:Article')
+            ->findOneBy(['visible' => 1, 'slug' => $slug]);
+
+        if (!$article) throw new NotFoundHttpException();
+
+        return [
+            'article' => $article,
+        ];
     }
 }

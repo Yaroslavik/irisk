@@ -34,13 +34,13 @@ sonata_admin:
                 position: left
                 type: sonata.admin.block.admin_list
                 settings:
-                    groups: [Content]
+                    groups: [Order, Shop]
 
             right:
                 position: right
                 type: sonata.admin.block.admin_list
                 settings:
-                    groups: [Config, sonata_user]
+                    groups: [Content, Config, sonata_user]
 
     persist_filters: true
     security:
@@ -61,3 +61,8 @@ fos_user:
 
     service:
         user_manager: sonata.user.orm.user_manager
+
+pix_sortable_behavior:
+    db_driver: orm
+    position_field:
+        default: order

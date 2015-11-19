@@ -2,26 +2,13 @@
 
 {% block content %}
     <div class="container">
-        <div class="jumbotron">
-            <h1>Быстрое наращивание ресниц</h1>
-            <p>10 простых способов как нарастить ресницы</p>
-            <p><a class="btn btn-primary btn-lg">Узать больше</a></p>
+        {% for article in articles %}
+        <div class="jumbotron{{ cycle(['', ' text-right'], loop.index0) }}">
+            <h1>{{ article.title }}</h1>
+            <p class="date"><em>{{ article.createdAt.format('d.m.Y') }}</em></p>
+            {{ article.description|raw }}
+            <p><a href="{{ path('article', {'slug': article.slug}) }}" class="btn btn-primary btn-lg">Узнать больше</a></p>
         </div>
-        <div class="jumbotron text-right">
-            <h1>Хотите красивые и пышные волосы?</h1>
-            <p>Впервые! Эксперты раскроют шокирующую тайну шампуней</p>
-            <p><a class="btn btn-primary btn-lg">Узнать больше</a></p>
-        </div>
-        <div class="jumbotron">
-            <h1>Быстрое наращивание ресниц</h1>
-            <p>10 простых способов как нарастить ресницы</p>
-            <p><a class="btn btn-primary btn-lg">Узать больше</a></p>
-        </div>
-        <div class="jumbotron text-right">
-            <h1>Хотите красивые и пышные волосы?</h1>
-            <p>Впервые! Эксперты раскроют шокирующую тайну шампуней</p>
-            <p><a class="btn btn-primary btn-lg">Узнать больше</a></p>
-        </div>
+        {% endfor %}
     </div>
 {% endblock %}
-

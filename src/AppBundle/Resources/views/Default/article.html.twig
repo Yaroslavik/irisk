@@ -1,0 +1,12 @@
+{% extends '@App/layout.html.twig' %}
+
+{% block content %}
+    <div class = "clearfix">
+        <div class="container">
+            <h1>{{ article.title }}</h1>
+            {{ article.content|raw }}
+            <p class="date"><em>{{ article.createdAt.format('d.m.Y') }}</em></p>
+        </div>
+    </div>
+    {% include '@App/slideshow.html.twig' %}
+{% endblock %}

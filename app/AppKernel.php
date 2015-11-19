@@ -30,10 +30,13 @@ class AppKernel extends Kernel
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
             new Application\Sonata\AdminBundle\ApplicationSonataAdminBundle(),
             new Sonata\SeoBundle\SonataSeoBundle(),
+            // Additional bundles
+            new Pix\SortableBehaviorBundle\PixSortableBehaviorBundle(),
             // AxS bundles:
             new AxS\ConfigBundle\AxSConfigBundle(),
             new AxS\PageBundle\AxSPageBundle(),
             new AxS\ShopBundle\AxSShopBundle(),
+            new AxS\ArticleBundle\AxSArticleBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
