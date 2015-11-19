@@ -9,14 +9,17 @@ html {
     height: 5px;
     margin: 0 auto;
 }
+
 .clearfix:before,
 .clearfix:after {
     display: table;
     content: " ";
 }
+
 .clearfix:after {
     clear: both;
 }
+
 a {
     color: #ff7d00;
 }
@@ -145,7 +148,20 @@ li {
     padding: 5px 10px;
     border-radius: 0;
     font-size: 13px;
+}
 
+#header .navig li a {
+    border-radius: 4px 4px 0 0 !important;
+}
+
+.navig li.current a {
+    background: #ff7d00 !important;
+    color: #fff;
+}
+
+.navig li a {
+    background: transparent !important;
+    color: #ff7d00;
 }
 
 #about .container p {
@@ -232,7 +248,8 @@ li {
     background: #ed1c24;
 }
 
-.adv-itembox { width: 100%;
+.adv-itembox {
+    width: 100%;
 }
 
 .adv-item img {
@@ -247,7 +264,6 @@ li {
     float: left;
     width: 30%;
     margin-right: 3%;
-
 
 }
 
@@ -349,8 +365,6 @@ li {
 #catalog .c-item img {
     margin-top: 45px;
 }
-
-
 
 .f-itembox {
     margin-left: 350px;
@@ -565,18 +579,42 @@ li {
     margin-right: 50px;
     margin-top: 25px;
 }
-.mycart p {color:#fff; font-size:14px;}
+
+.mycart p {
+    color: #fff;
+    font-size: 14px;
+}
+
 #kartochka .tov-img:hover {
 }
-.fresco-main img {float: left; border: 1px #eaedeb solid; cursor: zoom-in; margin-right: 5px;}
-.fresco-sub img {width:90px;border: 1px #eaedeb solid;cursor: zoom-in;
+
+.fresco-main img {
+    float: left;
+    border: 1px #eaedeb solid;
+    cursor: zoom-in;
+    margin-right: 5px;
+}
+
+.fresco-sub img {
+    width: 90px;
+    border: 1px #eaedeb solid;
+    cursor: zoom-in;
     height: 90.5px;
-margin-bottom: 5px;}
+    margin-bottom: 5px;
+}
+
 #kartochka .tov-price {
     float: left;
 }
-.fresco-main img:hover {box-shadow: #090909 1px 1px 3px;}
-.fresco-sub img:hover {box-shadow: #090909 1px 1px 3px;}
+
+.fresco-main img:hover {
+    box-shadow: #090909 1px 1px 3px;
+}
+
+.fresco-sub img:hover {
+    box-shadow: #090909 1px 1px 3px;
+}
+
 .act-to-buy {
     float: left;
     margin-top: 35px;
@@ -592,7 +630,6 @@ margin-bottom: 5px;}
     padding: 5px 40px;
     text-transform: uppercase;
     font-size: 22px;
-
 
 }
 
@@ -711,18 +748,27 @@ b {
 .dostavka .caption p {
     font-size: 25px;
 
-    width:1100px;
+    width: 1100px;
 }
 
 .dostavka .caption p span {
     font-size: 14px;
     line-height: 5px;
 }
-.pochta {text-align: right;}
-.pochta p {color:#222;}
-#seotext .text-box { float: left;
+
+.pochta {
+    text-align: right;
 }
-#footer  {
+
+.pochta p {
+    color: #222;
+}
+
+#seotext .text-box {
+    float: left;
+}
+
+#footer {
 
     width: 100%;
     background: #222222;
@@ -733,19 +779,19 @@ b {
     position: relative;
 }
 
-#footer  .logo {
+#footer .logo {
     color: #dcdfdf;
     font-weight: bold;
     float: left;
     padding: 15px 30px
 }
 
-#footer  .search {
+#footer .search {
 
     margin-top: -105px;
 }
 
-#footer  .search input {
+#footer .search input {
     width: 270px;
     height: 35px;
     border-radius: 5px;
@@ -753,16 +799,17 @@ b {
 
 }
 
-#footer  .k-contact {
+#footer .k-contact {
     padding: 33px 441px;
     text-align: center;
 }
-#footer  .k-contact {
+
+#footer .k-contact {
     color: #dcdfdf;
     font-size: 20px;
 }
 
-#footer  .k-contact .btn {
+#footer .k-contact .btn {
     padding: 0 10px;
 }
 
@@ -774,7 +821,7 @@ b {
     font-size: 20px;
 }
 
-#footer  .worktime {
+#footer .worktime {
     font-size: 20px;
     float: right;
     color: #dcdfdf;
@@ -783,26 +830,28 @@ b {
     text-align: center;
 }
 
-#footer  .k-contact a {
+#footer .k-contact a {
     text-transform: uppercase;
 }
 
-#footer  .navig {
-
+#footer .navig {
     background: #2a2a2f;
     width: 100%;
     padding-left: 175px;
 }
 
-#footer  .navig ul li {
+#footer .navig ul li {
     display: inline-block;
 }
 
 #footer .navig ul li .btn {
     text-align: center;
-margin-left:-5px;
+    margin-left: -5px;
     padding: 5px 10px;
     border-radius: 0;
     font-size: 13px;
+}
 
+#footer .navig li.current a {
+    background: transparent !important;
 }

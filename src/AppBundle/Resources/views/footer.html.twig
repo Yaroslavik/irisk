@@ -1,14 +1,6 @@
 <div id="footer" class="clearfix">
     <div class="navig">
-        <ul>
-            <li><a href="{{ path('homepage') }}" class="btn btn-warning">Главная</a></li>
-            <li><a href="{{ path('page', {'slug': 'about'}) }}" class="btn btn-warning">О магазине</a></li>
-            <li><a href="{{ path('catalog') }}" class="btn btn-warning">Каталог товаров</a></li>
-            <li><a href="{{ path('page-delivery') }}" class="btn btn-warning">Доставка и оплата</a></li>
-            <li><a href="{{ path('articles') }}" class="btn btn-warning">Полезные статьи</a></li>
-            <li><a href="{{ path('page', {'slug': 'for-dealers'}) }}" class="btn btn-warning">Дилерам</a></li>
-            <li><a href="{{ path('cart') }}" class="btn btn-warning">Корзина</a></li>
-        </ul>
+        {{ knp_menu_render('main') }}
     </div>
     <div class="logo">
         <a href="#"><img src="{{ asset('img/logo.png') }}" alt="Irisk"></a>
