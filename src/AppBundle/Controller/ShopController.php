@@ -11,6 +11,7 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\Request;
 
 class ShopController extends Controller
 {
@@ -21,6 +22,19 @@ class ShopController extends Controller
     public function catalogAction()
     {
         return [];
+    }
+
+    /**
+     * @Route("/search", name="search")
+     * @Template()
+     */
+    public function searchAction(Request $request)
+    {
+        $q = $request->get('q');
+
+        return [
+            'q' => $q
+        ];
     }
 
     /**

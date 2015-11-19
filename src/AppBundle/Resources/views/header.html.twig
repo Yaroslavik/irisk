@@ -5,26 +5,28 @@
     </div>
     <div class="k-contact">
         <ul>
-            <li>
-                +375 29 666 55 55
-            </li>
-            <li>
-                +375 29 666 55 55
-            </li>
-            <li><a href="#" class="btn btn-success" data-toggle="modal" data-target="#zakazatzvonok">заказать звонок</a>
-            </li>
+            <li>{{ configuration.get('PHONE_1') }}</li>
+            <li>{{ configuration.get('PHONE_2') }}</li>
+            <li><a href="#" class="btn btn-success" data-toggle="modal" data-target="#zakazatzvonok">заказать звонок</a></li>
         </ul>
     </div>
     <div class="worktime">
-        <p><i class="fa fa-clock-o"></i><b> 8:00 - 20:00</b><br/>пн - пт</p>
+        <p>
+            <i class="fa fa-clock-o"></i> <b>{{ configuration.get('WORKTIME') }}</b><br/>
+            {{ configuration.get('WORKDAYS') }}
+        </p>
     </div>
     <div class="mycart">
-        <a href=""> <i class="fa fa-shopping-cart"></i> Корзина</a>
+        <a href="{{ path('cart') }}"> <i class="fa fa-shopping-cart"></i> Корзина</a>
         <p>
             <ins>0 товаров</ins>
         </p>
     </div>
-    <div class="search"><input type="text" placeholder="Поиск по сайту"></div>
+    <div class="search">
+        <form action="{{ path('search') }}" method="get">
+            <input type="text" name="q" placeholder="Поиск по каталогу">
+        </form>
+    </div>
     <div class="navig">
         {{ knp_menu_render('main') }}
     </div>
