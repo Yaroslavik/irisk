@@ -4,3 +4,10 @@ services:
         arguments: ["@knp_menu.factory"]
         tags:
             - { name: knp_menu.menu_builder, method: createMainMenu, alias: main }
+
+    app.voter.request:
+        class: AppBundle\Voter\RequestVoter
+        arguments:
+            - @service_container
+        tags:
+            - { name: knp_menu.voter }
