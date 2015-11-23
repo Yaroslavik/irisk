@@ -32,6 +32,7 @@ class AppKernel extends Kernel
             new Sonata\SeoBundle\SonataSeoBundle(),
             // Additional bundles
             new Pix\SortableBehaviorBundle\PixSortableBehaviorBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             // AxS bundles:
             new AxS\ConfigBundle\AxSConfigBundle(),
             new AxS\PageBundle\AxSPageBundle(),

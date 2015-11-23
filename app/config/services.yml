@@ -1,11 +1,5 @@
 # Learn more about services, parameters and containers at
 # http://symfony.com/doc/current/book/service_container.html
-imports:
-    - { resource: "@AxSConfigBundle/Resources/config/services.yml" }
-    - { resource: "@AxSPageBundle/Resources/config/services.yml" }
-    - { resource: "@AxSShopBundle/Resources/config/admin_order.yml" }
-    - { resource: "@AxSShopBundle/Resources/config/admin_shop.yml" }
-    - { resource: "@AxSArticleBundle/Resources/config/services.yml" }
 
 parameters:
 #    parameter_name: value

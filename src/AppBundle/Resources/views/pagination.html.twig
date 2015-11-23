@@ -1,0 +1,35 @@
+{% if pageCount > 1 %}
+    <ul class="pagination pagination-sm">
+        {% if first is defined and current != first %}
+            <li class="first{{ current == first ? ' disabled' : '' }}">
+                <a href="{{ path(route, query|merge({(pageParameterName): first})) }}">&lt;&lt;</a>
+            </li>
+        {% endif %}
+
+        {% if previous is defined %}
+            <li class="previous{{ current == first ? ' disabled' : '' }}">
+                <a href="{{ path(route, query|merge({(pageParameterName): previous})) }}">&lt;</a>
+            </li>
+        {% endif %}
+
+        {% for page in pagesInRange %}
+            {% if page != current %}
+                <li><a href="{{ path(route, query|merge({(pageParameterName): page})) }}">{{ page }}</a></li>
+            {% else %}
+                <li class="active"><span class="current">{{ page }}</span></li>
+            {% endif %}
+        {% endfor %}
+
+        {% if next is defined %}
+            <li class="next{{ current == last ? ' disabled' : '' }}">
+                <a href="{{ path(route, query|merge({(pageParameterName): next})) }}">&gt;</a>
+            </li>
+        {% endif %}
+
+        {% if last is defined and current != last %}
+            <li class="last{{ current == last ? ' disabled' : '' }}">
+                <a href="{{ path(route, query|merge({(pageParameterName): last})) }}">&gt;&gt;</a>
+            </li>
+        {% endif %}
+    </ul>
+{% endif %}

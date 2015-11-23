@@ -2,13 +2,21 @@
 
 {% block content %}
     <div class="container">
-        {% for article in articles %}
-        <div class="jumbotron{{ cycle(['', ' text-right'], loop.index0) }}">
-            <h1>{{ article.title }}</h1>
-            <p class="date"><em>{{ article.createdAt.format('d.m.Y') }}</em></p>
-            {{ article.description|raw }}
-            <p><a href="{{ path('article', {'slug': article.slug}) }}" class="btn btn-primary btn-lg">Узнать больше</a></p>
-        </div>
+        {% for article in pagination %}
+            <div class="jumbotron{{ cycle(['', ' text-right'], loop.index0) }}">
+                <h1>{{ article.title }}</h1>
+                <p class="date"><em>{{ article.createdAt.format('d.m.Y') }}</em></p>
+                {{ article.description|raw }}
+                <p><a href="{{ path('article', {'slug': article.slug}) }}" class="btn btn-primary btn-lg">Узнать больше</a></p>
+            </div>
         {% endfor %}
+
+        {% if pagination.paginationData.pageCount > 1 %}
+            <div class="right-head">
+                <div class="ciferki">
+                    {{ knp_pagination_render(pagination) }}
+                </div>
+            </div>
+        {% endif %}
     </div>
 {% endblock %}

@@ -2,12 +2,12 @@
 
 namespace AppBundle\Controller;
 
+use Doctrine\ORM\EntityManager;
+use Knp\Component\Pager\Pagination\SlidingPagination;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Knp\Menu\MenuFactory;
-use Knp\Menu\Renderer\ListRenderer;
 
 class DefaultController extends Controller
 {
@@ -47,17 +47,31 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/articles", name="articles")
+     * @Route("/articles/{page}", requirements={"page": "\d+"}, defaults={"page"=1}, name="articles")
      * @Template()
      */
-    public function articlesAction()
+    public function articlesAction($page)
     {
-        $articles = $this->getDoctrine()
-            ->getRepository('AxSArticleBundle:Article')
-            ->findBy(['visible' => 1], ['createdAt' => 'DESC']);
+        /** @var EntityManager $em */
+        $em = $this->getDoctrine()->getManager();
+        $qb = $em->createQueryBuilder()
+            ->select('a')
+            ->from('AxSArticleBundle:Article', 'a')
+            ->where('a.visible = :visible')
+            ->orderBy('a.createdAt', 'DESC')
+            ->setParameter(':visible', 1);
+
+        /** @var SlidingPagination $pagination */
+        $pagination = $this->get('knp_paginator')->paginate(
+            $qb,
+            $page,
+            5
+        );
+
+        if (!count($pagination)) throw new NotFoundHttpException();
 
         return [
-            'articles' => $articles,
+            'pagination' => $pagination,
         ];
     }
 

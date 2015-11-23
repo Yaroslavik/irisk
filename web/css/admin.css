@@ -56,3 +56,15 @@ input[type=checkbox] {
 .login_wrapper .connection input[type=password] {
     width: 100%;
 }
+
+.form-preview {
+    max-width: 100%;
+}
+
+.list-preview {
+    max-width: 320px;
+}
+
+.select2-container {
+    width: 100%;
+}

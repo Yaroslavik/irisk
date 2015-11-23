@@ -49,6 +49,9 @@ sonata_admin:
 sonata_user:
     security_acl: false
     manager_type: orm
+    admin:
+        user:
+            class:      Application\Sonata\UserBundle\Admin\UserAdmin
 
 fos_user:
     db_driver:      orm # can be orm or odm

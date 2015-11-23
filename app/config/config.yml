@@ -119,3 +119,36 @@ sonata_seo:
             'xmlns':              http://www.w3.org/1999/xhtml
             'xmlns:og':           http://opengraphprotocol.org/schema/
             #'xmlns:fb':           "http://www.facebook.com/2008/fbml"
+
+# Shop Configuration
+ax_s_shop:
+    date_format: 'dd.MM.yyyy HH:mm'
+    product:
+#        form_preview_class: form-preview
+        use_product_options: true
+        use_product_photos: true
+    product_photo:
+#        form_preview_class: form-preview
+    category:
+#        form_preview_class: form-preview
+
+ax_s_config:
+    use_groups: true
+
+ax_s_page:
+    date_format: 'dd.MM.yyyy HH:mm'
+
+ax_s_article:
+    date_format: 'dd.MM.yyyy HH:mm'
+    use_categories: false
+
+knp_paginator:
+    page_range: 5                      # default page range used in pagination control
+    default_options:
+        page_name: page                # page query parameter name
+        sort_field_name: sort          # sort field query parameter name
+        sort_direction_name: direction # sort direction query parameter name
+        distinct: true                 # ensure distinct results, useful when ORM queries are using GROUP BY statements
+    template:
+        pagination: AppBundle::pagination.html.twig     # sliding pagination controls template
+        sortable: KnpPaginatorBundle:Pagination:sortable_link.html.twig # sort link template
