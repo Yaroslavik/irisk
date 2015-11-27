@@ -21,3 +21,4 @@ parameters:
     #
     site_name: Irisk-bel.by
     site_host: http://irisk.off
+    web_path: %kernel.root_dir%/../web

@@ -2,7 +2,9 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\ProductRepository;
 use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\Mapping\ClassMetadata;
 use Knp\Component\Pager\Pagination\SlidingPagination;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -17,7 +19,23 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return [];
+        $products = $this->getDoctrine()->getRepository('AxSShopBundle:Product')
+            ->findBy([
+                'visible' => 1,
+                'available' => 1,
+                'featured' => 1,
+            ], ['updatedAt' => 'DESC'], 8);
+
+        $categories = $this->getDoctrine()->getRepository('AxSShopBundle:ShopCategory')
+            ->findBy([
+                'visible' => 1,
+                'featured' => 1,
+            ], ['order' => 'ASC'], 12);
+
+        return [
+            'products' => $products,
+            'categories' => $categories,
+        ];
     }
 
     /**

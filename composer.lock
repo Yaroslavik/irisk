@@ -156,12 +156,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/alexsholk/AxSShopBundle.git",
-                "reference": "dc406d3fd6ec000445401659064e88e2fc9c6880"
+                "reference": "a51517a281fada4ba49e2d6bd7d7b66223fbe177"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/alexsholk/AxSShopBundle/zipball/dc406d3fd6ec000445401659064e88e2fc9c6880",
-                "reference": "dc406d3fd6ec000445401659064e88e2fc9c6880",
+                "url": "https://api.github.com/repos/alexsholk/AxSShopBundle/zipball/a51517a281fada4ba49e2d6bd7d7b66223fbe177",
+                "reference": "a51517a281fada4ba49e2d6bd7d7b66223fbe177",
                 "shasum": ""
             },
             "require": {
@@ -197,7 +197,7 @@
                 "source": "https://github.com/alexsholk/AxSShopBundle/tree/master",
                 "issues": "https://github.com/alexsholk/AxSShopBundle/issues"
             },
-            "time": "2015-11-23 17:41:26"
+            "time": "2015-11-23 22:07:54"
         },
         {
             "name": "behat/transliterator",

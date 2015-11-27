@@ -44,86 +44,52 @@
     </div>
 
     <div class="margin"></div>
-    <div id="popular">
-        <div class="title">
-            <h2>Популярные товары</h2>
-            <div class="simple-line"></div>
-            <p>Ваши любимые товары </p>
-        </div>
-        <div class="margin"></div>
-        <div class="p-itembox">
-            {% for i in 1..4 %}
-                <div class="p-item">
-                    <a href="">Гель для ногтей, 150мл </a>
-                    <br/>
-                    <a href="{{ asset('img/pop-item.jpg') }}" class ="fresco">
-                        <img src="{{ asset('img/pop-item.jpg') }}" alt="Ресницы">
-                    </a>
-                    <p>Ванночка для проведения парафинотерапии рук и лица, рассчитана на небольшой объем</p>
-                    <p><b>Цена: 50 000 руб</b></p>
-                    <div class="action">
-                        <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#tovarvkorzine">В корзину</a>
-                        <a href="#" class="btn btn-default">Описание</a>
+
+    {% if products is not empty %}
+        <div id="popular">
+            <div class="title">
+                <h2>Популярные товары</h2>
+                <div class="simple-line"></div>
+                <p>Ваши любимые товары</p>
+            </div>
+            <div class="margin"></div>
+            <div class="p-itembox">
+                {% for product in products %}
+                    {% set url = path('product', {'url': product.slug}) %}
+                    <div class="p-item">
+                        <a href="{{ url }}">{{ product.title }}</a><br/>
+                        <a href="{{ url }}">
+                            <img src="{{ vich_uploader_asset(product, 'file')|imagine_filter('product_preview') }}" alt="{{ product.title }}">
+                        </a>
+                        <p>{{ product.shortDescription }}</p>
+                        <p><b>Цена: {{ product.cost|number_format }} руб</b></p>
+                        <div class="action">
+                            <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#tovarvkorzine">В корзину</a>
+                            <a href="{{ url }}" class="btn btn-default">Описание</a>
+                        </div>
                     </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="margin"></div>
+
+    {% if categories is not empty %}
+        <div id="catalog">
+            {% for category in categories %}
+                {% set url = path('category', {'url': category.slug}) %}
+                <div class="c-item ">
+                    <h3><a href="{{ url }}">{{ category.title }}</a></h3>
+                    <div class="simple-line"></div>
+                    <a href="{{ url }}">
+                        <img src="{{ vich_uploader_asset(category, 'file')|imagine_filter('category_preview') }}"
+                             alt="{{ category.title }}">
+                    </a>
                 </div>
             {% endfor %}
         </div>
-    </div>
-
-    <div class="margin"></div>
-    <div id="catalog">
-        <div class="c-item ">
-            <h3>Для <br/>наращивания ресниц</h3>
-            <div class="simple-line"></div>
-            <img src="{{ asset('img/c-item-1.jpg') }}" alt="наращивание ресниц">
-        </div>
-        <div class="c-item ">
-            <h3>Для<br/>
-                наращивания
-                ногтей</h3>
-            <div class="simple-line"></div>
-            <img src="{{ asset('img/c-item-2.jpg') }}" alt="наращивание ногтей">
-        </div>
-        <div class="c-item ">
-            <h3>Для<br/>
-                маникюра и
-                педикюра
-            </h3>
-            <div class="simple-line"></div>
-            <img src="{{ asset('img/c-item-3.jpg') }}" alt="маникюр и педикюр">
-        </div>
-        <div class="c-item">
-            <h3>для <br/>
-                биоэпиляции
-            </h3>
-            <div class="simple-line"></div>
-            <img src="{{ asset('img/c-item-4.jpg') }}" alt="биоэпиляция">
-        </div>
-        <div class="c-item">
-            <h3>Для <br/>
-                парафинотерапии</h3>
-            <div class="simple-line"></div>
-            <img src="{{ asset('img/c-item-5.jpg') }}" alt="парафинотерапия">
-        </div>
-        <div class="c-item ">
-            <h3>Для <br/>
-                Спа</h3>
-            <div class="simple-line"></div>
-            <img src="{{ asset('img/c-item-6.jpg') }}" alt="спа">
-        </div>
-        <div class="c-item ">
-            <h3>Для <br/>
-                Визажиста</h3>
-            <div class="simple-line"></div>
-            <img src="{{ asset('img/c-item-7.jpg') }}" alt="визаж">
-        </div>
-        <div class="c-item ">
-            <h3>Для <br/>
-                Парикмахера</h3>
-            <div class="simple-line"></div>
-            <img src="{{ asset('img/c-item-8.jpg') }}" alt="парикмахер">
-        </div>
-    </div>
+    {% endif %}
 
     <div class="margin"></div>
     <div id="seotext">

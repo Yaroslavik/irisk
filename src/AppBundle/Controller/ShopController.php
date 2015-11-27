@@ -25,6 +25,15 @@ class ShopController extends Controller
     }
 
     /**
+     * @Route("/category/{url}", name="category")
+     * @Template()
+     */
+    public function categoryAction($url)
+    {
+        return [];
+    }
+
+    /**
      * @Route("/search", name="search")
      * @Template()
      */

@@ -158,18 +158,18 @@ vich_uploader:
     mappings:
         product_file:
             uri_prefix:         /uploads/product
-            upload_destination: %web_path%/uploads/product
+            upload_destination: %kernel.root_dir%/../web/uploads/product
         category_file:
             uri_prefix:         /uploads/category
-            upload_destination: %web_path%/uploads/category
+            upload_destination: %kernel.root_dir%/../web/uploads/category
         product_photo_file:
             uri_prefix:         /uploads/product_photo
-            upload_destination: %web_path%/uploads/product_photo
+            upload_destination: %kernel.root_dir%/../web/uploads/product_photo
 
 liip_imagine:
     resolvers:
-        default:
-            web_path: ~
+       default:
+          web_path: ~
 
     filter_sets:
         cache: ~

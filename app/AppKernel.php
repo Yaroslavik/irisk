@@ -33,6 +33,8 @@ class AppKernel extends Kernel
             // Additional bundles
             new Pix\SortableBehaviorBundle\PixSortableBehaviorBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+            new Vich\UploaderBundle\VichUploaderBundle(),
+            new Liip\ImagineBundle\LiipImagineBundle(),
             // AxS bundles:
             new AxS\ConfigBundle\AxSConfigBundle(),
             new AxS\PageBundle\AxSPageBundle(),
