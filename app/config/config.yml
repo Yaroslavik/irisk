@@ -169,7 +169,13 @@ vich_uploader:
 liip_imagine:
     resolvers:
         default:
-            web_path: ~
+            web_path:
+                web_root: %web_path%
+                cache_prefix: uploads/cache
+    loaders:
+        default:
+            filesystem:
+                data_root: %web_path%
 
     filter_sets:
         cache: ~
