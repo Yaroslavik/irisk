@@ -12,23 +12,22 @@ use AxS\ShopBundle\Entity\ShopCategory;
 use Doctrine\ORM\EntityManager;
 use Knp\Menu\FactoryInterface;
 use Knp\Menu\ItemInterface;
+use Knp\Menu\Matcher\Voter\UriVoter;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\Request;
 
 class MenuBuilder
 {
     protected $factory;
-
-    protected $em;
+    protected $container;
 
     /**
      * @param FactoryInterface $factory
-     * @param EntityManager $em
-     *
-     * Add any other dependency you need
      */
-    public function __construct(FactoryInterface $factory, EntityManager $em)
+    public function __construct(FactoryInterface $factory, ContainerInterface $container)
     {
         $this->factory = $factory;
-        $this->em = $em;
+        $this->container = $container;
     }
 
     public function createMainMenu()
@@ -52,7 +51,8 @@ class MenuBuilder
 
     public function createCatalogMenu()
     {
-        $r = $this->em->getRepository('AxSShopBundle:ShopCategory');
+        $em = $this->container->get('doctrine')->getManager();
+        $r = $em->getRepository('AxSShopBundle:ShopCategory');
         $roots = $r->getRootNodes('order', 'asc');
 
         $menu = $this->factory->createItem('catalog_menu');
@@ -69,19 +69,62 @@ class MenuBuilder
     protected function buildCatalogMenu(ItemInterface $menuItem, $categories, $path = '')
     {
         foreach ($categories as $category) {
-            if ($path !== '') $path .= '/';
-            $path .= $category->getSlug();
+            $tempPath = $path;
+            if ($tempPath !== '') $tempPath .= '/';
+            $tempPath .= $category->getSlug();
 
             $item = $menuItem->addChild(
                 $category->getTitle(),
                 ['route' => 'catalog', 'routeParameters' => [
-                    'path' => $path
+                    'path' => $tempPath
                 ]]
             );
 
-            $this->buildCatalogMenu($item, $category->getChildren(), $path);
+            $this->buildCatalogMenu(
+                $item,
+                $category->getChildren(),
+                $tempPath
+            );
         }
 
         return $menuItem;
+    }
+
+    public function createBreadcrumbsMenu()
+    {
+        $catalogMenu = $this->createCatalogMenu();
+        $result = $this->getCurrentMenuChain($catalogMenu);
+        $menu = $this->factory->createItem('breadcrumbs', [
+            'childrenAttributes' => [
+                'class' => 'breadcrumb',
+            ]
+        ]);
+
+        foreach ($result as $i => $item) {
+            /** @var ItemInterface $item */
+            $menu->addChild($item->getLabel(), ['uri' => $item->getUri()]);
+        }
+
+        return $menu;
+    }
+
+    protected function getCurrentMenuChain($menu)
+    {
+        $chain = [];
+        $voter = $this->container->get('app.voter.request');
+
+        while (count($menu)) {
+            foreach ($menu as $item) {
+                if ($voter->matchItem($item)) {
+                    $chain[] = $item;
+                    $menu = $item;
+                    continue 2;
+                }
+            }
+
+            break;
+        }
+
+        return $chain;
     }
 }

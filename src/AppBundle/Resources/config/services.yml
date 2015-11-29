@@ -3,10 +3,35 @@ services:
         class: AppBundle\Menu\MenuBuilder
         arguments:
             - "@knp_menu.factory"
-            - "@doctrine.orm.default_entity_manager"
+            - "@service_container"
+
+    app.menu.main:
+        class: Knp\Menu\MenuItem
+        factory_service: app.menu_builder
+        factory_method: createMainMenu
+        arguments: ~
+        scope: request
         tags:
-            - { name: knp_menu.menu_builder, method: createMainMenu, alias: main }
-            - { name: knp_menu.menu_builder, method: createCatalogMenu, alias: catalog }
+            - { name: knp_menu.menu, alias: main }
+
+    app.menu.catalog:
+        class: Knp\Menu\MenuItem
+        factory_service: app.menu_builder
+        factory_method: createCatalogMenu
+        arguments: ~
+        scope: request
+        tags:
+            - { name: knp_menu.menu, alias: catalog }
+
+    app.menu.breadcrumbs:
+        class: Knp\Menu\MenuItem
+        factory_service: app.menu_builder
+        factory_method: createBreadcrumbsMenu
+        arguments: ~
+        scope: request
+        tags:
+            - { name: knp_menu.menu, alias: breadcrumbs }
+
 
     app.voter.request:
         class: AppBundle\Voter\RequestVoter
@@ -14,3 +39,4 @@ services:
             - @service_container
         tags:
             - { name: knp_menu.voter }
+

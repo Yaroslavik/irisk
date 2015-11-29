@@ -25,6 +25,7 @@ class ShopController extends Controller
     {
         if ($path === null) return [];
 
+        // Parse path and find current category
         $parts = preg_split('/\\//', $path);
         $last = end($parts);
 
