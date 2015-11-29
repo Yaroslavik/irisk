@@ -1,9 +1,12 @@
 services:
     app.menu_builder:
         class: AppBundle\Menu\MenuBuilder
-        arguments: ["@knp_menu.factory"]
+        arguments:
+            - "@knp_menu.factory"
+            - "@doctrine.orm.default_entity_manager"
         tags:
             - { name: knp_menu.menu_builder, method: createMainMenu, alias: main }
+            - { name: knp_menu.menu_builder, method: createCatalogMenu, alias: catalog }
 
     app.voter.request:
         class: AppBundle\Voter\RequestVoter

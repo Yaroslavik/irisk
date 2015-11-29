@@ -78,7 +78,7 @@
     {% if categories is not empty %}
         <div id="catalog">
             {% for category in categories %}
-                {% set url = path('category', {'url': category.slug}) %}
+                {% set url = path('catalog', {'url': category.slug}) %}
                 <div class="c-item ">
                     <h3><a href="{{ url }}">{{ category.title }}</a></h3>
                     <div class="simple-line"></div>

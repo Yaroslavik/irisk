@@ -8,29 +8,40 @@
 
 namespace AppBundle\Controller;
 
+use Doctrine\ORM\EntityManager;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class ShopController extends Controller
 {
     /**
-     * @Route("/catalog", name="catalog")
+     * @Route("/catalog/{path}", name="catalog", requirements={"path": ".+"})
      * @Template()
      */
-    public function catalogAction()
+    public function catalogAction($path = null)
     {
-        return [];
-    }
+        if ($path === null) return [];
 
-    /**
-     * @Route("/category/{url}", name="category")
-     * @Template()
-     */
-    public function categoryAction($url)
-    {
-        return [];
+        $parts = preg_split('/\\//', $path);
+        $last = end($parts);
+
+        /** @var EntityManager $em */
+        $em = $this->getDoctrine()->getManager();
+        $r = $em->getRepository('AxSShopBundle:ShopCategory');
+
+        $category = $r->findOneBy([
+            'slug' => $last,
+            'visible' => 1,
+        ]);
+
+        if (!$category) throw new NotFoundHttpException();
+
+        return [
+            'category' => $category,
+        ];
     }
 
     /**
@@ -42,7 +53,7 @@ class ShopController extends Controller
         $q = $request->get('q');
 
         return [
-            'q' => $q
+            'q' => $q,
         ];
     }
 
