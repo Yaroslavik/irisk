@@ -100,6 +100,8 @@ class MenuBuilder
             ]
         ]);
 
+        $menu->addChild('Каталог', ['route' => 'catalog']);
+
         foreach ($result as $i => $item) {
             /** @var ItemInterface $item */
             $menu->addChild($item->getLabel(), ['uri' => $item->getUri()]);
