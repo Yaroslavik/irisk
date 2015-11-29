@@ -23,21 +23,15 @@
                         </ul>
                     </div>
                 </div>
-                <div class="ciferki">
-                    <ul class="pagination pagination-sm">
-                        <li class="disabled"><a href="#">«</a></li>
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">»</a></li>
-                    </ul>
-                </div>
+                {% if pagination.paginationData.pageCount > 1 %}
+                    <div class="ciferki">
+                        {{ knp_pagination_render(pagination) }}
+                    </div>
+                {% endif %}
             </div>
             <div class="tovar-box clearfix">
-                {% if products is not empty %}
-                    {% for product in products %}
+                {% if pagination is not empty %}
+                    {% for product in pagination %}
                         {% set url = path('product', {'url': product.slug}) %}
                         <div class="t-item">
                             <div class="item-head">

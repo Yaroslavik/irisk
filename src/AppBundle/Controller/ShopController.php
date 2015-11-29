@@ -21,7 +21,7 @@ class ShopController extends Controller
      * @Route("/catalog/{path}", name="catalog", requirements={"path": ".+"})
      * @Template()
      */
-    public function catalogAction($path = null)
+    public function catalogAction(Request $request, $path = null)
     {
         /** @var EntityManager $em */
         $em = $this->getDoctrine()->getManager();
@@ -44,7 +44,10 @@ class ShopController extends Controller
 
         // If not contains subcategories forward to products page
         if (!count($category->getChildren())) {
-            return $this->forward('AppBundle:Shop:products', ['category' => $category]);
+            return $this->forward('AppBundle:Shop:products', [
+                'category' => $category,
+                'request' => $request,
+            ]);
         }
 
         return [
@@ -58,6 +61,9 @@ class ShopController extends Controller
      */
     public function productsAction(Request $request, $category)
     {
+        $page = $request->query->get('page', 1);
+        $orderBy = $request->query->get('sort', 'title-asc');
+
         $em = $this->getDoctrine()->getManager();
         $r = $em->getRepository('AxSShopBundle:Product');
         $products = $r->findBy([
@@ -66,9 +72,42 @@ class ShopController extends Controller
             'available' => 1
         ], ['title' => 'asc']);
 
+        $qb = $em->createQueryBuilder()
+            ->select('p')
+            ->from('AxSShopBundle:Product', 'p')
+            ->where('p.visible = :visible')
+            ->andWhere('p.available = :available')
+            ->andWhere('p.category = :category')
+            ->setParameter(':visible', 1)
+            ->setParameter(':available', 1)
+            ->setParameter(':category', $category);
+
+        switch ($orderBy) {
+            case 'title-asc':
+                $qb->orderBy('p.title', 'asc');
+                break;
+            case 'title-desc':
+                $qb->orderBy('p.title', 'desc');
+                break;
+            case 'price-asc':
+                $qb->orderBy('p.cost', 'asc');
+                break;
+            case 'title-desc':
+                $qb->orderBy('p.cost', 'desc');
+                break;
+        }
+
+        /** @var SlidingPagination $pagination */
+        $pagination = $this->get('knp_paginator')->paginate(
+            $qb,
+            $page,
+            2
+        );
+
         return [
             'category' => $category,
             'products' => $products,
+            'pagination' => $pagination,
         ];
     }
 
