@@ -3,69 +3,29 @@
 {% block content %}
     {% include '@App/slideshow.html.twig' %}
     <div class="margin"></div>
-    <div id="katalog" class = "clearfix">
+    <div id="katalog" class="clearfix">
         {% include '@App/catalogMenu.html.twig' %}
         <div class="right-side clearfix">
             <div class="right-head">
                 <div class="breadcrumbs">
                     {{ knp_menu_render('breadcrumbs', {template: 'AppBundle::breadcrumbs.html.twig'}) }}
                 </div>
-                <div class="sort">
-                    <div class="btn-group">
-                        <a href="#" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                            Сортировать <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Начать с низкой цены</a></li>
-                            <li><a href="#">Начать с высокой цены</a></li>
-                            <li><a href="#">А-Я</a></li>
-                            <li><a href="#">Я-А</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="ciferki">
-                    <ul class="pagination pagination-sm">
-                        <li class="disabled"><a href="#">«</a></li>
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">»</a></li>
-                    </ul>
-                </div>
             </div>
             <div class="tovar-box clearfix">
-                {% for i in 1..10 %}
-                    <div class="t-item">
-                        <div class="item-head">
-                            <a href="{{ path('product', {'url': 'test'}) }}">Лак для собак, 150мл</a>
-                            <div class="raiting">
-                                <img src="{{ asset('img/star.png') }}" alt="raiting" align="right">
-                            </div>
-                        </div>
-                        <div class="item-middle">
-                            <a href="#"><img src="{{ asset('img/k-item.jpg') }}" alt="" align="left"></a>
-                            <p>Код товара: 918</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui odio tempora voluptates
-                                quod itaque commodi quibusdam non voluptatum earum iusto!</p>
-                            <p><b>Цена: 50 000 руб</b></p>
-                        </div>
-                        <div class="item-footer">
-                            <div class="present">
-                                <ul>
-                                    <li><img src="img/yes.png" alt=""></li>
-                                    <li>
-                                        <p>В наличии</p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <a href="#" class="btn btn-success">В корзину</a>
-                        </div>
-                    </div>
-                {% endfor %}
+                <ul>
+                    {% for subcategory in subcategories %}
+                        {% set url = path('catalog', {'path': subcategory.slugPath}) %}
+                        <li>
+                            <h2><a href="{{ url }}">{{ subcategory.title }}</a></h2>
+                            {% if subcategory.filename is not empty %}
+                                <a href="{{ url }}">
+                                    <img src="{{ vich_uploader_asset(subcategory, 'file')|imagine_filter('small') }}">
+                                </a>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
     </div>
 {% endblock %}
-

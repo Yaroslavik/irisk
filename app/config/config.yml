@@ -189,6 +189,11 @@ liip_imagine:
              filters:
                  thumbnail: { size: [198, 215], mode: outbound }
 
+        product_list:
+             quality: 80
+             filters:
+                 thumbnail: { size: [158, 152], mode: outbound }
+
         category_preview:
              quality: 80
              filters:

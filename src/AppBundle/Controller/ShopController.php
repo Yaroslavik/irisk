@@ -23,15 +23,17 @@ class ShopController extends Controller
      */
     public function catalogAction($path = null)
     {
-        if ($path === null) return [];
+        /** @var EntityManager $em */
+        $em = $this->getDoctrine()->getManager();
+        $r = $em->getRepository('AxSShopBundle:ShopCategory');
+
+        if ($path === null) {
+            return ['subcategories' => $r->findBy(['visible' => 1, 'parent' => null], ['order' => 'asc'])];
+        }
 
         // Parse path and find current category
         $parts = preg_split('/\\//', $path);
         $last = end($parts);
-
-        /** @var EntityManager $em */
-        $em = $this->getDoctrine()->getManager();
-        $r = $em->getRepository('AxSShopBundle:ShopCategory');
 
         $category = $r->findOneBy([
             'slug' => $last,
@@ -40,8 +42,33 @@ class ShopController extends Controller
 
         if (!$category) throw new NotFoundHttpException();
 
+        // If not contains subcategories forward to products page
+        if (!count($category->getChildren())) {
+            return $this->forward('AppBundle:Shop:products', ['category' => $category]);
+        }
+
         return [
             'category' => $category,
+            'subcategories' => $category->getChildren(),
+        ];
+    }
+
+    /**
+     * @Template()
+     */
+    public function productsAction(Request $request, $category)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $r = $em->getRepository('AxSShopBundle:Product');
+        $products = $r->findBy([
+            'category' => $category,
+            'visible' => 1,
+            'available' => 1
+        ], ['title' => 'asc']);
+
+        return [
+            'category' => $category,
+            'products' => $products,
         ];
     }
 
