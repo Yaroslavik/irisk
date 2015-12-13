@@ -1,0 +1,13 @@
+{% if slides|length > 0 %}
+    <div id="banner">
+        <div class="container">
+            <div class="slider">
+                <ul>
+                    {% for slide in slides %}
+                        <li><img src="{{ slide.webPath|imagine_filter('gallery') }}" alt=""></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endif %}

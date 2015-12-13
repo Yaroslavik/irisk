@@ -32,7 +32,6 @@ services:
         tags:
             - { name: knp_menu.menu, alias: breadcrumbs }
 
-
     app.voter.request:
         class: AppBundle\Voter\RequestVoter
         arguments:
@@ -40,3 +39,14 @@ services:
         tags:
             - { name: knp_menu.voter }
 
+    sonata.admin.slide:
+        class: AppBundle\Admin\SlideAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Slide" }
+        arguments:
+            - ~
+            - AppBundle\Entity\Slide
+            - ~
+        calls:
+            - [setTranslationDomain, [AdminSlide]]
+            - [setLabelTranslatorStrategy, [@sonata.admin.label.strategy.underscore]]

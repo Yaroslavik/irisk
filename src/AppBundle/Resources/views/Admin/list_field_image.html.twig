@@ -1,0 +1,9 @@
+{% extends 'SonataAdminBundle:CRUD:base_list_field.html.twig' %}
+
+{% block field %}
+    {% if object.filename is not empty %}
+        <div>
+            <img src="{{ object.webPath|imagine_filter('small') }}" class="list-preview">
+        </div>
+    {% endif %}
+{% endblock %}
