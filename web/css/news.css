@@ -1,0 +1,105 @@
+.tovar-item {
+    padding: 10px 25px;
+}
+
+.tovar-head {
+    padding: 10px 0;
+    width: 100%;
+}
+
+.tovar-item .head span {
+    float: left;
+    vertical-align: middle;
+}
+
+.tov-body {
+    margin-top: 25px;
+    float: left;;
+}
+
+.tov-body img {
+    width: 250px;
+    height: 250px;
+    float: left;
+    border: 1px #9c929a solid;
+    margin-right: 5px;
+    cursor: zoom-in;
+}
+
+.small {
+    float: left;
+}
+
+.small a {
+    display: block;
+}
+
+.small img {
+    width: 122px;
+    height: 122px;
+    border: 1px #c6b9c4 solid;
+    margin-bottom: 4px;
+    cursor: zoom-in;
+}
+
+.tov-caption {
+    float: right;
+    width: 430px;
+    margin-top: 20px;
+}
+
+.tov-caption span {
+    font-size: 22px;
+    color: black;
+}
+
+.tov-caption .btn-cart {
+    padding: 10px 15px;
+    color: #fff;
+    background: #ff0475;
+    border: none;
+    font-size: 18px;
+    margin-right: 15px;
+    margin-top: 25px;
+    cursor: pointer;
+}
+
+.tov-caption a {
+    text-decoration: underline;
+}
+
+.tov-caption .btn-cart:hover {
+    background: #ff6a8f
+}
+
+.tabs {
+    margin-top: 10px;
+}
+
+#tab2, #tab3 {
+    position: fixed;
+}
+
+.menu1 > a, .menu1 #tab2:target ~ a:nth-of-type(1), .menu1 #tab3:target ~ a:nth-of-type(1), .menu1 > div {
+    padding: 5px;
+    border: 1px solid #aaa;
+}
+
+.menu1 > a {
+    line-height: 28px;
+    background: #fff;
+    text-decoration: none;
+}
+
+#tab2, #tab3, .menu1 > div, .menu1 #tab2:target ~ div:nth-of-type(1), .menu1 #tab3:target ~ div:nth-of-type(1) {
+    display: none;
+}
+
+.menu1 > div:nth-of-type(1), .menu1 #tab2:target ~ div:nth-of-type(2), .menu1 #tab3:target ~ div:nth-of-type(3) {
+    display: block;
+}
+
+.menu1 > a:nth-of-type(1), .menu1 #tab2:target ~ a:nth-of-type(2), .menu1 #tab3:target ~ a:nth-of-type(3) {
+    border-bottom: 2px solid #fff;
+}
+.title span {font-size: 25px; font-weight: bold;}

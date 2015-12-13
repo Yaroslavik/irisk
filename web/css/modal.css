@@ -1,104 +1,98 @@
-#zakazatzvonok .modal-dialog {
-    width: 350px;
-    background: black;
-    border-radius: 0;
+/* кнопка закрытия окна */
+.modal .btn-close {
+    color: #aaa;
+    cursor: pointer;
+    font-size: 30px;
+    text-decoration: none;
+    position: absolute;
+    right: 5px;
+    top: 0;
+}
+
+.modal .btn-close:hover {
+    color: red;
+}
+
+/* слой затемнения */
+.modal-wrap:before {
+    content: "";
+    display: none;
+    background: rgba(0, 0, 0, .3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 101;
+}
+
+.modal-overlay {
+    bottom: 0;
+    display: none;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 102;
+}
+
+/* активация слоя затемнения и модального блока */
+.modal-open:checked ~ .modal-wrap:before,
+.modal-open:checked ~ .modal-wrap .modal-overlay {
+    display: block;
+}
+
+.modal-open:checked ~ .modal-wrap .modal-dialog {
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    top: 20%;
+}
+
+/* элементы модального окна */
+.modal-dialog {
+    background: #fefefe;
     border: none;
+    border-radius: 5px;
+    position: fixed;
+    padding: 10px 35px;
+    left: 50%;
+    top: -100%;
+    -webkit-box-shadow: 0 15px 20px rgba(0, 0, 0, .22), 0 19px 60px rgba(0, 0, 0, .3);
+    -moz-box-shadow: 0 15px 20px rgba(0, 0, 0, .22), 0 19px 60px rgba(0, 0, 0, .3);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, .22), 0 19px 60px rgba(0, 0, 0, .3);
+    -webkit-transform: translate(-50%, -500%);
+    -ms-transform: translate(-50%, -500%);
+    -o-transform: translate(-50%, -500%);
+    transform: translate(-50%, -500%);
+    -webkit-transition: -webkit-transform 0.4s ease-out;
+    -moz-transition: -moz-transform 0.4s ease-out;
+    -o-transition: -o-transform 0.4s ease-out;
+    transition: transform 0.4s ease-out;
+    z-index: 103;
 }
 
-#zakazatzvonok .modal-content {
-    width: 350px;
-    background: url(../img/formback.jpg) no-repeat;
-    border-radius: 0;
+.modal-body input {
+    padding: 5px 5px;
+    width: 265px;
+    margin-top: 10px;
 }
 
-.callback-form {
-    padding: 0 35px;
-}
-
-#zakazatzvonok .modal-header {
-    background: #ff0027;
-
-}
-
-#zakazatzvonok .modal-header .close span {
-    color: #000000;
-
-}
-
-#zakazatzvonok .modal-header h4.modal-title {
+.modal-body button {
+    padding: 5px 100px;
+    margin-top: 10px;
+    margin-left: -1px;
+    border: none;
+    background: #ff0475;
     text-transform: uppercase;
     color: #fff;
+    box-shadow: 1px 1px 3px #222;
 }
-
-.callback-form p {
-    margin-bottom: 0;
-}
-
-.callback-form input {
-    border-radius: 3px;
-    border: 1px solid #555555;
-    padding: 10px 3px;
-    width: 250px;
-    margin-bottom: 15px;
-}
-.callback-form textarea {border-radius: 3px;
-    border: 1px solid #555555;
-    padding: 10px 3px;
-    width: 250px;
-    margin-bottom: 15px;}
-.callback-form .btn {
-    width: 250px;
-}
-#tovarvkorzine .modal-dialog {margin-top: 10%; width: 250px; }
-#tovarvkorzine .modal-body .btn {padding: 5px 5px; margin-top: 10px;}
-
-#kupitv1klik .modal-dialog {
-    width: 350px;
-    background: black;
-    border-radius: 0;
-    border: none;
-}
-
-#kupitv1klik .modal-content {
-    width: 350px;
-    background: url(../img/formback.jpg) no-repeat;
-    border-radius: 0;
-}
-
-#kupitv1klik .callback-form {
-    padding: 0 35px;
-}
-
-#kupitv1klik .modal-header {
-    background: #ff0027;
-
-}
-
-#kupitv1klik .modal-header .close span {
-    color: #000000;
-
-}
-#kupitv1klik .modal-header h4.modal-title {
-    text-transform: uppercase;
-    color: #fff;
-}
-
-#kupitv1klik .callback-form p {
-    margin-bottom: 0;
-}
-
-#kupitv1klik .callback-form input {
-    border-radius: 3px;
-    border: 1px solid #555555;
-    padding: 10px 3px;
-    width: 250px;
-    margin-bottom: 15px;
-}
-#kupitv1klik .callback-form textarea {border-radius: 3px;
-    border: 1px solid #555555;
-    padding: 10px 3px;
-    width: 250px;
-    margin-bottom: 15px;}
-#kupitv1klik .callback-form .btn {
-    width: 250px;
-}
+.modal-body p {text-align: center;
+    font-weight: bold;}
+.modal-body button:hover {background: #ff5588;}
+.modal-body span {text-align: center; font-size: 10px;}
+.buttons {margin-top: 25px;}
+.modal-header {text-align: center;}
+.modal-body .shopping {margin-left: 20px;}

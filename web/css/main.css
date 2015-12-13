@@ -1,0 +1,415 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic);
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: url(../img/background.jpg);
+    font: 14px normal, 'Open Sans', sans-serif;
+
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: ' ';
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+#top-menu {
+    border-top: 5px #ffa509 solid;
+    color: #fff;
+    background: #222;
+    padding: 5px 0;
+}
+
+.logo {
+    float: left;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.logo img {
+    width: 100px;
+    height: 60px;
+}
+
+.cart {
+
+    background: #ffa509 url(../img/cart.png) no-repeat 5px 11px;
+    float: right;
+    width: 150px;
+    margin-top: -10px;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;;
+}
+
+.cart a {
+    display: block;
+    color: #fff;
+    height: 45px;
+    padding: 16px 0 0 48px;
+    text-decoration: none;
+}
+
+.cart a:hover {
+    text-shadow: 1px 1px 3px #222;
+}
+
+.worktime {
+    text-align: center;
+    float: right;
+    margin-right: 50px;
+
+}
+
+.contacts {
+    float: right;
+    margin-right: 50px;
+    text-align: center;
+
+}
+
+.contacts a {
+    color: #fff;
+}
+
+.action {
+    margin-top: 10px;
+}
+
+.btn {
+    color: #ffffff;
+    padding: 5px 10px;
+    background: #ffa509;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px #222;
+}
+
+.search {
+    float: left;
+}
+
+.search form {
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+.search form input {
+
+    padding: 10px 5px;
+    border: none;
+    width: 250px;
+}
+
+.search form button {
+    padding: 9px 3px;
+    border: none;
+    margin-left: -5px;
+    background: #d2d2d2;
+    cursor: pointer;
+}
+
+#header-nav {
+    background: #ffa509;
+    padding: 10px 0;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul span {
+    margin: 0 15px;
+    color: #212121;
+
+}
+
+nav ul li::after {
+    content: '::';
+    margin: 0 15px;
+    color: #212121;
+}
+
+nav ul li:last-child::after {
+    display: none;
+}
+
+nav ul li a {
+    color: #222;
+}
+
+#advantage .a-box {
+    background: #ff0475;
+    padding: 15px 15px;
+}
+
+.a-item {
+    float: left;
+}
+
+.a-item + .a-item {
+    margin-left: 140px;
+}
+
+.a-item p {
+    color: #fff;
+    font-size: 14px;
+    padding: 0 0 0 90px;
+}
+
+.a-item span {
+    text-transform: uppercase;
+}
+
+.price {
+    background: url(../img/ico-pig.png) no-repeat 45px 5px;
+}
+
+.deliv {
+    background: url(../img/ico-car.png) no-repeat 45px 0px;
+}
+
+.assort {
+    background: url(../img/ico-check.png) no-repeat 45px 5px;
+}
+
+#popular {
+    margin-top: 15px;
+
+    padding: 10px 0
+}
+
+.popular-back {
+    background: #ffeffc;
+}
+
+.title {
+    text-align: center;
+    padding: 15px 0;
+
+}
+
+.p-box {
+    margin-top: 15px;
+    margin-left: 20px;
+    padding: 10px 10px;
+}
+
+.p-item {
+    float: left;
+
+    padding: 10px 10px;
+}
+
+.p-head, .p-body {
+    text-align: center;
+}
+
+.p-body img {
+    width: 180px;
+    height: 180px;
+}
+
+.p-body span {
+    font-size: 22px;
+    text-shadow: 1px 1px 3px #222;
+    color: #222;
+
+}
+
+.p-body b {
+    font-size: 16px;
+
+}
+
+.p-item + .p-item {
+    margin-left: 35px;
+}
+
+.p-item:hover {
+    box-shadow: 1px 1px 3px #222;
+}
+
+.p-foot {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.btn {
+    cursor: pointer;
+    border: none;
+    box-shadow: 1px 1px 3px #222;
+}
+
+.btn:hover {
+    background: #ffc10d;
+
+}
+
+.catalog-wrapp {
+    background: url(../img/formback.jpg) no-repeat center bottom;
+    width: 100%;
+
+}
+
+#main-catalog {
+    margin-top: 15px;
+}
+
+.mc-box {
+    padding: 10px 15px;
+    margin-left: 110px;
+}
+
+.mc-item {
+    padding: 10px 15px;
+    text-align: center;
+    float: left;
+    background: #fff;
+    margin-bottom: 15px;
+}
+
+.just {
+    background: #ff0475;
+    width: 40px;
+    height: 5px;
+    margin: 0 auto;
+
+}
+
+.mc-item {
+    margin-right: 15px;
+}
+
+.mc-item:last-child {
+    margin-right: 0;
+}
+
+.mc-item img {
+    margin-top: 50px;
+}
+
+.mc-item:hover {
+    box-shadow: #222 1px 1px 3px;
+}
+
+.wrapper {
+    background: #ffeffc;
+    padding: 10px 25px;
+}
+
+#seo-text {
+    margin-top: 25px;
+
+}
+
+#seo-text .title {
+    text-align: left;
+}
+
+.seo {
+    text-align: left;
+}
+
+.p-item label {
+    padding: 5px 15px;
+    background: #ffa509;
+    box-shadow: 1px 1px 3px;
+}
+
+.p-item label:hover {
+    cursor: pointer;
+    background: #ffa881;
+}
+
+.btnl {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.dostavka {
+    background: #fff;
+    padding: 10px 15px;
+}
+
+.dostavka p {
+    font-size: 20px;
+}
+
+.dostavka h3 {
+    font-size: 25px;
+}
+
+.kurer {
+    margin-bottom: 25px;
+}
+
+.pochta {
+    margin-bottom: 25px;
+}
+
+#about .container {
+    background: #fff;
+}
+
+#about .caption {
+    padding: 15px 15px;
+}
+
+.n-item img {
+    width: 150px;
+    float: left;
+    height: 100px;
+    padding: 0 15px;
+}
+
+.n-item {
+    margin-bottom: 45px;
+}
+
+.wrap {
+    background: #fff;
+}
+
+.n-item-box-l {
+    float: left;
+    width: 600px;
+}
+
+.n-item-box-r {
+    float: right;
+    width: 600px;
+}
+#opt .caption {background: #fff; padding: 10px 25px;}
+
+#opt .caption button {
+    padding: 6px 15px;
+    border: none;
+    box-shadow: 1px 1px 3px #222;
+}
+#opt .caption button:hover {background: #e6e6e6
+}
+
+.btns {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}

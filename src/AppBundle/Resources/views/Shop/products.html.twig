@@ -36,9 +36,9 @@
                         <div class="t-item">
                             <div class="item-head">
                                 <a href="{{ url }}">{{ product.title }}</a>
-                                <div class="raiting">
-                                    <img src="img/star.png" alt="raiting" align="right">
-                                </div>
+                                {#<div class="raiting">#}
+                                    {#<img src="{{ asset('img/star.png') }}" alt="raiting" align="right">#}
+                                {#</div>#}
                             </div>
                             <div class="item-middle">
                                 <a href="{{ url }}"><img src="{{ vich_uploader_asset(product, 'file')|imagine_filter('product_list') }}" alt="{{ product.title }}" align="left"></a>

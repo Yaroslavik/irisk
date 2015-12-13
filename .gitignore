@@ -12,7 +12,7 @@
 
 *.php~
 /.idea/
-/~
+/_
 /web/uploads/*
 !web/uploads/.gitkeep
 /web/media/

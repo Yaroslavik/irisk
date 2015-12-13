@@ -1,54 +1,59 @@
-<div class="modal fade" id="zakazatzvonok" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
+<!----------------------------- Модалки --------------------------------->
+<div class="modal">
+    <input class="modal-open" id="incart" type="checkbox" hidden>
+    <div class="modal-wrap" aria-hidden="true" role="dialog">
+        <label class="modal-overlay" for="incart"></label>
+        <div class="modal-dialog">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="false">&times;</span></button>
-                <h4 class="modal-title text-center" id="myModalLabel">Заявка на бесплатную консультацию</h4>
+                <h2>Ура! Товар добавлен в корзину!</h2>
+                <label class="btn-close" for="incart" aria-hidden="true">×</label>
             </div>
-            <div class="modal-body ">
-                <div class="callback-form">
-                    <form action="#">
-                        <p>*Ваше имя</p><input type="text" placeholder="Александр">
-                        <p>*Телефон для связи</p><input type="tel" placeholder="+375 29 555 66 77"><br/>
-                        <p>Сообщение</p> <textarea  rows="4" cols="27" placeholder="О чем бы Вы хотели узнать?"></textarea>
-                        <button class="btn btn-warning">Отправить</button>
-                    </form>
-                </div>
+            <div class="modal-body">
+                <p>Вы можете <a href="#">вернуться в магазин</a> и продолжить шоппинг <br> или</p>
+                <button class = "shopping">Перейти к оформлению</button>
             </div>
 
         </div>
     </div>
 </div>
+<!----------------------------------------------------------------------------------->
+<div class="modal">
+    <input class="modal-open" id="1clickbuy" type="checkbox" hidden>
+    <div class="modal-wrap" aria-hidden="true" role="dialog">
+        <label class="modal-overlay" for="1clickbuy"></label>
+        <div class="modal-dialog">
+            <div class="modal-body">
+                <p>Заполните форму и мы перезвоним <br>Вам по поводу доставки</p>
+                <label class="btn-close" for="1clickbuy" aria-hidden="true">×</label>
 
-<div class="modal fade" id="tovarvkorzine" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="false">&times;</span></button>
-                <h4 class="modal-title text-center" id="korz">Товар помещен в корзину</h4>
-            </div>
-            <div class="modal-body text-center">
-                <p> Вы можете <a href = "" >вернуться в магазин</a> и продолжить шоппинг или<br/> <a href="korzina.html" class="btn btn-success">Перейти к оформлению</a> </p>
+                <form action="">
+                    <input type="text"placeholder="Как Вас зовут?">
+                    <br/>
+                    <input type = "tel" placeholder="8(044)111-22-33">
+                </form>
+                <button>Отправить</button><br/>
+                <span>*не волнуйтесь, Ваши данные под надежной защитой</span>
             </div>
         </div>
     </div>
 </div>
+<!----------------------------------------------------------------------------------->
+<div class="modal">
+    <input class="modal-open" id="callback" type="checkbox" hidden>
+    <div class="modal-wrap" aria-hidden="true" role="dialog">
+        <label class="modal-overlay" for="callback"></label>
+        <div class="modal-dialog">
+            <div class="modal-body">
+                <p>Заполните форму и мы перезвоним <br>Вам для подробной консультации</p>
+                <label class="btn-close" for="callback" aria-hidden="true">×</label>
 
-<div class="modal fade" id="kupitv1klik" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="false">&times;</span></button>
-                <h4 class="modal-title text-center" id="klik">Заявка на бесплатную консультацию</h4>
-            </div>
-            <div class="modal-body ">
-                <div class="callback-form">
-                    <form action="#">
-                        <p>*Ваше имя</p><input type="text" placeholder="Александр">
-                        <p>*Телефон для связи</p><input type="tel" placeholder="+375 29 555 66 77"><br/>
-                        <button class="btn btn-warning">Отправить</button>
-                    </form>
-                </div>
+                <form action="">
+                    <input type="text"placeholder="Как Вас зовут?">
+                    <br/>
+                    <input type = "tel" placeholder="8(044)111-22-33">
+                </form>
+                <button>Отправить</button><br/>
+                <span>*не волнуйтесь, Ваши данные под надежной защитой</span>
             </div>
         </div>
     </div>

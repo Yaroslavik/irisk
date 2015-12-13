@@ -35,16 +35,13 @@ class MenuBuilder
         $menu = $this->factory->createItem('menu');
 
         $menu->addChild('Главная', array('route' => 'homepage'));
-        $menu->addChild('О магазине', array('route' => 'page', 'routeParameters' => ['slug' => 'about']));
-        $menu->addChild('Каталог товаров', array('route' => 'catalog'));
         $menu->addChild('Доставка и оплата', array('route' => 'page-delivery'));
+        $menu->addChild('Каталог товаров', array('route' => 'catalog'));
         $menu->addChild('Полезные статьи', array('route' => 'articles'));
-        $menu->addChild('Дилерам', array('route' => 'page', 'routeParameters' => ['slug' => 'for-dealers']));
+        $menu->addChild('О магазине', array('route' => 'page', 'routeParameters' => ['slug' => 'about']));
+        $menu->addChild('Спецпредложения', array('route' => 'catalog'));
+        $menu->addChild('Оптовые закупки', array('route' => 'page', 'routeParameters' => ['slug' => 'for-dealers']));
         $menu->addChild('Корзина', array('route' => 'cart'));
-
-        foreach ($menu->getChildren() as $item) {
-            $item->setLinkAttribute('class', 'btn btn-warning');
-        }
 
         return $menu;
     }

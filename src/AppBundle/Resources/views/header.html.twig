@@ -1,33 +1,36 @@
-<div id="header">
-    <div class="logo">
-        <a href="{{ path('homepage') }}"><img src="{{ asset('img/logo.png') }}" alt="Irisk"></a>
-        <p>BELARUS</p>
+<div id="top-menu">
+    <div class="container clearfix ">
+        <div class="logo">
+            <a href="{{ path('homepage') }}"><img src="{{ asset('img/logo.png') }}" alt="Irisk-bel.by"></a><br/>
+            <span>Беларусь</span>
+        </div>
+        <div class="search">
+            <form action="{{ path('search') }}" method="get">
+                <input type="text" name="q" required="required" placeholder="Поиск товаров в каталоге">
+                <button><i class="fa fa-search fa-2"></i></button>
+            </form>
+        </div>
+        <div class="cart">
+            <a href="{{ path('cart') }}"><span>Корзина (0)</span></a>
+        </div>
+        <div class="worktime">
+            <p>Время работы:</p>
+                <span>
+                    {{ configuration.get('WORKTIME') }}<br/>
+                    {{ configuration.get('WORKDAYS') }}
+                </span>
+        </div>
+        <div class="contacts">
+            <a href="tel:+{{ configuration.get('PHONE_1')|digits }}">{{ configuration.get('PHONE_1') }}</a><br/>
+            <a href="tel:+{{ configuration.get('PHONE_2')|digits }}">{{ configuration.get('PHONE_2') }}</a><br/>
+            <div class="action"><label for = "callback" class="btn btn-callback">Вам перезвонить?</label></div>
+        </div>
     </div>
-    <div class="k-contact">
-        <ul>
-            <li>{{ configuration.get('PHONE_1') }}</li>
-            <li>{{ configuration.get('PHONE_2') }}</li>
-            <li><a href="#" class="btn btn-success" data-toggle="modal" data-target="#zakazatzvonok">заказать звонок</a></li>
-        </ul>
-    </div>
-    <div class="worktime">
-        <p>
-            <i class="fa fa-clock-o"></i> <b>{{ configuration.get('WORKTIME') }}</b><br/>
-            {{ configuration.get('WORKDAYS') }}
-        </p>
-    </div>
-    <div class="mycart">
-        <a href="{{ path('cart') }}"> <i class="fa fa-shopping-cart"></i> Корзина</a>
-        <p>
-            <ins>0 товаров</ins>
-        </p>
-    </div>
-    <div class="search">
-        <form action="{{ path('search') }}" method="get">
-            <input type="text" name="q" placeholder="Поиск по каталогу">
-        </form>
-    </div>
-    <div class="navig">
-        {{ knp_menu_render('main') }}
+</div>
+<div id="header-nav">
+    <div class="container clearfix">
+        <nav>
+            {{ knp_menu_render('main') }}
+        </nav>
     </div>
 </div>

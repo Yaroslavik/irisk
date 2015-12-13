@@ -3,112 +3,218 @@
 {% block content %}
     <div id="banner">
         <div class="container">
-            <div class="b-caption col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <h1>Материалы для <br/> <span><strong>Наращивания ногтей и ресниц</strong></span></h1>
-                <h2><span>Маникюра и педикюра</span></h2>
-                <p><i class="fa fa-check-circle-o"></i> Биоэпиляции </p>
-                <p><i class="fa fa-check-circle-o"></i> Визажа</p>
-                <p><i class="fa fa-check-circle-o"></i> Косметологии</p>
-                <p><span>Внимание отправка в день заказа по всей РБ</span></p>
-                <div class="action">
-                    <a href="{{ path('catalog') }}" class="btn btn-warning">Перейти в каталог</a>
-                    <a href="#" class="btn btn-default" data-toggle="modal" data-target="#zakazatzvonok">
-                        Бесплатная консультация
-                    </a>
+            <div class="slider">
+                <ul>
+                    <li><img src="{{ asset('img/1.jpg') }}" alt=""></li>
+                    <li><img src="{{ asset('img/2.jpg') }}" alt=""></li>
+                    <li><img src="{{ asset('img/3.jpg') }}" alt=""></li>
+                    <li><img src="{{ asset('img/4.jpg') }}" alt=""></li>
+                    <li><img src="{{ asset('img/5.jpg') }}" alt=""></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!----------------------------------------------------------------------------------->
+    <div id="advantage">
+        <div class="container clearfix">
+            <div class="a-box clearfix">
+                <div class="a-item price">
+                    <p><span>Низкая цена</span><br/>
+                        мы первый поставщик и <br>
+                        работаем без посредников</p>
+                </div>
+                <div class="a-item deliv">
+                    <p><span>Бесплатная доставка</span><br/>
+                        закажите товаров на 450 000 <br>
+                        и мы привезем их бесплатно </p>
+                </div>
+                <div class="a-item assort">
+                    <p><span>Более 2000 товаров</span><br/>
+                        всегда в наличии в день заказа
+                    </p>
                 </div>
             </div>
         </div>
     </div>
+    <!----------------------------------------------------------------------------------->
+    <div id="popular">
+        <div class="container">
+            <div class="popular-back">
+                <div class="title">
+                    <h2>Популярные товары</h2>
 
-    <div id="advantage">
-        <div class="adv-itembox clearfix">
-            <div class="adv-item">
-                <img src="{{ asset('img/ico-pig.png') }}" alt="низкая цена" align="left">
-                <p><span>Низкая цена</span></p>
-                <p>мы первый поставщик и <br/> работаем без посредников
-                </p>
-            </div>
-            <div class="adv-item">
-                <img src="{{ asset('img/ico-car.png') }}" alt="низкая цена" align="left">
-                <p><span>Бесплатная доставка</span></p>
-                <p>закажите товаров на 450 000 и мы привезем их бесплатно
-                </p>
-            </div>
-            <div class="adv-item ">
-                <img src="{{ asset('img/ico-check.png') }}" alt="низкая цена" align="left">
-                <p><span>Более 2000 товаров</span></p>
-                <p>всегда в наличии в день заказа
-                </p>
-            </div>
-        </div>
-    </div>
+                    <p>Новинки, спецпредложения, акции</p>
 
-    <div class="margin"></div>
-
-    {% if products is not empty %}
-        <div id="popular">
-            <div class="title">
-                <h2>Популярные товары</h2>
-                <div class="simple-line"></div>
-                <p>Ваши любимые товары</p>
-            </div>
-            <div class="margin"></div>
-            <div class="p-itembox">
-                {% for product in products %}
-                    {% set url = path('product', {'url': product.slug}) %}
+                </div>
+                <div class="p-box clearfix">
+                    <!---------------- ITEM --------------------->
                     <div class="p-item">
-                        <a href="{{ url }}">{{ product.title }}</a><br/>
-                        <a href="{{ url }}">
-                            <img src="{{ vich_uploader_asset(product, 'file')|imagine_filter('product_preview') }}" alt="{{ product.title }}">
-                        </a>
-                        <p>{{ product.shortDescription }}</p>
-                        <p><b>Цена: {{ product.cost|number_format }} руб</b></p>
-                        <div class="action">
-                            <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#tovarvkorzine">В корзину</a>
-                            <a href="{{ url }}" class="btn btn-default">Описание</a>
+                        <div class="p-head"><a href="tovar.html">Лак для волос 260мл</a></div>
+                        <div class="p-body"><img src="{{ asset('img/tov1.jpg') }}" alt="Товар">
+
+                            <p>Краткое описание товара <br>
+                                Суперпредложение!</p>
+                            <br/>
+                            <span>250 000 руб.</span>
+                        </div>
+                        <div class="p-foot">
+                            <label for = "incart">В корзину</label>
                         </div>
                     </div>
-                {% endfor %}
-            </div>
-        </div>
-    {% endif %}
+                    <!---------------- ITEM --------------------->
+                    <div class="p-item">
+                        <div class="p-head"><a href="#">Лак для волос 260мл</a></div>
+                        <div class="p-body"><img src="{{ asset('img/tov1.jpg') }}" alt="Товар">
 
-    <div class="margin"></div>
+                            <p>Краткое описание товара <br>
+                                Суперпредложение!</p>
+                            <br/>
+                            <span>250 000 руб.</span>
+                        </div>
+                        <div class="p-foot">
+                            <label for = "incart">В корзину</label>
+                        </div>
+                    </div>
+                    <!---------------- ITEM --------------------->
+                    <div class="p-item">
+                        <div class="p-head"><a href="#">Лак для волос 260мл</a></div>
+                        <div class="p-body"><img src="{{ asset('img/tov1.jpg') }}" alt="Товар">
 
-    {% if categories is not empty %}
-        <div id="catalog">
-            {% for category in categories %}
-                {% set url = path('catalog', {'url': category.slug}) %}
-                <div class="c-item ">
-                    <h3><a href="{{ url }}">{{ category.title }}</a></h3>
-                    <div class="simple-line"></div>
-                    <a href="{{ url }}">
-                        <img src="{{ vich_uploader_asset(category, 'file')|imagine_filter('category_preview') }}"
-                             alt="{{ category.title }}">
-                    </a>
+                            <p>Краткое описание товара <br>
+                                Суперпредложение!</p>
+                            <br/>
+                            <span>250 000 руб.</span>
+                        </div>
+                        <div class="p-foot">
+                            <label for = "incart">В корзину</label>
+                        </div>
+                    </div>
+                    <!---------------- ITEM --------------------->
+                    <div class="p-item">
+                        <div class="p-head"><a href="#">Лак для волос 260мл</a></div>
+                        <div class="p-body"><img src="{{ asset('img/tov1.jpg') }}" alt="Товар">
+
+                            <p>Краткое описание товара <br>
+                                Суперпредложение!</p>
+                            <br/>
+                            <span>250 000 руб.</span>
+                        </div>
+                        <div class="p-foot">
+                            <label for = "incart">В корзину</label>
+                        </div>
+                    </div>
+                    <!---------------- ITEM --------------------->
+                    <div class="p-item">
+                        <div class="p-head"><a href="#">Лак для волос 260мл</a></div>
+                        <div class="p-body"><img src="{{ asset('img/tov1.jpg') }}" alt="Товар">
+
+                            <p>Краткое описание товара <br>
+                                Суперпредложение!</p>
+                            <br/>
+                            <span>250 000 руб.</span>
+                        </div>
+                        <div class="p-foot">
+                            <label for = "incart">В корзину</label>
+                        </div>
+                    </div>
                 </div>
-            {% endfor %}
-        </div>
-    {% endif %}
-
-    <div class="margin"></div>
-    <div id="seotext">
-        <div class="title">
-            <h2>Seo текст о нас</h2>
-            <div class="simple-line"></div>
-            <p>интернет-магазин Irisk-bel.by</p>
-        </div>
-        <div class="margin"></div>
-        <div class="container clearfix">
-            <div class="text-box ">
-                {{ configuration.get('TEXT_HOMEPAGE')|raw }}
-            </div>
-            <div class="vidos">
-                <iframe align="left" width="100%" height="466" src="https://www.youtube.com/embed/XMh-q2GUR70"
-                        frameborder="0"></iframe>
             </div>
         </div>
     </div>
-    <div class="margin"></div>
+    <!----------------------------------------------------------------------------------->
+    <div id="main-catalog">
+        <div class="container clearfix">
+            <div class="catalog-wrapp">
+                <div class="title">
+                    <h2>Каталог товаров</h2>
 
+                    <p>Всё что Вам нужно по категориям</p>
+                </div>
+                <div class="mc-box clearfix">
+                    <!----------item---------------->
+                    <div class="mc-item">
+                        <a href="Catalog.html"><h3>Наращивание ресниц</h3><br/>
+
+                            <div class="just"></div>
+                            <img src="{{ asset('img/c-item-1.jpg') }}" alt=""></a>
+                    </div>
+                    <!----------item---------------->
+                    <div class="mc-item">
+                        <a href="Catalog.html"><h3>Наращивание ресниц</h3><br/>
+
+                            <div class="just"></div>
+                            <img src="{{ asset('img/c-item-1.jpg') }}" alt=""></a>
+                    </div>
+                    <!----------item---------------->
+                    <div class="mc-item">
+                        <a href="Catalog.html"><h3>Наращивание ресниц</h3><br/>
+
+                            <div class="just"></div>
+                            <img src="{{ asset('img/c-item-1.jpg') }}" alt=""></a>
+                    </div>
+                    <!----------item---------------->
+                    <div class="mc-item">
+                        <a href="Catalog.html"><h3>Наращивание ресниц</h3><br/>
+
+                            <div class="just"></div>
+                            <img src="{{ asset('img/c-item-1.jpg') }}" alt=""></a>
+                    </div>
+                    <!----------item---------------->
+                    <div class="mc-item">
+                        <a href="Catalog.html"><h3>Наращивание ресниц</h3><br/>
+
+                            <div class="just"></div>
+                            <img src="{{ asset('img/c-item-1.jpg') }}" alt=""></a>
+                    </div>
+                    <!----------item---------------->
+                    <div class="mc-item">
+                        <a href="Catalog.html"><h3>Наращивание ресниц</h3><br/>
+
+                            <div class="just"></div>
+                            <img src="{{ asset('img/c-item-1.jpg') }}" alt=""></a>
+                    </div>
+                    <!----------item---------------->
+                    <div class="mc-item">
+                        <a href="Catalog.html"><h3>Наращивание ресниц</h3><br/>
+
+                            <div class="just"></div>
+                            <img src="{{ asset('img/c-item-1.jpg') }}" alt=""></a>
+                    </div>
+                    <!----------item---------------->
+                    <div class="mc-item">
+                        <a href="Catalog.html"><h3>Наращивание ресниц</h3><br/>
+
+                            <div class="just"></div>
+                            <img src="{{ asset('img/c-item-1.jpg') }}" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!----------------------------------------------------------------------------------->
+    <div id="seo-text">
+        <div class="container">
+            <div class="wrapper">
+                <div class="title">
+                    <h1>IRISK-BEL.BY - Интернет-магазин товаров для <strong>наращивания ресниц</strong> и
+                        <strong>ногтей</strong></h1>
+
+                    <h2>Товары для биоэпиляции, косметологии, визажа и парикмахерского искусства</h2>
+                </div>
+                <div class="seo">
+                    Интернет-магазин IRISKBEL специализируется на продукции для ресничного и ногтевого сервиса, а также для
+                    визажа и косметологии. У нас самый большой ассортимент – около 2000 наименований. В нашем интернет –
+                    магазине представлен широкий выбор продукции для наращивания ногтей и ресниц, маникюра и педикюра,
+                    косметологии и визажа. Ассортимент товаров постоянно расширяется и обновляется. Вся продукция
+                    представлена в удобном иллюстрированном каталоге на нашем сайте. У нас Вы можете приобрести весь
+                    ассортимент продукции популярных торговых марок IRIS'K PROFESSIONAL, DPG, COSMO, TANGO и др. Многие годы
+                    эти торговые марки пользуются заслуженной популярностью и доверием мастеров. У нас Вы найдете нужную Вам
+                    продукцию по доступным ценам. Для нашего интернет-магазина действительно важно воплотить в жизнь все
+                    фантазии мастеров ногтевого и ресничного сервиса, косметологов и визажистов, предоставив им качественные
+                    материалы и аксессуары, которые обеспечат прекрасный результат работы и принесут клиентам только
+                    позитивные эмоции. Наши клиенты ценят такой подход. Присоединяйтесь!
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
