@@ -1,0 +1,73 @@
+<div id="footer">
+    <div class="container clearfix">
+        <div class="logo">
+            <a href="{{ path('homepage') }}"><img src="{{ asset('img/logo.png') }}" alt=""></a><br/>
+            <a href="tel:+{{ configuration.get('PHONE_1')|digits }}">{{ configuration.get('PHONE_1') }}</a><br/>
+            <a href="tel:+{{ configuration.get('PHONE_2')|digits }}">{{ configuration.get('PHONE_2') }}</a><br/>
+            <div class="action"><label for="callback" class="btn btn-callback">Вам перезвонить?</label></div>
+        </div>
+        <div class="links">
+            <p>Главная</p>
+            <ul>
+                <li><a href="">Продукция Irisk</a></li>
+                <li><a href="">О магазине</a></li>
+                <li><a href="">Cпецпредложения</a></li>
+                <li><a href="">Акции</a></li>
+            </ul>
+        </div>
+        <div class="links">
+            <p>Главная</p>
+            <ul>
+                <li><a href="">Продукция Irisk</a></li>
+                <li><a href="">О магазине</a></li>
+                <li><a href="">Cпецпредложения</a></li>
+                <li><a href="">Акции</a></li>
+            </ul>
+        </div>
+        <div class="links">
+            <p>Главная</p>
+            <ul>
+                <li><a href="">Продукция Irisk</a></li>
+                <li><a href="">О магазине</a></li>
+                <li><a href="">Cпецпредложения</a></li>
+                <li><a href="">Акции</a></li>
+            </ul>
+        </div>
+        <div class="social">
+            <ul>
+                {% if configuration.get('SOCIAL_LINK_VK') %}
+                    <li>
+                        <a href="{{ configuration.get('SOCIAL_LINK_VK') }}" target="_blank">
+                            <i class="fa fa-vk fa-inverse fa-2x"></i>
+                        </a>
+                    </li>
+                {% endif %}
+                {% if configuration.get('SOCIAL_LINK_FB') %}
+                    <li>
+                        <a href="{{ configuration.get('SOCIAL_LINK_FB') }}" target="_blank">
+                            <i class="fa fa-facebook fa-inverse fa-2x"></i>
+                        </a>
+                    </li>
+                {% endif %}
+                {% if configuration.get('SOCIAL_LINK_OK') %}
+                    <li>
+                        <a href="{{ configuration.get('SOCIAL_LINK_OK') }}" target="_blank">
+                            <i class="fa fa-odnoklassniki fa-inverse fa-2x"></i>
+                        </a>
+                    </li>
+                {% endif %}
+                {% if configuration.get('SOCIAL_LINK_INSTAGRAM') %}
+                    <li>
+                        <a href="{{ configuration.get('SOCIAL_LINK_INSTAGRAM') }}" target="_blank">
+                            <i class="fa fa-instagram fa-inverse fa-2x"></i>
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+
+    </div>
+</div>
+<div class="maker">
+    <span>Сайт делали: <a href="http://s-it.of.by" target="_blank">s-it.by</a></span>
+</div>
