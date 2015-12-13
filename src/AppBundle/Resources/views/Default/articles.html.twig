@@ -1,22 +1,105 @@
 {% extends '@App/layout.html.twig' %}
 
 {% block content %}
-    <div class="container">
-        {% for article in pagination %}
-            <div class="jumbotron{{ cycle(['', ' text-right'], loop.index0) }}">
-                <h1>{{ article.title }}</h1>
-                <p class="date"><em>{{ article.createdAt.format('d.m.Y') }}</em></p>
-                {{ article.description|raw }}
-                <p><a href="{{ path('article', {'slug': article.slug}) }}" class="btn btn-primary btn-lg">Узнать больше</a></p>
-            </div>
-        {% endfor %}
+    <div id="poleznoe">
+        <div class="container clearfix">
+            <div class="wrap clearfix">
+                <div class="title">
+                    <h2>Полезные статьи по наращиванию ногтей и ресниц</h2>
+                    <p>советы экспертов и профессионалов</p>
+                </div>
+                <div class="n-item-box-l">
+                    <div class="n-item">
+                        <img src="{{ asset('img/3.jpg') }}" alt="" align="left">
+                        <h3>Узнайте как быстро научиться красить ногти</h3>
+                        <p>советы экспертов и профессионалов за 5 секунд</p>
+                        <br><a href="#">Читать полностью</a>
+                    </div>
+                    <div class="n-item">
+                        <img src="{{ asset('img/3.jpg') }}" alt="" align="left">
+                        <h3>Узнайте как быстро научиться красить ногти</h3>
+                        <p>советы экспертов и профессионалов за 5 секунд</p>
+                        <br><a href="#">Читать полностью</a>
 
-        {% if pagination.paginationData.pageCount > 1 %}
-            <div class="right-head">
-                <div class="ciferki">
-                    {{ knp_pagination_render(pagination) }}
+                    </div>
+                    <div class="n-item">
+                        <img src="{{ asset('img/3.jpg') }}" alt="" align="left">
+                        <h3>Узнайте как быстро научиться красить ногти</h3>
+                        <p>советы экспертов и профессионалов за 5 секунд</p>
+                        <br><a href="#">Читать полностью</a>
+
+                    </div>
+                    <div class="n-item">
+                        <img src="{{ asset('img/3.jpg') }}" alt="" align="left">
+                        <h3>Узнайте как быстро научиться красить ногти</h3>
+                        <p>советы экспертов и профессионалов за 5 секунд</p>
+                        <br><a href="#">Читать полностью</a>
+
+                    </div>
+                    <div class="n-item">
+                        <img src="{{ asset('img/3.jpg') }}" alt="" align="left">
+                        <h3>Узнайте как быстро научиться красить ногти</h3>
+                        <p>советы экспертов и профессионалов за 5 секунд</p>
+                        <br><a href="#">Читать полностью</a>
+                    </div>
+                </div>
+                <!------------>
+                <div class="n-item-box-r">
+                    <div class="n-item">
+                        <img src="{{ asset('img/3.jpg') }}" alt="" align="left">
+                        <h3>Узнайте как быстро научиться красить ногти</h3>
+                        <p>советы экспертов и профессионалов за 5 секунд</p>
+                        <br><a href="#">Читать полностью</a>
+
+                    </div>
+                    <div class="n-item">
+                        <img src="{{ asset('img/3.jpg') }}" alt="" align="left">
+                        <h3>Узнайте как быстро научиться красить ногти</h3>
+                        <p>советы экспертов и профессионалов за 5 секунд</p>
+                        <br><a href="#">Читать полностью</a>
+
+                    </div>
+                    <div class="n-item">
+                        <img src="{{ asset('img/3.jpg') }}" alt="" align="left">
+                        <h3>Узнайте как быстро научиться красить ногти</h3>
+                        <p>советы экспертов и профессионалов за 5 секунд</p>
+                        <br><a href="#">Читать полностью</a>
+
+                    </div>
+                    <div class="n-item">
+                        <img src="{{ asset('img/3.jpg') }}" alt="" align="left">
+                        <h3>Узнайте как быстро научиться красить ногти</h3>
+                        <p>советы экспертов и профессионалов за 5 секунд</p>
+                        <br><a href="#">Читать полностью</a>
+
+                    </div>
+                    <div class="n-item">
+                        <img src="{{ asset('img/3.jpg') }}" alt="" align="left">
+                        <h3>Узнайте как быстро научиться красить ногти</h3>
+                        <p>советы экспертов и профессионалов за 5 секунд</p>
+                        <br><a href="#">Читать полностью</a>
+                    </div>
                 </div>
             </div>
-        {% endif %}
+        </div>
     </div>
+
+    {#<div class="container">#}
+        {#{% for article in pagination %}#}
+            {#<div class="jumbotron{{ cycle(['', ' text-right'], loop.index0) }}">#}
+                {#<h1>{{ article.title }}</h1>#}
+                {#<p class="date"><em>{{ article.createdAt.format('d.m.Y') }}</em></p>#}
+                {#{{ article.description|raw }}#}
+                {#<p><a href="{{ path('article', {'slug': article.slug}) }}" class="btn btn-primary btn-lg">Узнать больше</a></p>#}
+            {#</div>#}
+        {#{% endfor %}#}
+
+        {#{% if pagination.paginationData.pageCount > 1 %}#}
+            {#<div class="right-head">#}
+                {#<div class="ciferki">#}
+                    {#{{ knp_pagination_render(pagination) }}#}
+                {#</div>#}
+            {#</div>#}
+        {#{% endif %}#}
+    {#</div>#}
 {% endblock %}
