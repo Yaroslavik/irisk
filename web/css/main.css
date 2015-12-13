@@ -157,6 +157,11 @@ nav ul li a {
     color: #222;
 }
 
+nav ul li.current a {
+    color: #fff;
+    text-shadow: 1px 1px 1px #222;
+}
+
 #advantage .a-box {
     background: #ff0475;
     padding: 15px 15px;

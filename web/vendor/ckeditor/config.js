@@ -45,4 +45,6 @@ CKEDITOR.editorConfig = function( config ) {
 	config.filebrowserFlashUploadUrl = '/vendor/kcfinder/upload.php?opener=ckeditor&type=flash';
 
 	config.height = 500;
+
+	config.allowedContent = true;
 };
