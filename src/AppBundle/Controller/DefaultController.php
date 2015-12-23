@@ -81,7 +81,7 @@ class DefaultController extends Controller
         $pagination = $this->get('knp_paginator')->paginate(
             $qb,
             $page,
-            5
+            10
         );
 
         if (!count($pagination)) throw new NotFoundHttpException();

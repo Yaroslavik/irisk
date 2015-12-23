@@ -46,6 +46,19 @@ class MenuBuilder
         return $menu;
     }
 
+    public function createFooterMenu()
+    {
+        $menu = $this->factory->createItem('menu');
+
+        $menu->addChild('Доставка и оплата', array('route' => 'page-delivery'));
+        $menu->addChild('Каталог товаров', array('route' => 'catalog'));
+        $menu->addChild('Полезные статьи', array('route' => 'articles'));
+        $menu->addChild('О магазине', array('route' => 'page', 'routeParameters' => ['slug' => 'about']));
+        $menu->addChild('Оптовые закупки', array('route' => 'page', 'routeParameters' => ['slug' => 'for-dealers']));
+
+        return $menu;
+    }
+
     public function createCatalogMenu()
     {
         $em = $this->container->get('doctrine')->getManager();

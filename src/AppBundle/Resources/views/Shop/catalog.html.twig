@@ -1,14 +1,14 @@
 {% extends '@App/layout.html.twig' %}
 
 {% block content %}
-    {% include '@App/slideshow.html.twig' %}
+    {#{% include '@App/slideshow.html.twig' %}#}
     <div class="margin"></div>
     <div id="katalog" class="clearfix">
-        {% include '@App/catalogMenu.html.twig' %}
+        {#{% include '@App/catalogMenu.html.twig' %}#}
         <div class="right-side clearfix">
             <div class="right-head">
                 <div class="breadcrumbs">
-                    {{ knp_menu_render('breadcrumbs', {template: 'AppBundle::breadcrumbs.html.twig'}) }}
+                    {{ knp_menu_render('breadcrumbs', {template: 'AppBundle:Component:breadcrumbs.html.twig'}) }}
                 </div>
             </div>
             <div class="tovar-box clearfix">

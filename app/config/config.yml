@@ -125,8 +125,8 @@ ax_s_shop:
     date_format: 'dd.MM.yyyy HH:mm'
     product:
 #        form_preview_class: form-preview
-        use_product_options: true
-        use_product_photos: true
+#        use_product_options: true
+#        use_product_photos: true
     product_photo:
 #        form_preview_class: form-preview
     category:
@@ -150,7 +150,7 @@ knp_paginator:
         sort_direction_name: direction # sort direction query parameter name
         distinct: true                 # ensure distinct results, useful when ORM queries are using GROUP BY statements
     template:
-        pagination: AppBundle::pagination.html.twig     # sliding pagination controls template
+        pagination: AppBundle:Component:pagination.html.twig     # sliding pagination controls template
         sortable: KnpPaginatorBundle:Pagination:sortable_link.html.twig # sort link template
 
 vich_uploader:
@@ -184,6 +184,11 @@ liip_imagine:
             filters:
                 thumbnail: { size: [200, 120], mode: outbound }
 
+        product_homepage:
+            quality: 80
+            filters:
+                thumbnail: { size: [180, 180], mode: outbound }
+
         product_preview:
              quality: 80
              filters:
@@ -194,7 +199,7 @@ liip_imagine:
              filters:
                  thumbnail: { size: [158, 152], mode: outbound }
 
-        category_preview:
+        category_homepage:
              quality: 80
              filters:
                  thumbnail: { size: [194, 184], mode: outbound }
@@ -203,3 +208,8 @@ liip_imagine:
             quality: 80
             filters:
                 thumbnail: { size: [1200, 650], mode: outbound }
+
+        article_small:
+            quality: 80
+            filters:
+                thumbnail: { size: [150, 100], mode: outbound }

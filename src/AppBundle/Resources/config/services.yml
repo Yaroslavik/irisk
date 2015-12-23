@@ -23,6 +23,15 @@ services:
         tags:
             - { name: knp_menu.menu, alias: catalog }
 
+    app.menu.footer:
+        class: Knp\Menu\MenuItem
+        factory_service: app.menu_builder
+        factory_method: createFooterMenu
+        arguments: ~
+        scope: request
+        tags:
+            - { name: knp_menu.menu, alias: footer }
+
     app.menu.breadcrumbs:
         class: Knp\Menu\MenuItem
         factory_service: app.menu_builder
@@ -50,3 +59,7 @@ services:
         calls:
             - [setTranslationDomain, [AdminSlide]]
             - [setLabelTranslatorStrategy, [@sonata.admin.label.strategy.underscore]]
+
+    admin_success_handler:
+        class: AppBundle\Misc\AuthenticationHandler
+        arguments: ['@service_container']

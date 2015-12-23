@@ -1,5 +1,18 @@
 {% extends '@App/layout.html.twig' %}
 
+{% macro articleItem(article) %}
+    <div class="n-item clearfix">
+        <a href="{{ path('article', {'slug': article.slug}) }}">
+            <img src="{{ article.webPath|imagine_filter('article_small') }}" alt="{{ article.title }}" align="left">
+        </a>
+        <h3>{{ article.title }}</h3>
+        <p>{{ article.description|striptags }}</p>
+        <a href="{{ path('article', {'slug': article.slug}) }}">Читать полностью</a>
+    </div>
+{% endmacro %}
+
+{% import _self as macros %}
+
 {% block content %}
     <div id="poleznoe">
         <div class="container clearfix">
@@ -9,97 +22,31 @@
                     <p>советы экспертов и профессионалов</p>
                 </div>
                 <div class="n-item-box-l">
-                    <div class="n-item">
-                        <img src="{{ asset('img/3.jpg') }}" alt="" align="left">
-                        <h3>Узнайте как быстро научиться красить ногти</h3>
-                        <p>советы экспертов и профессионалов за 5 секунд</p>
-                        <br><a href="#">Читать полностью</a>
-                    </div>
-                    <div class="n-item">
-                        <img src="{{ asset('img/3.jpg') }}" alt="" align="left">
-                        <h3>Узнайте как быстро научиться красить ногти</h3>
-                        <p>советы экспертов и профессионалов за 5 секунд</p>
-                        <br><a href="#">Читать полностью</a>
-
-                    </div>
-                    <div class="n-item">
-                        <img src="{{ asset('img/3.jpg') }}" alt="" align="left">
-                        <h3>Узнайте как быстро научиться красить ногти</h3>
-                        <p>советы экспертов и профессионалов за 5 секунд</p>
-                        <br><a href="#">Читать полностью</a>
-
-                    </div>
-                    <div class="n-item">
-                        <img src="{{ asset('img/3.jpg') }}" alt="" align="left">
-                        <h3>Узнайте как быстро научиться красить ногти</h3>
-                        <p>советы экспертов и профессионалов за 5 секунд</p>
-                        <br><a href="#">Читать полностью</a>
-
-                    </div>
-                    <div class="n-item">
-                        <img src="{{ asset('img/3.jpg') }}" alt="" align="left">
-                        <h3>Узнайте как быстро научиться красить ногти</h3>
-                        <p>советы экспертов и профессионалов за 5 секунд</p>
-                        <br><a href="#">Читать полностью</a>
-                    </div>
+                    {% for article in pagination %}
+                        {% if loop.index is odd %}
+                            {{ macros.articleItem(article) }}
+                        {% endif %}
+                    {% endfor %}
                 </div>
-                <!------------>
                 <div class="n-item-box-r">
-                    <div class="n-item">
-                        <img src="{{ asset('img/3.jpg') }}" alt="" align="left">
-                        <h3>Узнайте как быстро научиться красить ногти</h3>
-                        <p>советы экспертов и профессионалов за 5 секунд</p>
-                        <br><a href="#">Читать полностью</a>
-
-                    </div>
-                    <div class="n-item">
-                        <img src="{{ asset('img/3.jpg') }}" alt="" align="left">
-                        <h3>Узнайте как быстро научиться красить ногти</h3>
-                        <p>советы экспертов и профессионалов за 5 секунд</p>
-                        <br><a href="#">Читать полностью</a>
-
-                    </div>
-                    <div class="n-item">
-                        <img src="{{ asset('img/3.jpg') }}" alt="" align="left">
-                        <h3>Узнайте как быстро научиться красить ногти</h3>
-                        <p>советы экспертов и профессионалов за 5 секунд</p>
-                        <br><a href="#">Читать полностью</a>
-
-                    </div>
-                    <div class="n-item">
-                        <img src="{{ asset('img/3.jpg') }}" alt="" align="left">
-                        <h3>Узнайте как быстро научиться красить ногти</h3>
-                        <p>советы экспертов и профессионалов за 5 секунд</p>
-                        <br><a href="#">Читать полностью</a>
-
-                    </div>
-                    <div class="n-item">
-                        <img src="{{ asset('img/3.jpg') }}" alt="" align="left">
-                        <h3>Узнайте как быстро научиться красить ногти</h3>
-                        <p>советы экспертов и профессионалов за 5 секунд</p>
-                        <br><a href="#">Читать полностью</a>
-                    </div>
+                    {% for article in pagination %}
+                        {% if loop.index is even %}
+                            {{ macros.articleItem(article) }}
+                        {% endif %}
+                    {% endfor %}
                 </div>
             </div>
+            {% if pagination.paginationData.pageCount > 1 %}
+                <div class="rs-foot clearfix">
+                    <div class="pages">
+                        {{ knp_pagination_render(pagination) }}
+                    </div>
+                </div>
+            {% endif %}
         </div>
     </div>
 
     {#<div class="container">#}
-        {#{% for article in pagination %}#}
-            {#<div class="jumbotron{{ cycle(['', ' text-right'], loop.index0) }}">#}
-                {#<h1>{{ article.title }}</h1>#}
-                {#<p class="date"><em>{{ article.createdAt.format('d.m.Y') }}</em></p>#}
-                {#{{ article.description|raw }}#}
-                {#<p><a href="{{ path('article', {'slug': article.slug}) }}" class="btn btn-primary btn-lg">Узнать больше</a></p>#}
-            {#</div>#}
-        {#{% endfor %}#}
-
-        {#{% if pagination.paginationData.pageCount > 1 %}#}
-            {#<div class="right-head">#}
-                {#<div class="ciferki">#}
-                    {#{{ knp_pagination_render(pagination) }}#}
-                {#</div>#}
-            {#</div>#}
-        {#{% endif %}#}
+        {##}
     {#</div>#}
 {% endblock %}

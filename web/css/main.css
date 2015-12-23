@@ -5,15 +5,31 @@
     margin: 0;
 }
 
+html {
+    height: 100%;
+}
+
 body {
     background: url(../img/background.jpg);
     font: 14px normal, 'Open Sans', sans-serif;
-
+    height: 100%;
 }
 
 .container {
     width: 1200px;
     margin: 0 auto;
+}
+
+.main-wrapper {
+    min-height: 100%;
+    /* equal to footer height */
+    margin-bottom: -204px;
+}
+
+.main-wrapper:after {
+    content: "";
+    display: block;
+    height: 204px;
 }
 
 ul, li {
@@ -22,6 +38,15 @@ ul, li {
 
 a {
     text-decoration: none;
+    color: hotpink;
+}
+
+a:hover {
+    color: deeppink;
+}
+
+a:focus {
+    outline: none;
 }
 
 .clearfix:before,
@@ -209,8 +234,7 @@ nav ul li.current a {
 
 .title {
     text-align: center;
-    padding: 15px 0;
-
+    padding: 25px 0;
 }
 
 .p-box {
@@ -389,6 +413,14 @@ nav ul li.current a {
 
 .n-item {
     margin-bottom: 45px;
+}
+
+.n-item p {
+    overflow: hidden;
+    margin: 2px 0;
+    line-height: 18px;
+    max-height: 54px;
+    text-overflow: ellipsis;
 }
 
 .wrap {

@@ -26,6 +26,7 @@
         "axs/page-bundle": "dev-master",
         "axs/shop-bundle": "dev-master",
         "axs/article-bundle": "dev-master",
+        "axs/common-bundle": "dev-master",
         "sonata-project/seo-bundle": "^2.0",
         "khepin/yaml-fixtures-bundle": "^1.0",
         "knplabs/knp-paginator-bundle": "^2.5",
@@ -36,6 +37,10 @@
         "sensio/generator-bundle": "~2.3"
     },
     "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/alexsholk/AxSCommonBundle.git"
+        },
         {
             "type": "vcs",
             "url": "https://github.com/alexsholk/AxSConfigBundle.git"

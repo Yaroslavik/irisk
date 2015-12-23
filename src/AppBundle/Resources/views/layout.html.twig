@@ -25,8 +25,10 @@
 {% endblock %}
 
 {% block body %}
-    {% include '@App/Component/header.html.twig' %}
-    {% block content %}{% endblock %}
+    <div class="main-wrapper">
+        {% include '@App/Component/header.html.twig' %}
+        {% block content %}{% endblock %}
+    </div>
     {% include '@App/Component/footer.html.twig' %}
     {% include '@App/Component/modal.html.twig' %}
 {% endblock %}

@@ -33,76 +33,27 @@
                     <p>Новинки, спецпредложения, акции</p>
                 </div>
                 <div class="p-box clearfix">
-                    <!---------------- ITEM --------------------->
-                    <div class="p-item">
-                        <div class="p-head"><a href="tovar.html">Лак для волос 260мл</a></div>
-                        <div class="p-body"><img src="{{ asset('img/tov1.jpg') }}" alt="Товар">
-
-                            <p>Краткое описание товара <br>
-                                Суперпредложение!</p>
-                            <br/>
-                            <span>250 000 руб.</span>
+                    {% for product in products %}
+                        <!---------------- ITEM --------------------->
+                        <div class="p-item">
+                            <div class="p-head">
+                                <a href="{{ path('product', {'url': product.slug}) }}">
+                                    {{ product.title }}
+                                </a>
+                            </div>
+                            <div class="p-body">
+                                <a href="{{ path('product', {'url': product.slug}) }}">
+                                    <img src="{{ vich_uploader_asset(product, 'file')|imagine_filter('product_homepage') }}" alt="{{ product.title }}">
+                                </a>
+                                <p>{{ product.description }}</p>
+                                <br/>
+                                <span>{{ product.cost }} руб.</span>
+                            </div>
+                            <div class="p-foot">
+                                <label for = "incart">В корзину</label>
+                            </div>
                         </div>
-                        <div class="p-foot">
-                            <label for = "incart">В корзину</label>
-                        </div>
-                    </div>
-                    <!---------------- ITEM --------------------->
-                    <div class="p-item">
-                        <div class="p-head"><a href="#">Лак для волос 260мл</a></div>
-                        <div class="p-body"><img src="{{ asset('img/tov1.jpg') }}" alt="Товар">
-
-                            <p>Краткое описание товара <br>
-                                Суперпредложение!</p>
-                            <br/>
-                            <span>250 000 руб.</span>
-                        </div>
-                        <div class="p-foot">
-                            <label for = "incart">В корзину</label>
-                        </div>
-                    </div>
-                    <!---------------- ITEM --------------------->
-                    <div class="p-item">
-                        <div class="p-head"><a href="#">Лак для волос 260мл</a></div>
-                        <div class="p-body"><img src="{{ asset('img/tov1.jpg') }}" alt="Товар">
-
-                            <p>Краткое описание товара <br>
-                                Суперпредложение!</p>
-                            <br/>
-                            <span>250 000 руб.</span>
-                        </div>
-                        <div class="p-foot">
-                            <label for = "incart">В корзину</label>
-                        </div>
-                    </div>
-                    <!---------------- ITEM --------------------->
-                    <div class="p-item">
-                        <div class="p-head"><a href="#">Лак для волос 260мл</a></div>
-                        <div class="p-body"><img src="{{ asset('img/tov1.jpg') }}" alt="Товар">
-
-                            <p>Краткое описание товара <br>
-                                Суперпредложение!</p>
-                            <br/>
-                            <span>250 000 руб.</span>
-                        </div>
-                        <div class="p-foot">
-                            <label for = "incart">В корзину</label>
-                        </div>
-                    </div>
-                    <!---------------- ITEM --------------------->
-                    <div class="p-item">
-                        <div class="p-head"><a href="#">Лак для волос 260мл</a></div>
-                        <div class="p-body"><img src="{{ asset('img/tov1.jpg') }}" alt="Товар">
-
-                            <p>Краткое описание товара <br>
-                                Суперпредложение!</p>
-                            <br/>
-                            <span>250 000 руб.</span>
-                        </div>
-                        <div class="p-foot">
-                            <label for = "incart">В корзину</label>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -113,66 +64,19 @@
             <div class="catalog-wrapp">
                 <div class="title">
                     <h2>Каталог товаров</h2>
-
                     <p>Всё что Вам нужно по категориям</p>
                 </div>
                 <div class="mc-box clearfix">
-                    <!----------item---------------->
-                    <div class="mc-item">
-                        <a href="Catalog.html"><h3>Наращивание ресниц</h3><br/>
-
-                            <div class="just"></div>
-                            <img src="{{ asset('img/c-item-1.jpg') }}" alt=""></a>
-                    </div>
-                    <!----------item---------------->
-                    <div class="mc-item">
-                        <a href="Catalog.html"><h3>Наращивание ресниц</h3><br/>
-
-                            <div class="just"></div>
-                            <img src="{{ asset('img/c-item-1.jpg') }}" alt=""></a>
-                    </div>
-                    <!----------item---------------->
-                    <div class="mc-item">
-                        <a href="Catalog.html"><h3>Наращивание ресниц</h3><br/>
-
-                            <div class="just"></div>
-                            <img src="{{ asset('img/c-item-1.jpg') }}" alt=""></a>
-                    </div>
-                    <!----------item---------------->
-                    <div class="mc-item">
-                        <a href="Catalog.html"><h3>Наращивание ресниц</h3><br/>
-
-                            <div class="just"></div>
-                            <img src="{{ asset('img/c-item-1.jpg') }}" alt=""></a>
-                    </div>
-                    <!----------item---------------->
-                    <div class="mc-item">
-                        <a href="Catalog.html"><h3>Наращивание ресниц</h3><br/>
-
-                            <div class="just"></div>
-                            <img src="{{ asset('img/c-item-1.jpg') }}" alt=""></a>
-                    </div>
-                    <!----------item---------------->
-                    <div class="mc-item">
-                        <a href="Catalog.html"><h3>Наращивание ресниц</h3><br/>
-
-                            <div class="just"></div>
-                            <img src="{{ asset('img/c-item-1.jpg') }}" alt=""></a>
-                    </div>
-                    <!----------item---------------->
-                    <div class="mc-item">
-                        <a href="Catalog.html"><h3>Наращивание ресниц</h3><br/>
-
-                            <div class="just"></div>
-                            <img src="{{ asset('img/c-item-1.jpg') }}" alt=""></a>
-                    </div>
-                    <!----------item---------------->
-                    <div class="mc-item">
-                        <a href="Catalog.html"><h3>Наращивание ресниц</h3><br/>
-
-                            <div class="just"></div>
-                            <img src="{{ asset('img/c-item-1.jpg') }}" alt=""></a>
-                    </div>
+                    {% for category in categories %}
+                        <!----------item---------------->
+                        <div class="mc-item">
+                            <a href="{{ path('catalog', {'path': category.slugPath}) }}">
+                                <h3>{{ category.title }}</h3><br/>
+                                <div class="just"></div>
+                                <img src="{{ vich_uploader_asset(category, 'file')|imagine_filter('category_homepage') }}" alt="">
+                            </a>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
