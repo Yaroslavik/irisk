@@ -7,6 +7,7 @@ use Knp\Component\Pager\Pagination\SlidingPagination;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class DefaultController extends Controller
@@ -66,16 +67,17 @@ class DefaultController extends Controller
      * @Route("/articles/{page}", requirements={"page": "\d+"}, defaults={"page"=1}, name="articles")
      * @Template()
      */
-    public function articlesAction($page)
+    public function articlesAction(Request $request, $page)
     {
+        $session = $request->getSession();
+
         /** @var EntityManager $em */
         $em = $this->getDoctrine()->getManager();
         $qb = $em->createQueryBuilder()
             ->select('a')
             ->from('AxSArticleBundle:Article', 'a')
-            ->where('a.visible = :visible')
-            ->orderBy('a.createdAt', 'DESC')
-            ->setParameter(':visible', 1);
+            ->where('a.visible = 1')
+            ->orderBy('a.createdAt', 'DESC');
 
         /** @var SlidingPagination $pagination */
         $pagination = $this->get('knp_paginator')->paginate(
@@ -83,6 +85,8 @@ class DefaultController extends Controller
             $page,
             10
         );
+
+        $session->set('articles-page', $page);
 
         if (!count($pagination)) throw new NotFoundHttpException();
 
@@ -92,11 +96,13 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/articles/{slug}", name="article")
+     * @Route("/article/{slug}", name="article")
      * @Template()
      */
-    public function articleAction($slug)
+    public function articleAction(Request $request, $slug)
     {
+        $session = $request->getSession();
+
         $article = $this->getDoctrine()
             ->getRepository('AxSArticleBundle:Article')
             ->findOneBy(['visible' => 1, 'slug' => $slug]);
@@ -105,6 +111,7 @@ class DefaultController extends Controller
 
         return [
             'article' => $article,
+            'articlesPage' => $session->get('articles-page', 1),
         ];
     }
 }

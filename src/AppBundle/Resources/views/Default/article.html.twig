@@ -1,12 +1,14 @@
 {% extends '@App/layout.html.twig' %}
 
 {% block content %}
-    <div class = "clearfix">
-        <div class="container">
-            <h1>{{ article.title }}</h1>
-            {{ article.content|raw }}
-            <p class="date"><em>{{ article.createdAt.format('d.m.Y') }}</em></p>
+    <div id="about">
+        <div class="container clearfix">
+            <div class="caption">
+                <p><a href="{{ path('articles', {'page': articlesPage}) }}" class="back-to-list">&lt;&lt; К списку статей</a></p><br>
+                <h3>{{ article.title }}</h3>
+                <p><em>{{ article.createdAt.format('d.m.Y') }}</em></p><br>
+                {{ article.content|raw }}
+            </div>
         </div>
     </div>
-    {% include '@App/slideshow.html.twig' %}
 {% endblock %}

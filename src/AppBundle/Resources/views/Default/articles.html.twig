@@ -7,7 +7,7 @@
         </a>
         <h3>{{ article.title }}</h3>
         <p>{{ article.description|striptags }}</p>
-        <a href="{{ path('article', {'slug': article.slug}) }}">Читать полностью</a>
+        <a href="{{ path('article', {'slug': article.slug}) }}">Читать полностью &gt;&gt;</a>
     </div>
 {% endmacro %}
 
