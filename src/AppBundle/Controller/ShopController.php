@@ -23,6 +23,8 @@ class ShopController extends Controller
      */
     public function catalogAction(Request $request, $path = null)
     {
+        return $this->forward('AppBundle:Default:development');
+
         /** @var EntityManager $em */
         $em = $this->getDoctrine()->getManager();
         $r = $em->getRepository('AxSShopBundle:ShopCategory');
@@ -159,6 +161,8 @@ class ShopController extends Controller
      */
     public function cartAction()
     {
+        return $this->forward('AppBundle:Default:development');
+
         return [];
     }
 }
