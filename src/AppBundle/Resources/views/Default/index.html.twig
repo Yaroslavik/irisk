@@ -1,5 +1,7 @@
 {% extends '@App/layout.html.twig' %}
 
+{% import '@App/Shop/macros.html.twig' as macros %}
+
 {% block content %}
     {{ render(controller('AppBundle:Component:gallery')) }}
     <!----------------------------------------------------------------------------------->
@@ -34,25 +36,7 @@
                 </div>
                 <div class="p-box clearfix">
                     {% for product in products %}
-                        <!---------------- ITEM --------------------->
-                        <div class="p-item">
-                            <div class="p-head">
-                                <a href="{{ path('product', {'url': product.slug}) }}">
-                                    {{ product.title }}
-                                </a>
-                            </div>
-                            <div class="p-body">
-                                <a href="{{ path('product', {'url': product.slug}) }}">
-                                    <img src="{{ vich_uploader_asset(product, 'file')|imagine_filter('product_homepage') }}" alt="{{ product.title }}">
-                                </a>
-                                <p>{{ product.description }}</p>
-                                <br/>
-                                <span>{{ product.cost }} руб.</span>
-                            </div>
-                            <div class="p-foot">
-                                <label for = "incart">В корзину</label>
-                            </div>
-                        </div>
+                        {{ macros.productItem(product) }}
                     {% endfor %}
                 </div>
             </div>

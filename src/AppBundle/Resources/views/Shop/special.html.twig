@@ -1,0 +1,22 @@
+{% extends '@App/layout.html.twig' %}
+
+{% import '@App/Shop/macros.html.twig' as macros %}
+
+{% block content %}
+    {{ render(controller('AppBundle:Component:gallery')) }}
+    <div id="popular">
+        <div class="container">
+            <div class="popular-back">
+                <div class="title">
+                    <h2>Популярные товары</h2>
+                    <p>Новинки, спецпредложения, акции</p>
+                </div>
+                <div class="p-box clearfix">
+                    {% for product in products %}
+                        {{ macros.productItem(product) }}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

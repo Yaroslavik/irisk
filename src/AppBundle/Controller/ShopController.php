@@ -57,6 +57,24 @@ class ShopController extends Controller
     }
 
     /**
+     * @Route("/special-offers", name="special")
+     * @Template()
+     */
+    public function specialAction()
+    {
+        $products = $this->getDoctrine()->getRepository('AxSShopBundle:Product')
+            ->findBy([
+                'visible' => 1,
+                'available' => 1,
+                'featured' => 1,
+            ], ['updatedAt' => 'DESC']);
+
+        return [
+            'products' => $products,
+        ];
+    }
+
+    /**
      * @Template()
      */
     public function productsAction(Request $request, $category)

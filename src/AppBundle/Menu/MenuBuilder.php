@@ -39,7 +39,7 @@ class MenuBuilder
         $menu->addChild('Каталог товаров', array('route' => 'catalog'));
         $menu->addChild('Полезные статьи', array('route' => 'articles'));
         $menu->addChild('О магазине', array('route' => 'page', 'routeParameters' => ['slug' => 'about']));
-        $menu->addChild('Спецпредложения', array('route' => 'catalog'));
+        $menu->addChild('Спецпредложения', array('route' => 'special'));
         $menu->addChild('Оптовые закупки', array('route' => 'page', 'routeParameters' => ['slug' => 'for-dealers']));
         $menu->addChild('Корзина', array('route' => 'cart'));
 
