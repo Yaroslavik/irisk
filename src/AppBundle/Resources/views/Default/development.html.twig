@@ -1,12 +1,12 @@
 {% extends '@App/layout.html.twig' %}
 
 {% block content %}
-    {{ render(controller('AppBundle:Component:gallery')) }}
     <div id="about">
         <div class="container clearfix">
             <div class="caption">
-                <h3>{{ page.title }}</h3>
-                {{ page.content|raw }}
+                <p style="text-align: center">
+                    <img src="{{ asset('img/development.png') }}">
+                </p>
             </div>
         </div>
     </div>

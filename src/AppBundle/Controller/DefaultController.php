@@ -114,4 +114,12 @@ class DefaultController extends Controller
             'articlesPage' => $session->get('articles-page', 1),
         ];
     }
+
+    /**
+     * @Template()
+     */
+    public function developmentAction()
+    {
+        return [];
+    }
 }

@@ -125,8 +125,8 @@ ax_s_shop:
     date_format: 'dd.MM.yyyy HH:mm'
     product:
 #        form_preview_class: form-preview
-#        use_product_options: true
-#        use_product_photos: true
+        use_product_options: false
+        use_product_photos: false
     product_photo:
 #        form_preview_class: form-preview
     category:
@@ -212,4 +212,4 @@ liip_imagine:
         article_small:
             quality: 80
             filters:
-                thumbnail: { size: [150, 100], mode: outbound }
+                thumbnail: { size: [150, 650], mode: outbound }

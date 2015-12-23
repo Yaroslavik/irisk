@@ -135,6 +135,8 @@ class ShopController extends Controller
      */
     public function searchAction(Request $request)
     {
+        return $this->forward('AppBundle:Default:development');
+
         $q = $request->get('q');
 
         return [
