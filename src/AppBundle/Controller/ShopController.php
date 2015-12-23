@@ -81,6 +81,8 @@ class ShopController extends Controller
      */
     public function productsAction(Request $request, $category)
     {
+        return $this->forward('AppBundle:Default:development');
+
         $page = $request->query->get('page', 1);
         $orderBy = $request->query->get('sort', 'title-asc');
 
@@ -152,6 +154,8 @@ class ShopController extends Controller
      */
     public function productAction($url)
     {
+        return $this->forward('AppBundle:Default:development');
+
         return [];
     }
 
