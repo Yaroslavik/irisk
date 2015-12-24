@@ -202,12 +202,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/alexsholk/AxSShopBundle.git",
-                "reference": "d3675a5e562fa60896d4807b27951fa95489a08e"
+                "reference": "3b0c1821393ed987479c5dfc8840c77b30bbc405"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/alexsholk/AxSShopBundle/zipball/d3675a5e562fa60896d4807b27951fa95489a08e",
-                "reference": "d3675a5e562fa60896d4807b27951fa95489a08e",
+                "url": "https://api.github.com/repos/alexsholk/AxSShopBundle/zipball/3b0c1821393ed987479c5dfc8840c77b30bbc405",
+                "reference": "3b0c1821393ed987479c5dfc8840c77b30bbc405",
                 "shasum": ""
             },
             "require": {
@@ -243,7 +243,7 @@
                 "source": "https://github.com/alexsholk/AxSShopBundle/tree/master",
                 "issues": "https://github.com/alexsholk/AxSShopBundle/issues"
             },
-            "time": "2015-11-29 14:48:21"
+            "time": "2015-12-24 14:20:18"
         },
         {
             "name": "behat/transliterator",
@@ -2165,16 +2165,16 @@
         },
         {
             "name": "michelf/php-markdown",
-            "version": "1.5.1",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/michelf/php-markdown.git",
-                "reference": "155287e4222d2dd69b6a21221617b50668d5892e"
+                "reference": "156e56ee036505ec637d761ee62dc425d807183c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/michelf/php-markdown/zipball/155287e4222d2dd69b6a21221617b50668d5892e",
-                "reference": "155287e4222d2dd69b6a21221617b50668d5892e",
+                "url": "https://api.github.com/repos/michelf/php-markdown/zipball/156e56ee036505ec637d761ee62dc425d807183c",
+                "reference": "156e56ee036505ec637d761ee62dc425d807183c",
                 "shasum": ""
             },
             "require": {
@@ -2212,7 +2212,7 @@
             "keywords": [
                 "markdown"
             ],
-            "time": "2015-12-22 18:18:12"
+            "time": "2015-12-24 01:37:31"
         },
         {
             "name": "monolog/monolog",

@@ -65,7 +65,11 @@ class MenuBuilder
         $r = $em->getRepository('AxSShopBundle:ShopCategory');
         $roots = $r->getRootNodes('order', 'asc');
 
-        $menu = $this->factory->createItem('catalog_menu');
+        $menu = $this->factory->createItem('catalog_menu', [
+            'childrenAttributes' => [
+                'class' => 'topnav',
+            ]
+        ]);
         $this->buildCatalogMenu($menu, $roots);
         return $menu;
     }
@@ -73,28 +77,24 @@ class MenuBuilder
     /**
      * @param ItemInterface $menuItem
      * @param ShopCategory[]|\Traversable $categories
-     * @param string $path
      * @return mixed
      */
-    protected function buildCatalogMenu(ItemInterface $menuItem, $categories, $path = '')
+    protected function buildCatalogMenu(ItemInterface $menuItem, $categories)
     {
         foreach ($categories as $category) {
-            $tempPath = $path;
-            if ($tempPath !== '') $tempPath .= '/';
-            $tempPath .= $category->getSlug();
+            if ($category->getChildren()->count()) {
+                $params['uri'] = '#';
+            } else {
+//                $params['uri'] = '#';
+                $params['route'] = 'catalog';
+                $params['routeParameters'] = ['path' => $category->getSlugPath()];
+            }
 
-            $item = $menuItem->addChild(
-                $category->getTitle(),
-                ['route' => 'catalog', 'routeParameters' => [
-                    'path' => $tempPath
-                ]]
-            );
+            $item = $menuItem->addChild($category->getTitle(), $params);
 
-            $this->buildCatalogMenu(
-                $item,
-                $category->getChildren(),
-                $tempPath
-            );
+            if ($category->getChildren()->count()) {
+                $this->buildCatalogMenu($item, $category->getChildren());
+            }
         }
 
         return $menuItem;

@@ -1,30 +1,101 @@
 {% extends '@App/layout.html.twig' %}
 
 {% block content %}
-    {#{% include '@App/slideshow.html.twig' %}#}
-    <div class="margin"></div>
-    <div id="katalog" class="clearfix">
-        {#{% include '@App/catalogMenu.html.twig' %}#}
-        <div class="right-side clearfix">
-            <div class="right-head">
-                <div class="breadcrumbs">
-                    {{ knp_menu_render('breadcrumbs', {template: 'AppBundle:Component:breadcrumbs.html.twig'}) }}
+    {{ render(controller('AppBundle:Component:gallery')) }}
+    <div id="catalog">
+        <div class="container clearfix">
+            <div class="left-side">
+                <div class="ls-item">
+                    {{ knp_menu_render('catalog') }}
                 </div>
             </div>
-            <div class="tovar-box clearfix">
-                <ul>
-                    {% for subcategory in subcategories %}
-                        {% set url = path('catalog', {'path': subcategory.slugPath}) %}
-                        <li>
-                            <h2><a href="{{ url }}">{{ subcategory.title }}</a></h2>
-                            {% if subcategory.filename is not empty %}
-                                <a href="{{ url }}">
-                                    <img src="{{ vich_uploader_asset(subcategory, 'file')|imagine_filter('small') }}">
+            <div class="right-side clearfix">
+                <div class="rs-head clearfix">
+                    <div class="breadcumbs">
+                        <ul>
+                            <li><a href="">Главная</a></li>
+                            <span>/</span>
+                            <li><a href="">Заглавная</a></li>
+                            <span>/</span>
+                            <li><a href="">Подглавная</a></li>
+                            <span>/</span>
+                            <li>Последняя</li>
+                        </ul>
+                    </div>
+                    <div class="pages">
+                        <ul>
+                            <li><a href="#">&#8249;</a></li>
+                            <li class="active"><a href="">1</a></li>
+                            <li><a href="">2</a></li>
+                            <li><a href="">3</a></li>
+                            <li><a href="">4</a></li>
+                            <li><a href="">5</a></li>
+                            <li><a href="">...</a></li>
+                            <li><a href="">15</a></li>
+                            <li><a href="#">&#8250;</a></li>
+                        </ul>
+                    </div>
+                    <div class="sort">
+                        <form action="#" name="select">
+                            <select name="sort" id="sortirovka">
+                                <option selected value="Начать с дешевых">Цена &uarr;</option>
+                                <option value="Начать с дорогих">Цена &darr;</option>
+                                <option value="от А до Я ">А - Я</option>
+                                <option value="от Я до А">Я - А</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+                <div class="rs-tovbox clearfix">
+                    {% for item in subcategories %}
+                        <div class="rs-item clearfix">
+                            <div class="t-head clearfix">
+                                <a href="{{ path('catalog', {'path': item.slugPath}) }}">{{ item.title }}</a>
+                            </div>
+                            <div class="t-body">
+                                <a href="{{ path('catalog', {'path': item.slugPath}) }}">
+                                    <img src="{{ vich_uploader_asset(item, 'file')|imagine_filter('category_catalog') }}" alt="{{ item.title }}">
                                 </a>
-                            {% endif %}
-                        </li>
+                            </div>
+                        </div>
                     {% endfor %}
-                </ul>
+                </div>
+                <div class="rs-foot clearfix">
+                    <div class="breadcumbs">
+                        <ul>
+                            <li><a href="">Главная</a></li>
+                            <span>/</span>
+                            <li><a href="">Заглавная</a></li>
+                            <span>/</span>
+                            <li><a href="">Подглавная</a></li>
+                            <span>/</span>
+                            <li>Последняя</li>
+                        </ul>
+                    </div>
+                    <div class="pages">
+                        <ul>
+                            <li><a href="#">&#8249;</a></li>
+                            <li class="active"><a href="">1</a></li>
+                            <li><a href="">2</a></li>
+                            <li><a href="">3</a></li>
+                            <li><a href="">4</a></li>
+                            <li><a href="">5</a></li>
+                            <li><a href="">...</a></li>
+                            <li><a href="">15</a></li>
+                            <li><a href="#">&#8250;</a></li>
+                        </ul>
+                    </div>
+                    <div class="sort">
+                        <form action="#" name="select">
+                            <select name="sort" id="sortfoot">
+                                <option selected value="Начать с дешевых">Цена &uarr;</option>
+                                <option value="Начать с дорогих">Цена &darr;</option>
+                                <option value="от А до Я ">А - Я</option>
+                                <option value="от Я до А">Я - А</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

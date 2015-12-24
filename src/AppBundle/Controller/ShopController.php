@@ -23,14 +23,17 @@ class ShopController extends Controller
      */
     public function catalogAction(Request $request, $path = null)
     {
-        return $this->forward('AppBundle:Default:development');
-
         /** @var EntityManager $em */
-        $em = $this->getDoctrine()->getManager();
-        $r = $em->getRepository('AxSShopBundle:ShopCategory');
+        $r = $this->getDoctrine()->getRepository('AxSShopBundle:ShopCategory');
 
-        if ($path === null) {
-            return ['subcategories' => $r->findBy(['visible' => 1, 'parent' => null], ['order' => 'asc'])];
+        if (!$path) {
+            return [
+                'category' => null,
+                'subcategories' => $r->findBy([
+                    'visible' => 1,
+                    'level' => 0,
+                ]),
+            ];
         }
 
         // Parse path and find current category
@@ -81,8 +84,6 @@ class ShopController extends Controller
      */
     public function productsAction(Request $request, $category)
     {
-        return $this->forward('AppBundle:Default:development');
-
         $page = $request->query->get('page', 1);
         $orderBy = $request->query->get('sort', 'title-asc');
 
@@ -114,7 +115,7 @@ class ShopController extends Controller
             case 'price-asc':
                 $qb->orderBy('p.cost', 'asc');
                 break;
-            case 'title-desc':
+            case 'price-desc':
                 $qb->orderBy('p.cost', 'desc');
                 break;
         }
