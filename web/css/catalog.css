@@ -1,28 +1,57 @@
-#catalog {
-    margin-top: 10px;
+ul.topnav {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-weight: normal;
+}
+
+ul.topnav li ul {
+    padding-left: 15px;
+}
+
+ul.topnav li a {
+    padding: 5px 0;
+    display: block;
+    text-decoration: none;
+}
+
+ul.topnav ul {
+    margin: 0;
+    padding: 0;
+    display: none;
+}
+
+ul.topnav ul li {
+    margin: 0;
+    padding: 0;
+    clear: both;
+    font-weight: normal;
+}
+
+ul.topnav span {
+    float: right;
+    font-family: monospace;
+}
+
+#catalog .container {
+    background-color: #F8F1F6;
 }
 
 #catalog .left-side {
-    width: 295px;
+    padding: 15px;
+    width: 270px;
     float: left;
-    background: #fff9d1;
-
+    background: #F8F1F6;
 }
 
 #catalog .right-side {
-    width: 895px;
+    width: 900px;
     float: right;
     background: #fff;
-    margin-left: 10px;
 }
 
 .ls-item ul li {
-    padding: 10px 5px;
-    border: 1px solid #e8e8e8;
-}
-
-.ls-item ul li a {
-    color: #222;
+    padding: 0 0 10px;
 }
 
 .ls-item input {
@@ -33,7 +62,6 @@
 .ls-item ul li span {
     float: right;
     padding: 0 5px;
-    color: #222;
 }
 
 .rs-head {
@@ -107,21 +135,16 @@
 }
 
 .t-body {
-    /*margin-top: 15px;*/
-    /*height: 140px;*/
     min-height: 140px;
 }
 
 .t-body img {
-    /*width: 130px;*/
-    /*height: 130px;*/
     float: left;
 }
 
 .t-body span {
     font-weight: bold;
     vertical-align: middle;
-
 }
 
 .t-foot {

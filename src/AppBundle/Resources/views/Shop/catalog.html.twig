@@ -4,11 +4,7 @@
     {{ render(controller('AppBundle:Component:gallery')) }}
     <div id="catalog">
         <div class="container clearfix">
-            <div class="left-side">
-                <div class="ls-item">
-                    {{ knp_menu_render('catalog') }}
-                </div>
-            </div>
+            {% include '@App/Component/catalogMenu.html.twig' %}
             <div class="right-side clearfix">
                 <div class="rs-head clearfix">
                     <div class="breadcumbs">
