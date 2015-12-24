@@ -207,7 +207,7 @@ liip_imagine:
         category_catalog:
              quality: 80
              filters:
-                thumbnail: { size: [430, 240], mode: outbound }
+                thumbnail: { size: [430, 430], mode: outbound }
 
         gallery:
             quality: 80
