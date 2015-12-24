@@ -5,7 +5,7 @@
         <div class="container clearfix">
             <div class="caption">
                 <p><a href="{{ path('articles', {'page': articlesPage}) }}" class="back-to-list">&lt;&lt; К списку статей</a></p><br>
-                <h3>{{ article.title }}</h3>
+                <h2>{{ article.title }}</h2>
                 <p><em>{{ article.createdAt.format('d.m.Y') }}</em></p><br>
                 {{ article.content|raw }}
             </div>

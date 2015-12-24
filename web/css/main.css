@@ -401,7 +401,7 @@ nav ul li.current a {
 
 .dostavka {
     background: #fff;
-    padding: 10px 15px;
+    padding: 50px 50px 75px;
 }
 
 .dostavka p {
@@ -420,12 +420,16 @@ nav ul li.current a {
     margin-bottom: 25px;
 }
 
+#poleznoe .wrap {
+    padding: 0 35px 25px;
+}
+
 #about .container {
     background: #fff;
 }
 
 #about .caption {
-    padding: 15px 15px;
+    padding: 50px 50px 75px;
 }
 
 .n-item img {
@@ -453,12 +457,14 @@ nav ul li.current a {
 
 .n-item-box-l {
     float: left;
-    width: 600px;
+    width: 565px;
+    padding-top: 25px;
 }
 
 .n-item-box-r {
     float: right;
-    width: 600px;
+    width: 565px;
+    padding-top: 25px;
 }
 #opt .caption {background: #fff; padding: 10px 25px;}
 
