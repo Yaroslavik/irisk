@@ -85,7 +85,6 @@ class MenuBuilder
             if ($category->getChildren()->count()) {
                 $params['uri'] = '#';
             } else {
-//                $params['uri'] = '#';
                 $params['route'] = 'catalog';
                 $params['routeParameters'] = ['path' => $category->getSlugPath()];
             }

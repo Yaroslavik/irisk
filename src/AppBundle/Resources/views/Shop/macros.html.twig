@@ -10,8 +10,7 @@
                 <img src="{{ vich_uploader_asset(product, 'file')|imagine_filter('product_homepage') }}" alt="{{ product.title }}">
             </a>
             <p>{{ product.description }}</p>
-            <br/>
-            <span>{{ product.cost }} руб.</span>
+            <span>{{ product.cost|number_format(null, null, ' ') }} руб.</span>
         </div>
         <div class="p-foot">
             <label for = "incart">В корзину</label>
