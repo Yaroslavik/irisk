@@ -33,6 +33,10 @@ ul.topnav span {
     font-family: monospace;
 }
 
+ul.topnav li.last-active > a {
+    color: #000;
+}
+
 #catalog .container {
     background-color: #F8F1F6;
 }

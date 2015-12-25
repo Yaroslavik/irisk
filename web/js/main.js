@@ -1,9 +1,17 @@
 $(document).ready(function () {
     $('a').nivoLightbox();
 
+    $(".topnav, .breadcumbs").find('a').each(function(){
+        $(this).attr('href', $(this).attr('href') + '#catalog');
+    });
+
     $(".topnav").find("li").each(function() {
         if ($(this).find("ul").size() != 0) {
             $(this).find("a:first").click(function(){return false;});
+        }
+
+        if ($(this).find('li.active').size() == 0 && $(this).hasClass('active')) {
+            $(this).addClass('last-active');
         }
     }).end().accordion({
         accordion: true,

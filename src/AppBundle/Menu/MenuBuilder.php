@@ -9,12 +9,11 @@
 namespace AppBundle\Menu;
 
 use AxS\ShopBundle\Entity\ShopCategory;
-use Doctrine\ORM\EntityManager;
 use Knp\Menu\FactoryInterface;
 use Knp\Menu\ItemInterface;
-use Knp\Menu\Matcher\Voter\UriVoter;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Knp\Menu\MenuItem;
 
 class MenuBuilder
 {
@@ -122,6 +121,7 @@ class MenuBuilder
         while (count($menu)) {
             foreach ($menu as $item) {
                 if ($voter->matchItem($item)) {
+                    /** @var MenuItem $item */
                     $chain[] = $item;
                     $menu = $item;
                     continue 2;
