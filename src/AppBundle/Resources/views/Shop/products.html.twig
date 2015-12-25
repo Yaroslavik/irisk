@@ -1,67 +1,25 @@
 {% extends '@App/layout.html.twig' %}
 
 {% block content %}
-    {% include '@App/slideshow.html.twig' %}
-    <div class="margin"></div>
-    <div id="katalog" class = "clearfix">
-        {% include '@App/catalogMenu.html.twig' %}
-        <div class="right-side clearfix">
-            <div class="right-head">
-                <div class="breadcrumbs">
-                    {{ knp_menu_render('breadcrumbs', {template: 'AppBundle::breadcrumbs.html.twig'}) }}
-                </div>
-                <div class="sort">
-                    <div class="btn-group">
-                        <a href="#" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                            Сортировать <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Начать с низкой цены</a></li>
-                            <li><a href="#">Начать с высокой цены</a></li>
-                            <li><a href="#">А-Я</a></li>
-                            <li><a href="#">Я-А</a></li>
-                        </ul>
-                    </div>
-                </div>
-                {% if pagination.paginationData.pageCount > 1 %}
-                    <div class="ciferki">
-                        {{ knp_pagination_render(pagination) }}
-                    </div>
-                {% endif %}
-            </div>
-            <div class="tovar-box clearfix">
-                {% if pagination is not empty %}
+    {{ render(controller('AppBundle:Component:gallery')) }}
+    <div id="catalog">
+        <div class="container clearfix">
+            {% include '@App/Component/catalogMenu.html.twig' %}
+            <div class="right-side clearfix">
+                {% include '@App/Component/catalogBreadcrumbs.html.twig' %}
+                <div class="rs-tovbox clearfix">
                     {% for product in pagination %}
-                        {% set url = path('product', {'url': product.slug}) %}
-                        <div class="t-item">
-                            <div class="item-head">
-                                <a href="{{ url }}">{{ product.title }}</a>
-                                {#<div class="raiting">#}
-                                    {#<img src="{{ asset('img/star.png') }}" alt="raiting" align="right">#}
-                                {#</div>#}
-                            </div>
-                            <div class="item-middle">
-                                <a href="{{ url }}"><img src="{{ vich_uploader_asset(product, 'file')|imagine_filter('product_list') }}" alt="{{ product.title }}" align="left"></a>
-                                <p>Код товара: {{ product.code }}</p>
-                                <p>{{ product.shortDescription }}</p>
-                                <p><b>Цена: {{ product.cost }} руб</b></p>
-                            </div>
-                            <div class="item-footer">
-                                <div class="present">
-                                    <ul>
-                                        <li><img src="img/yes.png" alt=""></li>
-                                        <li>
-                                            <p>В наличии</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <a href="#" class="btn btn-success">В корзину</a>
-                            </div>
+                        <div class="rs-item clearfix">
+                            {#<div class="t-body">#}
+                                {#<a href="{{ path('catalog', {'path': item.slugPath}) }}">#}
+                                    {#<img src="{{ vich_uploader_asset(item, 'file')|imagine_filter('category_catalog') }}" alt="{{ item.title }}">#}
+                                    {#<span>{{ item.title }}</span>#}
+                                {#</a>#}
+                            {#</div>#}
                         </div>
                     {% endfor %}
-                {% else %}
-                    <p>В данной категории пока что нет товаров</p>
-                {% endif %}
+                </div>
+                {% include '@App/Component/catalogBreadcrumbs.html.twig' %}
             </div>
         </div>
     </div>

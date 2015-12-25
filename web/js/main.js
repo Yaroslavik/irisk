@@ -1,7 +1,11 @@
 $(document).ready(function () {
     $('a').nivoLightbox();
 
-    $(".topnav").accordion({
+    $(".topnav").find("li").each(function() {
+        if ($(this).find("ul").size() != 0) {
+            $(this).find("a:first").click(function(){return false;});
+        }
+    }).end().accordion({
         accordion: true,
         speed: 500,
         closedSign: '[+]',

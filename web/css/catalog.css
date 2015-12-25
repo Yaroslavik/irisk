@@ -73,8 +73,22 @@ ul.topnav span {
     display: inline-block;
 }
 
-.breadcumbs span {
+.breadcumbs span,  {
     margin: 0 10px;
+}
+
+.breadcumbs li::after {
+    content: '/';
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.breadcumbs li:last-child a {
+    color: #000;
+}
+
+.breadcumbs li:last-child::after {
+    display: none;
 }
 
 .breadcumbs {
@@ -95,8 +109,8 @@ ul.topnav span {
 
 .pages ul li {
     display: inline-block;
-    /*padding: 0 6px;*/
 }
+
 .pages ul li a {
     display: inline-block;
     padding: 0 3px;

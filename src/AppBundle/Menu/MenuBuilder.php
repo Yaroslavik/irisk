@@ -70,6 +70,7 @@ class MenuBuilder
                 'class' => 'topnav',
             ]
         ]);
+
         $this->buildCatalogMenu($menu, $roots);
         return $menu;
     }
@@ -82,12 +83,10 @@ class MenuBuilder
     protected function buildCatalogMenu(ItemInterface $menuItem, $categories)
     {
         foreach ($categories as $category) {
-            if ($category->getChildren()->count()) {
-                $params['uri'] = '#';
-            } else {
-                $params['route'] = 'catalog';
-                $params['routeParameters'] = ['path' => $category->getSlugPath()];
-            }
+            $params = [
+                'route' => 'catalog',
+                'routeParameters' => ['path' => $category->getSlugPath()],
+            ];
 
             $item = $menuItem->addChild($category->getTitle(), $params);
 
@@ -103,12 +102,8 @@ class MenuBuilder
     {
         $catalogMenu = $this->createCatalogMenu();
         $result = $this->getCurrentMenuChain($catalogMenu);
-        $menu = $this->factory->createItem('breadcrumbs', [
-            'childrenAttributes' => [
-                'class' => 'breadcrumb',
-            ]
-        ]);
 
+        $menu = $this->factory->createItem('breadcrumbs');
         $menu->addChild('Каталог', ['route' => 'catalog']);
 
         foreach ($result as $i => $item) {
