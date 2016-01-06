@@ -331,9 +331,9 @@ nav ul li.current a {
 }
 
 .catalog-wrapp {
-    background: url(../img/formback.jpg) no-repeat center bottom;
+    /*background: url(../img/formback.jpg) no-repeat center bottom;*/
     width: 100%;
-
+    background: linear-gradient(-45deg, #E06235, #FEC34E);
 }
 
 #main-catalog {
@@ -351,6 +351,13 @@ nav ul li.current a {
     float: left;
     background: #fff;
     margin-bottom: 15px;
+    width: 194px;
+}
+
+.mc-item h3 {
+    line-height: 26px;
+    height: 78px;
+    overflow: hidden;
 }
 
 .just {
