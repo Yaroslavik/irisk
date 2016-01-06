@@ -155,9 +155,17 @@ class ShopController extends Controller
      */
     public function productAction($url)
     {
-        return $this->forward('AppBundle:Default:development');
+        $r = $this->getDoctrine()->getRepository('AxSShopBundle:Product');
+        $product = $r->findOneBy([
+            'slug' => $url,
+            'visible' => 1,
+        ]);
 
-        return [];
+        if (!$product) throw new NotFoundHttpException();
+
+        return [
+            'product' => $product,
+        ];
     }
 
     /**

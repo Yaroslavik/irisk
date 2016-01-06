@@ -9,7 +9,7 @@
             <a href="{{ path('product', {'url': product.slug}) }}">
                 <img src="{{ vich_uploader_asset(product, 'file')|imagine_filter('product_homepage') }}" alt="{{ product.title }}">
             </a>
-            <p>{{ product.description }}</p>
+            <p>{{ product.shortDescription }}</p>
             <span>{{ product.cost|number_format(null, null, ' ') }} руб.</span>
         </div>
         <div class="p-foot">
