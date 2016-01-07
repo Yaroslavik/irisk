@@ -9,6 +9,7 @@
 namespace AppBundle\Controller;
 
 use Doctrine\ORM\EntityManager;
+use Knp\Component\Pager\Pagination\SlidingPagination;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -26,6 +27,7 @@ class ShopController extends Controller
         /** @var EntityManager $em */
         $r = $this->getDoctrine()->getRepository('AxSShopBundle:ShopCategory');
 
+        // If path not specified show root categories
         if (!$path) {
             return [
                 'category' => null,
@@ -47,8 +49,17 @@ class ShopController extends Controller
 
         if (!$category) throw new NotFoundHttpException();
 
+        // Contain visible subcategories?
+        $containSubcategories = false;
+        foreach ($category->getChildren() as $subcategory) {
+            if ($subcategory->getVisible()) {
+                $containSubcategories = true;
+                break;
+            }
+        }
+
         // If not contains subcategories forward to products page
-        if (!count($category->getChildren())) {
+        if (!$containSubcategories) {
             return $this->forward('AppBundle:Shop:products', [
                 'category' => $category,
                 'request' => $request,
@@ -62,24 +73,6 @@ class ShopController extends Controller
     }
 
     /**
-     * @Route("/special-offers", name="special")
-     * @Template()
-     */
-    public function specialAction()
-    {
-        $products = $this->getDoctrine()->getRepository('AxSShopBundle:Product')
-            ->findBy([
-                'visible' => 1,
-                'available' => 1,
-                'featured' => 1,
-            ], ['updatedAt' => 'DESC']);
-
-        return [
-            'products' => $products,
-        ];
-    }
-
-    /**
      * @Template()
      */
     public function productsAction(Request $request, $category)
@@ -88,13 +81,6 @@ class ShopController extends Controller
         $orderBy = $request->query->get('sort', 'title-asc');
 
         $em = $this->getDoctrine()->getManager();
-        $r = $em->getRepository('AxSShopBundle:Product');
-        $products = $r->findBy([
-            'category' => $category,
-            'visible' => 1,
-            'available' => 1
-        ], ['title' => 'asc']);
-
         $qb = $em->createQueryBuilder()
             ->select('p')
             ->from('AxSShopBundle:Product', 'p')
@@ -124,13 +110,30 @@ class ShopController extends Controller
         $pagination = $this->get('knp_paginator')->paginate(
             $qb,
             $page,
-            2
+            10
         );
 
         return [
             'category' => $category,
-            'products' => $products,
             'pagination' => $pagination,
+        ];
+    }
+
+    /**
+     * @Route("/special-offers", name="special")
+     * @Template()
+     */
+    public function specialAction()
+    {
+        $products = $this->getDoctrine()->getRepository('AxSShopBundle:Product')
+            ->findBy([
+                'visible' => 1,
+                'available' => 1,
+                'featured' => 1,
+            ], ['updatedAt' => 'DESC']);
+
+        return [
+            'products' => $products,
         ];
     }
 

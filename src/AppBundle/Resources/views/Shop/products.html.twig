@@ -9,13 +9,17 @@
                 {% include '@App/Component/catalogBreadcrumbs.html.twig' %}
                 <div class="rs-tovbox clearfix">
                     {% for product in pagination %}
+                        {% set url = path('product', {'url': product.slug}) %}
                         <div class="rs-item clearfix">
-                            {#<div class="t-body">#}
-                                {#<a href="{{ path('catalog', {'path': item.slugPath}) }}">#}
-                                    {#<img src="{{ vich_uploader_asset(item, 'file')|imagine_filter('category_catalog') }}" alt="{{ item.title }}">#}
-                                    {#<span>{{ item.title }}</span>#}
-                                {#</a>#}
-                            {#</div>#}
+                            <div class="prod">
+                                <h3><a href="{{ url }}">{{ product.title }}</a></h3>
+                                <a class="img-container" href="{{ url }}">
+                                    <img src="{{ vich_uploader_asset(product, 'file')|imagine_filter('product_catalog') }}" alt="{{ product.title }}">
+                                </a>
+                                <p class="short-desc">{{ product.shortDescription }}</p>
+                                <p class="cost">{{ product.cost }} руб.</p>
+                                <div class="add-to-cart"></div>
+                            </div>
                         </div>
                     {% endfor %}
                 </div>
