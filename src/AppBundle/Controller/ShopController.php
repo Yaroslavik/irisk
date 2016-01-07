@@ -110,7 +110,7 @@ class ShopController extends Controller
         $pagination = $this->get('knp_paginator')->paginate(
             $qb,
             $page,
-            10
+            200
         );
 
         return [
