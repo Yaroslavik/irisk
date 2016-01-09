@@ -184,44 +184,53 @@ liip_imagine:
         small:
             quality: 80
             filters:
+                upscale: { min: [200, 120] }
                 thumbnail: { size: [200, 120], mode: outbound }
 
         product_homepage:
             quality: 80
             filters:
+                upscale: { min: [180, 180] }
                 thumbnail: { size: [180, 180], mode: outbound }
 
         product_preview:
-             quality: 80
-             filters:
-                 thumbnail: { size: [198, 215], mode: outbound }
+            quality: 80
+            filters:
+                upscale: { min: [198, 215] }
+                thumbnail: { size: [198, 215], mode: outbound }
 
         product_show:
             quality: 80
             filters:
+                upscale: { min: [250, 250] }
                 thumbnail: { size: [250, 250], mode: outbound }
 
         product_catalog:
-             quality: 80
-             filters:
-                 thumbnail: { size: [150, 150], mode: outbound }
+            quality: 80
+            filters:
+                upscale: { min: [150, 150] }
+                thumbnail: { size: [150, 150], mode: outbound }
 
         category_homepage:
-             quality: 80
-             filters:
-                 thumbnail: { size: [194, 184], mode: outbound }
+            quality: 80
+            filters:
+                upscale: { min: [194, 184] }
+                thumbnail: { size: [194, 184], mode: outbound }
 
         category_catalog:
              quality: 80
              filters:
-                thumbnail: { size: [430, 430], mode: outbound }
+                upscale: { min: [390, 365] }
+                thumbnail: { size: [390, 365], mode: outbound }
 
         gallery:
             quality: 80
             filters:
+                upscale: { min: [1200, 650] }
                 thumbnail: { size: [1200, 650], mode: outbound }
 
         article_small:
             quality: 80
             filters:
-                thumbnail: { size: [150, 650], mode: outbound }
+                upscale: { min: [150, 100] }
+                thumbnail: { size: [150, 100], mode: outbound }
